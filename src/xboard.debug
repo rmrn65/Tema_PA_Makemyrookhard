@@ -1,0 +1,68 @@
+locale = LC_CTYPE=en_US.UTF-8;LC_NUMERIC=ro_RO.UTF-8;LC_TIME=ro_RO.UTF-8;LC_COLLATE=en_US.UTF-8;LC_MONETARY=ro_RO.UTF-8;LC_MESSAGES=en_US.UTF-8;LC_PAPER=ro_RO.UTF-8;LC_NAME=ro_RO.UTF-8;LC_ADDRESS=ro_RO.UTF-8;LC_TELEPHONE=ro_RO.UTF-8;LC_MEASUREMENT=ro_RO.UTF-8;LC_IDENTIFICATION=ro_RO.UTF-8
+recognized 'normal' (-1) as variant normal
+recognized 'normal' (-1) as variant normal
+recognized 'normal' (-1) as variant normal
+shuffleOpenings = 0
+shuffleOpenings = 0
+Version: xboard 4.9.1 + make ()
+Reset(1, 0) from gameMode 0
+recognized 'normal' (-1) as variant normal
+GameEnds(0, (null), 2)
+shuffleOpenings = 0
+StartChildProcess (dir=".") make run
+127 >first : xboard
+protover 2
+131 <first : java Main.java
+698 <first : feature sigint=0 san=0 name=Valoros
+698 >first : accepted sigint
+698 >first : accepted san
+698 >first : accepted name
+10128 >first : new
+random
+10128 >first : level 40 5 0
+10128 >first : post
+10128 >first : hard
+nps: w=-1, b=-1
+nps: w=-1, b=-1
+11156 >first : time 30000
+11156 >first : otim 30000
+book hit = (NULL)
+11156 >first : c2c4
+11183 <first : move c7c6
+11265 <first : Pawn 6 3
+12443 >first : time 29996
+12443 >first : otim 29874
+book hit = (NULL)
+12443 >first : b2b4
+12446 <first : move c6c5
+12524 <first : Pawn 5 3
+13708 >first : time 29996
+13708 >first : otim 29747
+book hit = (NULL)
+13708 >first : d2d4
+13712 <first : move c5d4
+13792 <first : Pawn 4 4
+14748 >first : time 29996
+14748 >first : otim 29644
+book hit = (NULL)
+14748 >first : e2e3
+14751 <first : move d4e3
+14831 <first : Pawn 3 5
+16939 >first : time 29995
+16939 >first : otim 29425
+book hit = (NULL)
+16939 >first : g2g3
+16942 <first : move e3f2
+17022 <first : Pawn 2 6
+19937 >first : time 29995
+19937 >first : otim 29125
+book hit = (NULL)
+19937 >first : e1d2
+19940 <first : move f2g1
+20021 <first : resign
+GameEnds(26, Black resigns, 1)
+20022 >first : result 1-0 {Black resigns}
+20022 >first : force
+20022 <first : Queen 1 7
+GameEnds(26, Black resigns, 2)
+39310 >first : quit
