@@ -23,7 +23,7 @@ build: classes
 
 classes: $(CLASSES:.java=.class)
 
-run: 
+run: build
 	java Main
 clean:
 	$(RM) *.class

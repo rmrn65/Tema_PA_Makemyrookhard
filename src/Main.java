@@ -49,7 +49,7 @@ public class Main {
                     if (first_move == 1) {
                         first_move = 0;
                         System.out.println("move " + myPawn.move_forward(1, board));
-                    } else if(myPawn.taken(board) || myPawn.current_position.charAt(1) == '8')
+                    } else if(myPawn.taken(board))
                         System.out.println("resign");
                     else if (myPawn.can_take_left(board)) {
                         System.out.println("move " + myPawn.take_left(board));

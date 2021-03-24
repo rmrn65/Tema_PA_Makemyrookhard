@@ -76,7 +76,7 @@ public class Board {
         object_matrix[dest_square.charAt(1)-'1'][dest_square.charAt(0)-'a'] = object_matrix[starting_square.charAt(1)-'1'][starting_square.charAt(0)-'a'];
         object_matrix[starting_square.charAt(1)-'1'][starting_square.charAt(0)-'a'] = null;
     }
-    public ArrayList pos_to_indexes(String pos){
+    public ArrayList<Integer> pos_to_indexes(String pos){
         ArrayList<Integer> coordinates = new ArrayList<Integer>();
         coordinates.add(pos.charAt(0) - 'a');
         coordinates.add(pos.charAt(1) - '1');
