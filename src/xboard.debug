@@ -1,0 +1,172 @@
+locale = LC_CTYPE=en_US.UTF-8;LC_NUMERIC=ro_RO.UTF-8;LC_TIME=ro_RO.UTF-8;LC_COLLATE=en_US.UTF-8;LC_MONETARY=ro_RO.UTF-8;LC_MESSAGES=en_US.UTF-8;LC_PAPER=ro_RO.UTF-8;LC_NAME=ro_RO.UTF-8;LC_ADDRESS=ro_RO.UTF-8;LC_TELEPHONE=ro_RO.UTF-8;LC_MEASUREMENT=ro_RO.UTF-8;LC_IDENTIFICATION=ro_RO.UTF-8
+recognized 'normal' (-1) as variant normal
+recognized 'normal' (-1) as variant normal
+recognized 'normal' (-1) as variant normal
+shuffleOpenings = 0
+shuffleOpenings = 0
+Version: xboard 4.9.1 + make ()
+Reset(1, 0) from gameMode 0
+recognized 'normal' (-1) as variant normal
+GameEnds(0, (null), 2)
+shuffleOpenings = 0
+StartChildProcess (dir=".") make run
+101 >first : xboard
+protover 2
+103 <first : javac -g Main.java
+648 <first : java Main
+698 <first : feature sigint=1 san=0 name=HardRookie
+698 >first : accepted sigint
+698 >first : accepted san
+698 >first : accepted name
+10106 >first : new
+random
+10107 >first : level 40 5 0
+10107 >first : post
+10107 >first : hard
+nps: w=-1, b=-1
+nps: w=-1, b=-1
+21834 >first : time 30000
+21834 >first : otim 30000
+book hit = (NULL)
+21834 >first : c2c4
+21871 <first : move e7e5
+Interrupting first
+22542 >first : time 29996
+22542 >first : otim 29932
+book hit = (NULL)
+22542 >first : c4c5
+22544 <first : move e5e4
+Interrupting first
+23040 >first : time 29996
+23040 >first : otim 29883
+book hit = (NULL)
+23040 >first : c5c6
+23041 <first : move e4e3
+Interrupting first
+23616 >first : time 29996
+23616 >first : otim 29825
+book hit = (NULL)
+23616 >first : c6b7
+23618 <first : e3f2
+23618 <first : move e3f2
+Interrupting first
+29849 >first : time 29995
+29849 >first : otim 29202
+book hit = (NULL)
+29849 >first : e1f2
+29850 <first : resign
+GameEnds(26, Black resigns, 1)
+Interrupting first
+29850 >first : result 1-0 {Black resigns}
+29850 >first : force
+Reset(1, 1) from gameMode 8
+recognized 'normal' (-1) as variant normal
+GameEnds(0, (null), 2)
+shuffleOpenings = 0
+32081 >first : new
+random
+32081 >first : level 40 5 0
+32081 >first : post
+32081 >first : hard
+nps: w=-1, b=-1
+nps: w=-1, b=-1
+37406 >first : time 30000
+37406 >first : otim 30000
+book hit = (NULL)
+37406 >first : c2c4
+37407 <first : move e7e5
+Interrupting first
+38861 >first : time 29999
+38861 >first : otim 29854
+book hit = (NULL)
+38861 >first : f2f4
+38862 <first : e5f4
+38862 <first : move e5f4
+Interrupting first
+40081 >first : time 29999
+40081 >first : otim 29732
+book hit = (NULL)
+40081 >first : c4c5
+40081 <first : move f4f3
+Interrupting first
+41972 >first : time 29999
+41972 >first : otim 29543
+book hit = (NULL)
+41972 >first : c5c6
+41973 <first : f3g2
+41973 <first : move f3g2
+Interrupting first
+42886 >first : time 29999
+42886 >first : otim 29452
+book hit = (NULL)
+42886 >first : c6b7
+42887 <first : g2h1
+42887 <first : move g2h1
+Interrupting first
+44317 >first : time 29999
+44317 >first : otim 29309
+book hit = (NULL)
+44317 >first : b7a8q
+Reset(1, 1) from gameMode 2
+recognized 'normal' (-1) as variant normal
+GameEnds(0, (null), 2)
+61766 >first : force
+shuffleOpenings = 0
+61767 >first : new
+random
+61767 >first : level 40 5 0
+61767 >first : post
+61767 >first : hard
+nps: w=-1, b=-1
+nps: w=-1, b=-1
+67421 >first : time 30000
+67421 >first : otim 30000
+book hit = (NULL)
+67421 >first : c2c4
+67422 <first : move e7e5
+Interrupting first
+69323 >first : time 29999
+69323 >first : otim 29809
+book hit = (NULL)
+69323 >first : f2f4
+69323 <first : e5f4
+69323 <first : move e5f4
+Interrupting first
+69989 >first : time 29999
+69989 >first : otim 29743
+book hit = (NULL)
+69989 >first : c4c5
+69990 <first : move f4f3
+Interrupting first
+70792 >first : time 29999
+70792 >first : otim 29663
+book hit = (NULL)
+70792 >first : c5c6
+70793 <first : f3g2
+70793 <first : move f3g2
+Interrupting first
+72017 >first : time 29999
+72017 >first : otim 29540
+book hit = (NULL)
+72017 >first : c6b7
+72018 <first : g2h1
+72018 <first : move g2h1
+Interrupting first
+78020 >first : time 29999
+78020 >first : otim 28940
+book hit = (NULL)
+78020 >first : b7a8q
+Reset(1, 1) from gameMode 2
+recognized 'normal' (-1) as variant normal
+GameEnds(0, (null), 2)
+87145 >first : force
+shuffleOpenings = 0
+87146 >first : new
+random
+87146 >first : level 40 5 0
+87146 >first : post
+87146 >first : hard
+GameEnds(29, xboard exit, 2)
+90223 >first : result * {xboard exit}
+90223 >first : force
+90223 >first : quit
