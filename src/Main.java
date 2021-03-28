@@ -8,10 +8,10 @@ public class Main {
         int start = 0, go = 0, quit = 0;
         String command;
         Pawn myPawn = board.P5;
-        while(true){
-            command = input.next(); // primește input
+        do {
+            command = input.next(); // primeste input
             //tratez comanda
-            switch (command){
+            switch (command) {
                 case "xboard":
                     break;
                 case "protover":
@@ -41,17 +41,17 @@ public class Main {
                     quit = 1;
                     break;
             }
-            //folosim regex pentru a găsi comenzile de mutare
-            if(command.matches("[a-h][1-8][a-h][1-8]") || go == 1){
+            //folosim regex pentru a gasi comenzile de mutare
+            if (command.matches("[a-h][1-8][a-h][1-8]q?") || go == 1) {
                 //process command
-                if(go == 0)
+                if (go == 0)
                     board.move(command);
-                if(start == 1) {
+                if (start == 1) {
                     //prima miscare
                     if (first_move == 1) {
                         first_move = 0;
                         System.out.println("move " + myPawn.move_forward(1, board));
-                    } else if(myPawn.taken(board))
+                    } else if (myPawn.taken(board))
                         System.out.println("resign");
                     else if (myPawn.can_take_left(board)) {
                         System.out.println("move " + myPawn.take_left(board));
@@ -59,15 +59,12 @@ public class Main {
                         System.out.println("move " + myPawn.take_right(board));
                     } else if (myPawn.can_move_forward(board)) {
                         System.out.println("move " + myPawn.move_forward(0, board));
-                    }
-                    else
+                    } else
                         System.out.println("resign");
                 }
                 first_move = 0;
                 go = 0;
             }
-            if(quit == 1)
-                break;
-        }
+        } while (quit != 1);
     }
 }
