@@ -11,15 +11,7 @@ public class Board {
     Pawn P1, P2, P3, P4, P5, P6, P7, P8,p1,p2,p3,p4,p5,p6,p7,p8;
     public Board(){
         init_pieces();
-        matrix = new char[][]
-                {{'r', 'n', 'b', 'q', 'k', 'b', 'n', 'r'},
-                {'p', 'p', 'p', 'p', 'p', 'p', 'p', 'p'},
-                {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-                {'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P'},
-                {'R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R'}};
+        //tabla de obiecte
         object_matrix = new Piece[][]{{R1,N1,B1,Q,K,B2,N2,R2},
                 {P1,P2,P3,P4,P5,P6,P7,P8},
                 {null,null,null,null,null,null,null,null},
@@ -29,6 +21,7 @@ public class Board {
                 {p1,p2,p3,p4,p5,p6,p7,p8},
                 {r1,n1,b1,q,k,b2,n2,r2}};
     }
+    //initializez toate piesele pentru ambele culori
     public void init_pieces(){
         P1 = new Pawn("a2","white");
         P2 = new Pawn("b2","white");

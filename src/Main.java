@@ -3,19 +3,19 @@ public class Main {
 
     public static void main(String[] args) {
     Scanner input = new Scanner(System.in);
-        //int turn = 0; //0 = my turn ; 1 = cpu turn
         Board board = new Board();
         int first_move = 1;
         int start = 0, go = 0, quit = 0;
         String command;
         Pawn myPawn = board.P5;
         while(true){
-            command = input.next();
+            command = input.next(); // primește input
+            //tratez comanda
             switch (command){
                 case "xboard":
                     break;
                 case "protover":
-                    System.out.println("feature sigint=1 san=0 name=HardRookie");
+                    System.out.println("feature sigint=0 san=0 name=HardRookie");
                     break;
                 case "new":
                     start = 1;
@@ -41,11 +41,17 @@ public class Main {
                     quit = 1;
                     break;
             }
+<<<<<<< HEAD
             if(command.matches("[a-h][1-8][a-h][1-8]q?") || go == 1){
+=======
+            //folosim regex pentru a găsi comenzile de mutare
+            if(command.matches("[a-h][1-8][a-h][1-8]") || go == 1){
+>>>>>>> 1b57a882156cee78b02b24e966fdd3c56d3b9ed4
                 //process command
                 if(go == 0)
                     board.move(command);
                 if(start == 1) {
+                    //prima miscare
                     if (first_move == 1) {
                         first_move = 0;
                         System.out.println("move " + myPawn.move_forward(1, board));
@@ -64,12 +70,6 @@ public class Main {
                 first_move = 0;
                 go = 0;
             }
-//        for(int i = 0; i < 8 ; i ++){
-//            for(int j = 0 ; j < 8; j ++){
-//                System.out.print(board.matrix[i][j] + "| |");
-//            }
-//            System.out.println();
-//        }
             if(quit == 1)
                 break;
         }

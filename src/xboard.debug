@@ -10,6 +10,7 @@ recognized 'normal' (-1) as variant normal
 GameEnds(0, (null), 2)
 shuffleOpenings = 0
 StartChildProcess (dir=".") make run
+<<<<<<< HEAD
 118 >first : xboard
 protover 2
 120 <first : java Main
@@ -160,3 +161,54 @@ Interrupting first
 126560 >first : force
 GameEnds(26, Black resigns, 2)
 146615 >first : quit
+=======
+240 >first : xboard
+protover 2
+242 <first : java Main
+320 <first : feature sigint=0 san=0 name=HardRookie
+320 >first : accepted sigint
+320 >first : accepted san
+320 >first : accepted name
+10243 >first : new
+random
+10243 >first : level 40 5 0
+10243 >first : post
+10243 >first : hard
+nps: w=-1, b=-1
+nps: w=-1, b=-1
+12500 >first : time 30000
+12500 >first : otim 30000
+book hit = (NULL)
+12500 >first : e2e4
+12572 <first : move e7e5
+14284 >first : time 29992
+14284 >first : otim 29828
+book hit = (NULL)
+14284 >first : d2d4
+14357 <first : move e5d4
+16540 >first : time 29985
+16540 >first : otim 29610
+book hit = (NULL)
+16540 >first : b2b4
+16613 <first : move d4d3
+18436 >first : time 29978
+18436 >first : otim 29428
+book hit = (NULL)
+18436 >first : c2c4
+18510 <first : move d3d2
+20059 >first : time 29970
+20059 >first : otim 29273
+book hit = (NULL)
+20059 >first : e1e2
+20132 <first : move d2c1
+22326 >first : time 29963
+22326 >first : otim 29053
+book hit = (NULL)
+22326 >first : d1d2
+22399 <first : resign
+GameEnds(26, Black resigns, 1)
+22400 >first : result 1-0 {Black resigns}
+22400 >first : force
+GameEnds(26, Black resigns, 2)
+25773 >first : quit
+>>>>>>> 1b57a882156cee78b02b24e966fdd3c56d3b9ed4
