@@ -36,7 +36,7 @@ public class Pawn extends Piece{
         current_position = new_position;
         return aux+""+new_position;
     }
-    //ia o piesa în stanga
+    //ia o piesa in stanga
     public String take_left(Board board){
         String aux =current_position;
         String new_position;
@@ -49,7 +49,7 @@ public class Pawn extends Piece{
     public Boolean etapa1(Board board){
         return (int) board.pos_to_indexes(current_position).get(1) < 1 || (int) board.pos_to_indexes(current_position).get(1) > 6;
     }
-    //ia o piesa în drepta
+    //ia o piesa in drepta
     public String take_right(Board board){
         String aux = current_position;
         String new_position;
@@ -58,7 +58,7 @@ public class Pawn extends Piece{
         current_position = new_position;
         return aux+""+new_position;
     }
-    //verifica  daca poate lua o piesa în stanga
+    //verifica  daca poate lua o piesa in stanga
     public Boolean can_take_left(Board board){
         ArrayList<Integer> positions = board.pos_to_indexes(current_position);
         if(etapa1(board) || (positions.get(0) - x > 7 || positions.get(0) - x < 0))
@@ -66,7 +66,7 @@ public class Pawn extends Piece{
         Piece piece = board.object_matrix[(int)board.pos_to_indexes(current_position).get(1) + x][(int)board.pos_to_indexes(current_position).get(0) - x];
         return piece != null && !piece.color.equals(color);
     }
-    //verifica daca poate lua o piesa în drepta
+    //verifica daca poate lua o piesa in drepta
     public Boolean can_take_right(Board board){
         ArrayList<Integer> positions = board.pos_to_indexes(current_position);
         if(etapa1(board) || (positions.get(0) + x > 7 || positions.get(0) + x < 0))
