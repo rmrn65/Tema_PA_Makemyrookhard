@@ -2,8 +2,11 @@
 
 ## Etapa 1 - mișcarea unui singur pion
 
-0. Rulare: În folderul src/ se va da comanda: xboard -fcp "make run" -debug
+*INSTRUCTIUNI DE COMPILARE*
 
+0. Rulare: Se va da comanda: xboard -fcp "make run" -debug
+
+*DETALII DESPRE STRUCTURA PROIECTULUI. ALGORITMICĂ.*
 1. Conectarea la xboard
 	În clasa Main se ruleaza programul principal. Am creat un obiect de tipul
 	scanner cu ajutorul căruia vom prelua comenzi de la xboard. Comenzile vor 
@@ -63,4 +66,6 @@
 	Comanda quit va activa flagul quit care va ieși din bucla while și programul 
 	nu va mai primi comenzi.
 
-
+*RESPONSABILITATEA FIECĂRUI MEMBRU AL ECHIPEI*
+	În această etapă toți membrii echipei au lucrat împreună la același cod,
+	procentajul de participare fiind egal.
