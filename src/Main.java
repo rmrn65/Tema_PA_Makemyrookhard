@@ -41,7 +41,7 @@ public class Main {
                     quit = 1;
                     break;
             }
-            if(command.matches("[a-h][1-8][a-h][1-8]") || go == 1){
+            if(command.matches("[a-h][1-8][a-h][1-8]q?") || go == 1){
                 //process command
                 if(go == 0)
                     board.move(command);

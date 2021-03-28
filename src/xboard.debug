@@ -10,163 +10,153 @@ recognized 'normal' (-1) as variant normal
 GameEnds(0, (null), 2)
 shuffleOpenings = 0
 StartChildProcess (dir=".") make run
-101 >first : xboard
+118 >first : xboard
 protover 2
-103 <first : javac -g Main.java
-648 <first : java Main
-698 <first : feature sigint=1 san=0 name=HardRookie
-698 >first : accepted sigint
-698 >first : accepted san
-698 >first : accepted name
-10106 >first : new
+120 <first : java Main
+184 <first : feature sigint=1 san=0 name=HardRookie
+184 >first : accepted sigint
+184 >first : accepted san
+184 >first : accepted name
+10118 >first : new
 random
-10107 >first : level 40 5 0
-10107 >first : post
-10107 >first : hard
+10119 >first : level 40 5 0
+10119 >first : post
+10119 >first : hard
 nps: w=-1, b=-1
 nps: w=-1, b=-1
-21834 >first : time 30000
-21834 >first : otim 30000
+13445 >first : time 30000
+13445 >first : otim 30000
 book hit = (NULL)
-21834 >first : c2c4
-21871 <first : move e7e5
+13445 >first : f2f4
+13476 <first : move e7e5
 Interrupting first
-22542 >first : time 29996
-22542 >first : otim 29932
+14703 >first : time 29996
+14703 >first : otim 29877
 book hit = (NULL)
-22542 >first : c4c5
-22544 <first : move e5e4
+14703 >first : d2d4
+14704 <first : e5f4
+14705 <first : move e5f4
 Interrupting first
-23040 >first : time 29996
-23040 >first : otim 29883
+16603 >first : time 29996
+16603 >first : otim 29687
 book hit = (NULL)
-23040 >first : c5c6
-23041 <first : move e4e3
+16603 >first : e1d2
+16605 <first : move f4f3
 Interrupting first
-23616 >first : time 29996
-23616 >first : otim 29825
+18175 >first : time 29996
+18175 >first : otim 29530
 book hit = (NULL)
-23616 >first : c6b7
-23618 <first : e3f2
-23618 <first : move e3f2
+18175 >first : c2c3
+18176 <first : f3g2
+18176 <first : move f3g2
 Interrupting first
-29849 >first : time 29995
-29849 >first : otim 29202
+19762 >first : time 29996
+19762 >first : otim 29372
 book hit = (NULL)
-29849 >first : e1f2
-29850 <first : resign
+19762 >first : e2e3
+19763 <first : g2h1
+19763 <first : move g2h1
+Interrupting first
+25949 >first : force
+30614 >first : e3e4
+33243 >first : h1e4
+46189 >first : d4d5
+47664 >first : white
+47664 >first : time 29996
+47664 >first : otim 29372
+47664 >first : black
+book hit = (NULL)
+47664 >first : go
+nps: w=-1, b=-1
+47666 <first : move e4e3
+Interrupting first
+50512 >first : time 29996
+50512 >first : otim 29087
+book hit = (NULL)
+50512 >first : d2c2
+50513 <first : move e3e2
+Interrupting first
+56103 >first : time 29996
+56103 >first : otim 28528
+book hit = (NULL)
+56103 >first : c2b3
+56104 <first : e2f1
+56104 <first : move e2f1
+Interrupting first
+58332 >first : time 29995
+58332 >first : otim 28305
+book hit = (NULL)
+58332 >first : g1h3
+58333 <first : resign
 GameEnds(26, Black resigns, 1)
 Interrupting first
-29850 >first : result 1-0 {Black resigns}
-29850 >first : force
-Reset(1, 1) from gameMode 8
-recognized 'normal' (-1) as variant normal
-GameEnds(0, (null), 2)
-shuffleOpenings = 0
-32081 >first : new
-random
-32081 >first : level 40 5 0
-32081 >first : post
-32081 >first : hard
+58333 >first : result 1-0 {Black resigns}
+58333 >first : force
+95973 >first : f1f6
+99339 >first : h3f4
+101298 >first : white
+101298 >first : time 29995
+101298 >first : otim 28305
+101298 >first : black
+book hit = (NULL)
+101298 >first : go
 nps: w=-1, b=-1
+101301 <first : move f6f5
+Interrupting first
+102761 >first : time 29995
+102761 >first : otim 28159
+book hit = (NULL)
+102761 >first : f4d3
+102762 <first : move f5f4
+Interrupting first
+103692 >first : time 29995
+103692 >first : otim 28066
+book hit = (NULL)
+103692 >first : h2h3
+103693 <first : move f4f3
+Interrupting first
+104227 >first : time 29995
+104227 >first : otim 28013
+book hit = (NULL)
+104227 >first : h3h4
+104228 <first : move f3f2
+Interrupting first
+104659 >first : time 29995
+104659 >first : otim 27970
+book hit = (NULL)
+104659 >first : h4h5
+104661 <first : move f2f1
+Interrupting first
+107302 >first : time 29995
+107302 >first : otim 27706
+book hit = (NULL)
+107303 >first : d1e2
+107304 <first : resign
+GameEnds(26, Black resigns, 1)
+Interrupting first
+107304 >first : result 1-0 {Black resigns}
+107304 >first : force
+115861 >first : f1e2
+117999 >first : d3b4
+118832 >first : e2e5
+123322 >first : b4a6
+125189 >first : white
+125189 >first : time 29995
+125189 >first : otim 27706
+125189 >first : black
+book hit = (NULL)
+125189 >first : go
 nps: w=-1, b=-1
-37406 >first : time 30000
-37406 >first : otim 30000
-book hit = (NULL)
-37406 >first : c2c4
-37407 <first : move e7e5
+125190 <first : move e5e4
 Interrupting first
-38861 >first : time 29999
-38861 >first : otim 29854
+126557 >first : time 29995
+126558 >first : otim 27569
 book hit = (NULL)
-38861 >first : f2f4
-38862 <first : e5f4
-38862 <first : move e5f4
+126558 >first : c1e3
+126559 <first : resign
+GameEnds(26, Black resigns, 1)
 Interrupting first
-40081 >first : time 29999
-40081 >first : otim 29732
-book hit = (NULL)
-40081 >first : c4c5
-40081 <first : move f4f3
-Interrupting first
-41972 >first : time 29999
-41972 >first : otim 29543
-book hit = (NULL)
-41972 >first : c5c6
-41973 <first : f3g2
-41973 <first : move f3g2
-Interrupting first
-42886 >first : time 29999
-42886 >first : otim 29452
-book hit = (NULL)
-42886 >first : c6b7
-42887 <first : g2h1
-42887 <first : move g2h1
-Interrupting first
-44317 >first : time 29999
-44317 >first : otim 29309
-book hit = (NULL)
-44317 >first : b7a8q
-Reset(1, 1) from gameMode 2
-recognized 'normal' (-1) as variant normal
-GameEnds(0, (null), 2)
-61766 >first : force
-shuffleOpenings = 0
-61767 >first : new
-random
-61767 >first : level 40 5 0
-61767 >first : post
-61767 >first : hard
-nps: w=-1, b=-1
-nps: w=-1, b=-1
-67421 >first : time 30000
-67421 >first : otim 30000
-book hit = (NULL)
-67421 >first : c2c4
-67422 <first : move e7e5
-Interrupting first
-69323 >first : time 29999
-69323 >first : otim 29809
-book hit = (NULL)
-69323 >first : f2f4
-69323 <first : e5f4
-69323 <first : move e5f4
-Interrupting first
-69989 >first : time 29999
-69989 >first : otim 29743
-book hit = (NULL)
-69989 >first : c4c5
-69990 <first : move f4f3
-Interrupting first
-70792 >first : time 29999
-70792 >first : otim 29663
-book hit = (NULL)
-70792 >first : c5c6
-70793 <first : f3g2
-70793 <first : move f3g2
-Interrupting first
-72017 >first : time 29999
-72017 >first : otim 29540
-book hit = (NULL)
-72017 >first : c6b7
-72018 <first : g2h1
-72018 <first : move g2h1
-Interrupting first
-78020 >first : time 29999
-78020 >first : otim 28940
-book hit = (NULL)
-78020 >first : b7a8q
-Reset(1, 1) from gameMode 2
-recognized 'normal' (-1) as variant normal
-GameEnds(0, (null), 2)
-87145 >first : force
-shuffleOpenings = 0
-87146 >first : new
-random
-87146 >first : level 40 5 0
-87146 >first : post
-87146 >first : hard
-GameEnds(29, xboard exit, 2)
-90223 >first : result * {xboard exit}
-90223 >first : force
-90223 >first : quit
+126560 >first : result 1-0 {Black resigns}
+126560 >first : force
+GameEnds(26, Black resigns, 2)
+146615 >first : quit
