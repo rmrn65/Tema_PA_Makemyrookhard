@@ -10,205 +10,208 @@ recognized 'normal' (-1) as variant normal
 GameEnds(0, (null), 2)
 shuffleOpenings = 0
 StartChildProcess (dir=".") make run
-<<<<<<< HEAD
-118 >first : xboard
+212 >first : xboard
 protover 2
-120 <first : java Main
-184 <first : feature sigint=1 san=0 name=HardRookie
-184 >first : accepted sigint
-184 >first : accepted san
-184 >first : accepted name
-10118 >first : new
+214 <first : javac -g Main.java
+1088 <first : java Main
+1129 <first : feature sigint=0 san=0 name=HardRookie
+1129 >first : accepted sigint
+1129 >first : accepted san
+1129 >first : accepted name
+10213 >first : new
 random
-10119 >first : level 40 5 0
-10119 >first : post
-10119 >first : hard
+10213 >first : level 40 5 0
+10213 >first : post
+10213 >first : hard
+11826 >first : black
+11826 >first : time 30000
+11826 >first : otim 30000
+11826 >first : white
+book hit = (NULL)
+11826 >first : go
 nps: w=-1, b=-1
+11869 <first : move e2e4
+13446 >first : white
+13446 >first : time 29899
+13446 >first : otim 29995
+13446 >first : black
+book hit = (NULL)
+13446 >first : go
 nps: w=-1, b=-1
-13445 >first : time 30000
-13445 >first : otim 30000
+13449 <first : move e7e6
+15586 >first : black
+15586 >first : time 29800
+15586 >first : otim 29899
+15586 >first : white
 book hit = (NULL)
-13445 >first : f2f4
-13476 <first : move e7e5
-Interrupting first
-14703 >first : time 29996
-14703 >first : otim 29877
-book hit = (NULL)
-14703 >first : d2d4
-14704 <first : e5f4
-14705 <first : move e5f4
-Interrupting first
-16603 >first : time 29996
-16603 >first : otim 29687
-book hit = (NULL)
-16603 >first : e1d2
-16605 <first : move f4f3
-Interrupting first
-18175 >first : time 29996
-18175 >first : otim 29530
-book hit = (NULL)
-18175 >first : c2c3
-18176 <first : f3g2
-18176 <first : move f3g2
-Interrupting first
-19762 >first : time 29996
-19762 >first : otim 29372
-book hit = (NULL)
-19762 >first : e2e3
-19763 <first : g2h1
-19763 <first : move g2h1
-Interrupting first
-25949 >first : force
-30614 >first : e3e4
-33243 >first : h1e4
-46189 >first : d4d5
-47664 >first : white
-47664 >first : time 29996
-47664 >first : otim 29372
-47664 >first : black
-book hit = (NULL)
-47664 >first : go
+15586 >first : go
 nps: w=-1, b=-1
-47666 <first : move e4e3
-Interrupting first
-50512 >first : time 29996
-50512 >first : otim 29087
+15588 <first : move e4e5
+19809 >first : white
+19809 >first : time 29500
+19809 >first : otim 29799
+19809 >first : black
 book hit = (NULL)
-50512 >first : d2c2
-50513 <first : move e3e2
-Interrupting first
-56103 >first : time 29996
-56103 >first : otim 28528
-book hit = (NULL)
-56103 >first : c2b3
-56104 <first : e2f1
-56104 <first : move e2f1
-Interrupting first
-58332 >first : time 29995
-58332 >first : otim 28305
-book hit = (NULL)
-58332 >first : g1h3
-58333 <first : resign
+19809 >first : go
+nps: w=-1, b=-1
+19812 <first : resign
 GameEnds(26, Black resigns, 1)
-Interrupting first
-58333 >first : result 1-0 {Black resigns}
-58333 >first : force
-95973 >first : f1f6
-99339 >first : h3f4
-101298 >first : white
-101298 >first : time 29995
-101298 >first : otim 28305
-101298 >first : black
-book hit = (NULL)
-101298 >first : go
-nps: w=-1, b=-1
-101301 <first : move f6f5
-Interrupting first
-102761 >first : time 29995
-102761 >first : otim 28159
-book hit = (NULL)
-102761 >first : f4d3
-102762 <first : move f5f4
-Interrupting first
-103692 >first : time 29995
-103692 >first : otim 28066
-book hit = (NULL)
-103692 >first : h2h3
-103693 <first : move f4f3
-Interrupting first
-104227 >first : time 29995
-104227 >first : otim 28013
-book hit = (NULL)
-104227 >first : h3h4
-104228 <first : move f3f2
-Interrupting first
-104659 >first : time 29995
-104659 >first : otim 27970
-book hit = (NULL)
-104659 >first : h4h5
-104661 <first : move f2f1
-Interrupting first
-107302 >first : time 29995
-107302 >first : otim 27706
-book hit = (NULL)
-107303 >first : d1e2
-107304 <first : resign
-GameEnds(26, Black resigns, 1)
-Interrupting first
-107304 >first : result 1-0 {Black resigns}
-107304 >first : force
-115861 >first : f1e2
-117999 >first : d3b4
-118832 >first : e2e5
-123322 >first : b4a6
-125189 >first : white
-125189 >first : time 29995
-125189 >first : otim 27706
-125189 >first : black
-book hit = (NULL)
-125189 >first : go
-nps: w=-1, b=-1
-125190 <first : move e5e4
-Interrupting first
-126557 >first : time 29995
-126558 >first : otim 27569
-book hit = (NULL)
-126558 >first : c1e3
-126559 <first : resign
-GameEnds(26, Black resigns, 1)
-Interrupting first
-126560 >first : result 1-0 {Black resigns}
-126560 >first : force
-GameEnds(26, Black resigns, 2)
-146615 >first : quit
-=======
-240 >first : xboard
-protover 2
-242 <first : java Main
-320 <first : feature sigint=0 san=0 name=HardRookie
-320 >first : accepted sigint
-320 >first : accepted san
-320 >first : accepted name
-10243 >first : new
+19812 >first : result 1-0 {Black resigns}
+19812 >first : force
+Reset(1, 1) from gameMode 8
+recognized 'normal' (-1) as variant normal
+GameEnds(0, (null), 2)
+shuffleOpenings = 0
+25172 >first : new
 random
-10243 >first : level 40 5 0
-10243 >first : post
-10243 >first : hard
+25172 >first : level 40 5 0
+25172 >first : post
+25172 >first : hard
+27177 >first : black
+27177 >first : time 30000
+27177 >first : otim 30000
+27177 >first : white
+book hit = (NULL)
+27177 >first : go
 nps: w=-1, b=-1
+27178 <first : move e2e4
+28341 >first : white
+28342 >first : time 29899
+28342 >first : otim 29999
+28342 >first : black
+book hit = (NULL)
+28342 >first : go
 nps: w=-1, b=-1
-12500 >first : time 30000
-12500 >first : otim 30000
+28343 <first : move e7e6
+29064 >first : black
+29064 >first : time 29999
+29064 >first : otim 29899
+29064 >first : white
 book hit = (NULL)
-12500 >first : e2e4
-12572 <first : move e7e5
-14284 >first : time 29992
-14284 >first : otim 29828
+29064 >first : go
+nps: w=-1, b=-1
+29066 <first : move e4e5
+30039 >first : white
+30040 >first : time 29899
+30040 >first : otim 29999
+30040 >first : black
 book hit = (NULL)
-14284 >first : d2d4
-14357 <first : move e5d4
-16540 >first : time 29985
-16540 >first : otim 29610
-book hit = (NULL)
-16540 >first : b2b4
-16613 <first : move d4d3
-18436 >first : time 29978
-18436 >first : otim 29428
-book hit = (NULL)
-18436 >first : c2c4
-18510 <first : move d3d2
-20059 >first : time 29970
-20059 >first : otim 29273
-book hit = (NULL)
-20059 >first : e1e2
-20132 <first : move d2c1
-22326 >first : time 29963
-22326 >first : otim 29053
-book hit = (NULL)
-22326 >first : d1d2
-22399 <first : resign
+30040 >first : go
+nps: w=-1, b=-1
+30041 <first : resign
 GameEnds(26, Black resigns, 1)
-22400 >first : result 1-0 {Black resigns}
-22400 >first : force
-GameEnds(26, Black resigns, 2)
-25773 >first : quit
->>>>>>> 1b57a882156cee78b02b24e966fdd3c56d3b9ed4
+30041 >first : result 1-0 {Black resigns}
+30041 >first : force
+Reset(1, 1) from gameMode 8
+recognized 'normal' (-1) as variant normal
+GameEnds(0, (null), 2)
+shuffleOpenings = 0
+31722 >first : new
+random
+31722 >first : level 40 5 0
+31722 >first : post
+31722 >first : hard
+nps: w=-1, b=-1
+nps: w=-1, b=-1
+34774 >first : time 30000
+34774 >first : otim 30000
+book hit = (NULL)
+34774 >first : e2e4
+34775 <first : move e7e5
+Reset(1, 1) from gameMode 2
+recognized 'normal' (-1) as variant normal
+GameEnds(0, (null), 2)
+36890 >first : force
+shuffleOpenings = 0
+36891 >first : new
+random
+36891 >first : level 40 5 0
+36891 >first : post
+36891 >first : hard
+nps: w=-1, b=-1
+nps: w=-1, b=-1
+37816 >first : time 30000
+37816 >first : otim 30000
+book hit = (NULL)
+37816 >first : d2d4
+37817 <first : move e7e5
+39086 >first : time 29999
+39086 >first : otim 29873
+book hit = (NULL)
+39086 >first : f2f4
+39087 <first : e5f4
+39088 <first : move e5f4
+39822 >first : time 29999
+39823 >first : otim 29799
+book hit = (NULL)
+39823 >first : g2g3
+39824 <first : f4g3
+39824 <first : move f4g3
+41109 >first : time 29999
+41109 >first : otim 29671
+book hit = (NULL)
+41109 >first : f1h3
+41110 <first : g3h2
+41110 <first : move g3h2
+43211 >first : time 29999
+43211 >first : otim 29461
+book hit = (NULL)
+43211 >first : h1h2
+43212 <first : resign
+GameEnds(26, Black resigns, 1)
+43212 >first : result 1-0 {Black resigns}
+43212 >first : force
+Reset(1, 1) from gameMode 8
+recognized 'normal' (-1) as variant normal
+GameEnds(0, (null), 2)
+shuffleOpenings = 0
+45086 >first : new
+random
+45086 >first : level 40 5 0
+45086 >first : post
+45086 >first : hard
+46532 >first : force
+47385 >first : e2e4
+48302 >first : d7d5
+50065 >first : d2d3
+51095 >first : c7c6
+55203 >first : d1h5
+56907 >first : white
+56907 >first : time 30000
+56907 >first : otim 30000
+56907 >first : black
+book hit = (NULL)
+56907 >first : go
+nps: w=-1, b=-1
+56907 <first : move e7e6
+60457 >first : time 30000
+60457 >first : otim 29645
+book hit = (NULL)
+60457 >first : e4d5
+60459 <first : move e6d5
+62479 >first : time 29999
+62479 >first : otim 29443
+book hit = (NULL)
+62479 >first : h5g6
+62480 <first : move d5d4
+65968 >first : time 29999
+65968 >first : otim 29094
+book hit = (NULL)
+65968 >first : c2c4
+65969 <first : resign
+GameEnds(26, Black resigns, 1)
+65969 >first : result 1-0 {Black resigns}
+65969 >first : force
+Reset(1, 1) from gameMode 8
+recognized 'normal' (-1) as variant normal
+GameEnds(0, (null), 2)
+shuffleOpenings = 0
+71118 >first : new
+random
+71118 >first : level 40 5 0
+71118 >first : post
+71118 >first : hard
+GameEnds(29, xboard exit, 2)
+72754 >first : result * {xboard exit}
+72754 >first : force
+72754 >first : quit
