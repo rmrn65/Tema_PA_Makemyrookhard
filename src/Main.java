@@ -9,7 +9,7 @@ public class Main {
         String command;
         Pawn myPawn = board.P5;
         do {
-            command = input.next(); // primește input
+            command = input.next(); // primeste input
             //tratez comanda
             switch (command) {
                 case "xboard":
