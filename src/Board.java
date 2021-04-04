@@ -1,7 +1,8 @@
 import java.util.ArrayList;
 
 public class Board {
-    Piece[][] object_matrix;
+    char matrix[][];
+    Piece object_matrix[][];
     Rook R1,R2,r1,r2;
     Night N1,N2,n1,n2;
     Bishop B1, B2,b1,b2;
