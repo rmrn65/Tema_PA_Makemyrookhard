@@ -44,8 +44,8 @@ public class Board {
         R2 = new Rook("white");
         N1 = new Night("white");
         N2 = new Night("white");
-        B1 = new Bishop("white");
-        B2 = new Bishop("white");
+        B1 = new Bishop("c1", "white");
+        B2 = new Bishop("f1", "white");
         K = new King("white");
         Q = new Queen("white");
 
@@ -53,8 +53,8 @@ public class Board {
         r2 = new Rook("black");
         n1 = new Night("black");
         n2 = new Night("black");
-        b1 = new Bishop("black");
-        b2 = new Bishop("black");
+        b1 = new Bishop("c8", "black");
+        b2 = new Bishop("f8", "black");
         k = new King("black");
         q = new Queen("black");
 
@@ -74,5 +74,4 @@ public class Board {
         coordinates.add(pos.charAt(1) - '1');
         return coordinates;
     }
-
 }

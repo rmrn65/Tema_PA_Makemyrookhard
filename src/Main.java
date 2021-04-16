@@ -7,7 +7,7 @@ public class Main {
         int first_move = 1;
         int start = 0, go = 0, quit = 0;
         String command;
-        Pawn myPawn = board.P5;
+        Bishop myBishop = board.B1;
         do {
             command = input.next(); // primeste input
             //tratez comanda
@@ -21,7 +21,7 @@ public class Main {
                     start = 1;
                     board = new Board();
                     first_move = 1;
-                    myPawn = board.p5;
+                    myBishop = board.B1;
                     break;
                 case "force":
                     first_move = 0;
@@ -32,10 +32,10 @@ public class Main {
                     go = 1;
                     break;
                 case "white":
-                    myPawn = board.P5;
+                    myBishop = board.B1;
                     break;
                 case "black":
-                    myPawn = board.p5;
+                    myBishop = board.b1;
                     break;
                 case "quit":
                     quit = 1;
@@ -47,20 +47,10 @@ public class Main {
                 if (go == 0)
                     board.move(command);
                 if (start == 1) {
-                    //prima miscare
-                    if (first_move == 1) {
-                        first_move = 0;
-                        System.out.println("move " + myPawn.move_forward(1, board));
-                    } else if (myPawn.taken(board))
-                        System.out.println("resign");
-                    else if (myPawn.can_take_left(board)) {
-                        System.out.println("move " + myPawn.take_left(board));
-                    } else if (myPawn.can_take_right(board)) {
-                        System.out.println("move " + myPawn.take_right(board));
-                    } else if (myPawn.can_move_forward(board)) {
-                        System.out.println("move " + myPawn.move_forward(0, board));
-                    } else
-                        System.out.println("resign");
+                    myBishop.generateMoves(board);
+                    if(myBishop.canMove(board)) {
+                        System.out.println("move " + myBishop.move(board));
+                    }
                 }
                 first_move = 0;
                 go = 0;
