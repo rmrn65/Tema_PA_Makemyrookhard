@@ -6,11 +6,11 @@ public class King extends Piece{
 
     @Override
     String move(Board board) {
-        return null;
+        return "";
     }
 
     @Override
     Boolean canMove(Board board) {
-        return null;
+        return false;
     }
 }

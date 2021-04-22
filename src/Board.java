@@ -10,8 +10,8 @@ public class Board {
     King K,k;
     Queen Q,q;
     Pawn P1, P2, P3, P4, P5, P6, P7, P8,p1,p2,p3,p4,p5,p6,p7,p8;
-    ArrayList<Piece> whitePieces = new ArrayList<>();
-    ArrayList<Piece> blackPieces = new ArrayList<>();
+    ArrayList<Piece> whitePieces;
+    ArrayList<Piece> blackPieces;
     public Board(){
         init_pieces();
         //tabla de obiecte
@@ -23,6 +23,8 @@ public class Board {
                 {null,null,null,null,null,null,null,null},
                 {p1,p2,p3,p4,p5,p6,p7,p8},
                 {r1,n1,b1,q,k,b2,n2,r2}};
+        whitePieces = new ArrayList<>();
+        blackPieces = new ArrayList<>();
         for(int i = 0; i <= 1; i++) {
             for(int j = 0; j <= 7; j++) {
                 whitePieces.add(object_matrix[i][j]);

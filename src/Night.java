@@ -81,8 +81,7 @@ public class Night extends Piece {
         new_position = (char)(coloana + 'a') + "" + (char)(linie + '1');
 
         board.move(current_position+""+new_position);
-
-
+        current_position = new_position;
         return aux+""+new_position;
     }
 }

@@ -17,6 +17,7 @@ public class Rook extends Piece{
         Random random=new Random();
         String move = possibleMoves.get(Math.abs(random.nextInt()%(possibleMoves.size())));
         board.move(move);
+        current_position = move.substring(2);
         possibleMoves.clear();
         return move;
     }

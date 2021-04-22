@@ -53,7 +53,7 @@ public class Main {
                     System.out.println("move " + myPiece.move(board));
                 }
                 go = 0;
-                board.printBoard();
+                System.out.println(board.whitePieces.size() + " " + board.blackPieces.size());
             }
         } while (quit != 1);
     }
