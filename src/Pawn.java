@@ -1,4 +1,3 @@
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Random;
 public class Pawn extends Piece{
@@ -23,26 +22,32 @@ public class Pawn extends Piece{
     }
     public String move(Board board){
         possible_moves.clear();
-        if(can_move_forward(board))
-            possible_moves.add(move_forward(board));
+        if(can_move_forward(board)) {
+            if((color.compareTo("white") == 0 && current_position.charAt(1) == '2') || (color.compareTo("black") == 0 && current_position.charAt(1) == '7'))
+                possible_moves.add(move_forward(2));
+            possible_moves.add(move_forward(1));
+        }
         if(can_take_left(board))
-            possible_moves.add(take_left(board));
+            possible_moves.add(take_left());
         if(can_take_right(board))
-            possible_moves.add((take_right(board)));
+            possible_moves.add((take_right()));
         if(can_enPassant_left(board))
-            possible_moves.add(take_left(board));
+            possible_moves.add(take_left());
         if(can_enPassant_right(board))
-            possible_moves.add(take_right(board));
+            possible_moves.add(take_right());
         Random rand = new Random();
         String randomMove = possible_moves.get(rand.nextInt(possible_moves.size()));
         if(randomMove.charAt(0) != randomMove.charAt(2) &&
                 board.object_matrix[randomMove.charAt(3) - '1'][randomMove.charAt(2) - 'a'] == null) {
             board.moveEnPassant(randomMove, color);
-            System.out.println("A mers in enPassant");
         }
         else
             board.move(randomMove);
         current_position = randomMove.charAt(2) + "" + randomMove.charAt(3);
+        if((color.compareTo("white") == 0 && randomMove.charAt(3) == '8') || (color.compareTo("black") == 0 && randomMove.charAt(3) == '1')) {
+            promotePawn(board);
+            return randomMove + "q";
+        }
         return randomMove;
     }
     public Boolean canMove(Board board){
@@ -53,23 +58,14 @@ public class Pawn extends Piece{
     //if(can move forward , list.add )
     //if (can move left , list.add )
     //verifică dacă poate merge înainte
-    public String move_forward(Board board){
-        String aux =current_position; //rețin starea curentă
+    public String move_forward(int noOfSquares){
+        String aux = current_position; //rețin starea curentă
         String new_position;
-        int first_move = 0;
-        if ((color.compareTo("white") == 0 && current_position.charAt(1) == '2') || (color.compareTo("black") == 0 && current_position.charAt(1) == '7'))
-            first_move = 1;
-        if(first_move == 0){
-            new_position = current_position.charAt(0) + "" + (char)(current_position.charAt(1) + x);
-        }
-        else
-        {
-            new_position = current_position.charAt(0) + "" + (char)(current_position.charAt(1) + 2 * x);
-        }
+        new_position = current_position.charAt(0) + "" + (char)(current_position.charAt(1) + noOfSquares * x);
         return aux+""+new_position;
     }
     //ia o piesă în stânga
-    public String take_left(Board board){
+    public String take_left(){
         String aux =current_position;
         String new_position;
         new_position = (char)(current_position.charAt(0) - x) + "" + (char)(current_position.charAt(1) + x);
@@ -80,7 +76,7 @@ public class Pawn extends Piece{
         return (int) board.pos_to_indexes(current_position).get(1) < 1 || (int) board.pos_to_indexes(current_position).get(1) > 6;
     }
     //ia o piesă în drepta
-    public String take_right(Board board){
+    public String take_right(){
         String aux = current_position;
         String new_position;
         new_position = (char)(current_position.charAt(0) + x) + "" + (char)(current_position.charAt(1) + x);
@@ -91,7 +87,7 @@ public class Pawn extends Piece{
         ArrayList<Integer> positions = board.pos_to_indexes(current_position);
         if(etapa1(board) || (positions.get(0) - x > 7 || positions.get(0) - x < 0))
             return false;
-        Piece piece = board.object_matrix[(int)board.pos_to_indexes(current_position).get(1) + x][(int)board.pos_to_indexes(current_position).get(0) - x];
+        Piece piece = board.object_matrix[board.pos_to_indexes(current_position).get(1) + x][board.pos_to_indexes(current_position).get(0) - x];
         return piece != null && !piece.color.equals(color);
     }
     //verifică dacă poate lua o piesă în drepta
@@ -99,18 +95,18 @@ public class Pawn extends Piece{
         ArrayList<Integer> positions = board.pos_to_indexes(current_position);
         if(etapa1(board) || (positions.get(0) + x > 7 || positions.get(0) + x < 0))
             return false;
-        Piece piece = board.object_matrix[(int)board.pos_to_indexes(current_position).get(1) + x][(int)board.pos_to_indexes(current_position).get(0) + x];
+        Piece piece = board.object_matrix[board.pos_to_indexes(current_position).get(1) + x][board.pos_to_indexes(current_position).get(0) + x];
         return piece !=null && !piece.color.equals(color);
     }
     //verifică dacă poate merge înainte
     public Boolean can_move_forward(Board board){
         if(etapa1(board))
             return false;
-        Piece piece = board.object_matrix[(int)board.pos_to_indexes(current_position).get(1) + x][(int)board.pos_to_indexes(current_position).get(0)];
+        Piece piece = board.object_matrix[board.pos_to_indexes(current_position).get(1) + x][board.pos_to_indexes(current_position).get(0)];
         return piece == null;
     }
     public Boolean taken(Board board){
-        return board.object_matrix[(int)board.pos_to_indexes(current_position).get(1)][(int)board.pos_to_indexes(current_position).get(0)] != this;
+        return board.object_matrix[board.pos_to_indexes(current_position).get(1)][board.pos_to_indexes(current_position).get(0)] != this;
     }
 
     public Boolean can_enPassant_left(Board board) {
@@ -185,5 +181,10 @@ public class Pawn extends Piece{
                     .append((char) ('a' + (position.get(0) + 1))).append('3');
             return board.lastMove.compareTo(pieceLastMove) == 0;
         }
+    }
+
+    public void promotePawn(Board board) {
+        ArrayList<Integer> position = board.pos_to_indexes(current_position);
+        board.object_matrix[position.get(1)][position.get(0)] = new Queen(current_position, color);
     }
 }

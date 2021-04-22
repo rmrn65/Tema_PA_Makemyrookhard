@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashSet;
 
 public class Board {
     Piece[][] object_matrix;
@@ -9,6 +10,8 @@ public class Board {
     King K,k;
     Queen Q,q;
     Pawn P1, P2, P3, P4, P5, P6, P7, P8,p1,p2,p3,p4,p5,p6,p7,p8;
+    ArrayList<Piece> whitePieces = new ArrayList<>();
+    ArrayList<Piece> blackPieces = new ArrayList<>();
     public Board(){
         init_pieces();
         //tabla de obiecte
@@ -20,6 +23,16 @@ public class Board {
                 {null,null,null,null,null,null,null,null},
                 {p1,p2,p3,p4,p5,p6,p7,p8},
                 {r1,n1,b1,q,k,b2,n2,r2}};
+        for(int i = 0; i <= 1; i++) {
+            for(int j = 0; j <= 7; j++) {
+                whitePieces.add(object_matrix[i][j]);
+            }
+        }
+        for(int i = 6; i <= 7; i++) {
+            for(int j = 0; j <= 7; j++) {
+                blackPieces.add(object_matrix[i][j]);
+            }
+        }
     }
     //initializez toate piesele pentru ambele culori
     public void init_pieces(){
@@ -41,23 +54,23 @@ public class Board {
         p7 = new Pawn("g7","black");
         p8 = new Pawn("h7","black");
 
-        R1 = new Rook("white");
-        R2 = new Rook("white");
-        N1 = new Night("white");
-        N2 = new Night("white");
+        R1 = new Rook("a1", "white", this);
+        R2 = new Rook("h1", "white", this);
+        N1 = new Night("b1", "white");
+        N2 = new Night("g1", "white");
         B1 = new Bishop("c1", "white");
         B2 = new Bishop("f1", "white");
         K = new King("white");
-        Q = new Queen("white");
+        Q = new Queen("d1", "white");
 
-        r1 = new Rook("black");
-        r2 = new Rook("black");
-        n1 = new Night("black");
-        n2 = new Night("black");
+        r1 = new Rook("a8", "black", this);
+        r2 = new Rook("h8", "black", this);
+        n1 = new Night("b8","black");
+        n2 = new Night("g8","black");
         b1 = new Bishop("c8", "black");
         b2 = new Bishop("f8", "black");
         k = new King("black");
-        q = new Queen("black");
+        q = new Queen("d8","black");
 
     }
     public void move(String squares){
@@ -66,6 +79,13 @@ public class Board {
         //squares[2:3] -> destination square
         String dest_square = squares.substring(2,4);
         lastMove = new StringBuilder(squares);
+        Piece takenPiece = object_matrix[dest_square.charAt(1)-'1'][dest_square.charAt(0)-'a'];
+        if(takenPiece != null) {
+            if(takenPiece.color.compareTo("black") == 0)
+                blackPieces.remove(takenPiece);
+            else
+                whitePieces.remove(takenPiece);
+        }
         object_matrix[starting_square.charAt(1)-'1'][starting_square.charAt(0)-'a'].current_position = dest_square;
         object_matrix[dest_square.charAt(1)-'1'][dest_square.charAt(0)-'a'] = object_matrix[starting_square.charAt(1)-'1'][starting_square.charAt(0)-'a'];
         object_matrix[starting_square.charAt(1)-'1'][starting_square.charAt(0)-'a'] = null;
@@ -83,6 +103,13 @@ public class Board {
         //squares[2:3] -> destination square
         String dest_square = squares.substring(2,4);
         lastMove = new StringBuilder(squares);
+        Piece takenPiece = object_matrix[dest_square.charAt(1)-'1' - x][dest_square.charAt(0)-'a'];
+        if(takenPiece != null) {
+            if(takenPiece.color.compareTo("black") == 0)
+                blackPieces.remove(takenPiece);
+            else
+                whitePieces.remove(takenPiece);
+        }
         object_matrix[starting_square.charAt(1)-'1'][starting_square.charAt(0)-'a'].current_position = dest_square;
         object_matrix[dest_square.charAt(1)-'1'][dest_square.charAt(0)-'a'] = object_matrix[starting_square.charAt(1)-'1'][starting_square.charAt(0)-'a'];
         object_matrix[starting_square.charAt(1)-'1'][starting_square.charAt(0)-'a'] = null;
@@ -105,5 +132,24 @@ public class Board {
             }
             System.out.println("");
         }
+    }
+
+    public static String indexes_to_pos(int line,int row){
+        char[] pos=new char[2];
+        pos[0]=(char)(row+'a');
+        pos[1]=(char)(line+'1');
+        return new String(pos);
+    }
+    public Piece getSquare(int line,int row){
+        return object_matrix[line][row];
+    }
+
+    public ArrayList<Piece> getMovePieces(ArrayList<Piece> piecesList) {
+        ArrayList<Piece> ans = new ArrayList<>();
+        for(Piece p : piecesList) {
+            if(p.canMove(this))
+                ans.add(p);
+        }
+        return ans;
     }
 }
