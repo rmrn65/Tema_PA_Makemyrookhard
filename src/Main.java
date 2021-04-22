@@ -53,11 +53,9 @@ public class Main {
                     board.move(command);
                 if (start == 1) {
                     //prima miscare
-                    List<Move> moves=myRook.possibleMoves();
-                    Collections.sort(moves);
-                    if(moves.size()!=0){
-                        board.move(moves.get(0).move);
-                        System.out.println("move " +moves.get(0).move);
+                    
+                    if(myRook.canMove(board)){                        
+                        System.out.println("move "+myRook.Move(board));
                     }
                     else if (first_move == 1){
                         first_move = 0;

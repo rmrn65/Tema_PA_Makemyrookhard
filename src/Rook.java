@@ -1,30 +1,35 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 public class Rook extends Piece{
-    public Rook(String current_position,String color,Board board){
+    List<String> possibleMoves=new ArrayList<String>();
+    public Rook(String current_position,String color){
         value = 5;
-        this.board=board;
         this.current_position=current_position;
         this.color = color;
         List<Integer> positions=Board.pos_to_indexes(current_position);
         this.row=positions.get(0);
         this.line=positions.get(1);
     }
-    public boolean canMove(){
-        return (possibleMoves().size()==0);
+
+    public String Move(Board board){
+        Random random=new Random();
+        String move = possibleMoves.get(Math.abs(random.nextInt()%(possibleMoves.size())));
+        board.move(move);
+        possibleMoves.clear();
+        return move;
     }
-    public List<Move> possibleMoves(){
-        List<Move> moves=new ArrayList<Move>();
+    public boolean canMove(Board board){
         int i;
         class moveAdder{
             boolean addMove(int finishLine,int finishRow){
                 Piece piece=board.getSquare(finishLine,finishRow);
                 if(piece!=null){
                     if(!piece.color.equals(color))
-                        moves.add(new Move(Board.indexes_to_pos(line,row)+Board.indexes_to_pos(finishLine,finishRow),piece.value));
+                        possibleMoves.add(Board.indexes_to_pos(line,row)+Board.indexes_to_pos(finishLine,finishRow));
                     return true;
                 }
-                moves.add(new Move(Board.indexes_to_pos(line,row)+Board.indexes_to_pos(finishLine,finishRow),0));
+                possibleMoves.add(Board.indexes_to_pos(line,row)+Board.indexes_to_pos(finishLine,finishRow));
                 return false;
             }
         }
@@ -45,6 +50,6 @@ public class Rook extends Piece{
             if(adder.addMove(line,i))
                 break;
         }
-        return moves;
+        return ( possibleMoves.size() > 0);
     }
 }
