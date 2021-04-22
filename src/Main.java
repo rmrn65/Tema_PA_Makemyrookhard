@@ -1,3 +1,4 @@
+
 import java.util.*;
 public class Main {
 
@@ -8,6 +9,7 @@ public class Main {
         int start = 0, go = 0, quit = 0;
         String command;
         Pawn myPawn = board.P5;
+        Rook myRook=board.R1;
         do {
             command = input.next(); // primeste input
             //tratez comanda
@@ -22,6 +24,7 @@ public class Main {
                     board = new Board();
                     first_move = 1;
                     myPawn = board.p5;
+                    myRook=board.R1;
                     break;
                 case "force":
                     first_move = 0;
@@ -33,9 +36,11 @@ public class Main {
                     break;
                 case "white":
                     myPawn = board.P5;
+                    myRook=board.R1;
                     break;
                 case "black":
                     myPawn = board.p5;
+                    myRook=board.r1;
                     break;
                 case "quit":
                     quit = 1;
@@ -48,7 +53,13 @@ public class Main {
                     board.move(command);
                 if (start == 1) {
                     //prima miscare
-                    if (first_move == 1) {
+                    List<Move> moves=myRook.possibleMoves();
+                    Collections.sort(moves);
+                    if(moves.size()!=0){
+                        board.move(moves.get(0).move);
+                        System.out.println("move " +moves.get(0).move);
+                    }
+                    else if (first_move == 1){
                         first_move = 0;
                         System.out.println("move " + myPawn.move_forward(1, board));
                     } else if (myPawn.taken(board))
@@ -66,5 +77,6 @@ public class Main {
                 go = 0;
             }
         } while (quit != 1);
+        input.close();
     }
 }

@@ -1,8 +1,8 @@
 import java.util.ArrayList;
-
+import java.util.List;
 public class Pawn extends Piece{
     Character symbol;
-    int value, x;
+    int  x;
     public Pawn(){
         current_position = "";
         color = "";
@@ -12,6 +12,9 @@ public class Pawn extends Piece{
         this();
         this.current_position = current_position;
         this.color = color;
+        List<Integer> positions=Board.pos_to_indexes(current_position);
+        this.row=positions.get(0);
+        this.line=positions.get(1);
         if(color.equals("white")) {
             x = 1;
             symbol = 'p';
@@ -47,7 +50,7 @@ public class Pawn extends Piece{
         return aux+""+new_position;
     }
     public Boolean etapa1(Board board){
-        return (int) board.pos_to_indexes(current_position).get(1) < 1 || (int) board.pos_to_indexes(current_position).get(1) > 6;
+        return (int) Board.pos_to_indexes(current_position).get(1) < 1 || (int) Board.pos_to_indexes(current_position).get(1) > 6;
     }
     //ia o piesa in drepta
     public String take_right(Board board){
@@ -60,28 +63,28 @@ public class Pawn extends Piece{
     }
     //verifica  daca poate lua o piesa in stanga
     public Boolean can_take_left(Board board){
-        ArrayList<Integer> positions = board.pos_to_indexes(current_position);
+        ArrayList<Integer> positions = Board.pos_to_indexes(current_position);
         if(etapa1(board) || (positions.get(0) - x > 7 || positions.get(0) - x < 0))
             return false;
-        Piece piece = board.object_matrix[(int)board.pos_to_indexes(current_position).get(1) + x][(int)board.pos_to_indexes(current_position).get(0) - x];
+        Piece piece = board.object_matrix[(int)Board.pos_to_indexes(current_position).get(1) + x][(int)Board.pos_to_indexes(current_position).get(0) - x];
         return piece != null && !piece.color.equals(color);
     }
     //verifica daca poate lua o piesa in drepta
     public Boolean can_take_right(Board board){
-        ArrayList<Integer> positions = board.pos_to_indexes(current_position);
+        ArrayList<Integer> positions = Board.pos_to_indexes(current_position);
         if(etapa1(board) || (positions.get(0) + x > 7 || positions.get(0) + x < 0))
             return false;
-        Piece piece = board.object_matrix[(int)board.pos_to_indexes(current_position).get(1) + x][(int)board.pos_to_indexes(current_position).get(0) + x];
+        Piece piece = board.object_matrix[(int)Board.pos_to_indexes(current_position).get(1) + x][(int)Board.pos_to_indexes(current_position).get(0) + x];
         return piece !=null && !piece.color.equals(color);
     }
     //verifica daca poate merge inainte
     public Boolean can_move_forward(Board board){
         if(etapa1(board))
             return false;
-        Piece piece = board.object_matrix[(int)board.pos_to_indexes(current_position).get(1) + x][(int)board.pos_to_indexes(current_position).get(0)];
+        Piece piece = board.object_matrix[(int)Board.pos_to_indexes(current_position).get(1) + x][(int)Board.pos_to_indexes(current_position).get(0)];
         return piece == null;
     }
     public Boolean taken(Board board){
-        return board.object_matrix[(int)board.pos_to_indexes(current_position).get(1)][(int)board.pos_to_indexes(current_position).get(0)] != this;
+        return board.object_matrix[(int)Board.pos_to_indexes(current_position).get(1)][(int)Board.pos_to_indexes(current_position).get(0)] != this;
     }
 }

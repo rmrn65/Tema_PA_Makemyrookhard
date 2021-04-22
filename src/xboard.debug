@@ -1,0 +1,76 @@
+locale = en_US.UTF-8
+recognized 'normal' (-1) as variant normal
+recognized 'normal' (-1) as variant normal
+recognized 'normal' (-1) as variant normal
+shuffleOpenings = 0
+shuffleOpenings = 0
+Version: xboard 4.9.1 + make ()
+Reset(1, 0) from gameMode 0
+recognized 'normal' (-1) as variant normal
+GameEnds(0, (null), 2)
+shuffleOpenings = 0
+StartChildProcess (dir=".") make run
+293 >first : xboard
+protover 2
+322 <first : java Main
+491 <first : feature sigint=0 san=0 name=HardRookie
+492 >first : accepted sigint
+493 >first : accepted san
+494 >first : accepted name
+10307 >first : new
+random
+10308 >first : level 40 5 0
+10308 >first : post
+10308 >first : hard
+13168 >first : force
+14098 >first : a2a4
+15258 >first : a7a5
+17979 >first : name alin
+17979 >first : black
+17979 >first : time 30000
+17980 >first : otim 30000
+17981 >first : white
+book hit = (NULL)
+17982 >first : go
+nps: w=-1, b=-1
+17990 <first : move a1a2
+21278 >first : time 29999
+21279 >first : otim 29671
+book hit = (NULL)
+21281 >first : c7c5
+21284 <first : move a2a3
+21820 >first : time 29999
+21820 >first : otim 29617
+book hit = (NULL)
+21820 >first : c5c4
+21822 <first : move a3a2
+22479 >first : time 29999
+22479 >first : otim 29552
+book hit = (NULL)
+22479 >first : c4c3
+22480 <first : move a2a3
+23529 >first : time 29998
+23529 >first : otim 29447
+book hit = (NULL)
+23529 >first : d7d6
+23530 <first : move a3c3
+25138 >first : time 29998
+25139 >first : otim 29286
+book hit = (NULL)
+25139 >first : b7b6
+25140 <first : move c3c8
+30349 >first : time 29998
+30349 >first : otim 28765
+book hit = (NULL)
+30350 >first : b8c6
+30350 <first : move c8d8
+45231 >first : time 29998
+45231 >first : otim 27277
+book hit = (NULL)
+45231 >first : e8d8
+45236 <first : move d8a8
+BackwardInner(15), current 16, forward 16
+GameEnds(29, xboard exit, 2)
+2251029 >first : result * {xboard exit}
+2251030 >first : force
+2251030 >first : quit
