@@ -149,9 +149,12 @@ public class Board {
     public ArrayList<Piece> getMovePieces(ArrayList<Piece> piecesList) {
         ArrayList<Piece> ans = new ArrayList<>();
         for(Piece p : piecesList) {
-            if(p.canMove(this))
+            System.out.print(p.getClass().getName() + ", ");
+            if(p.canMove(this)) {
                 ans.add(p);
+            }
         }
+        System.out.println();
         return ans;
     }
 }

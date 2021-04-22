@@ -5,8 +5,8 @@ public class Main {
     Scanner input = new Scanner(System.in);
         Board board = new Board();
         int start = 0, go = 0, quit = 0;
+        String color = "black";
         String command;
-        ArrayList<Piece> myPieces = board.blackPieces;
         ArrayList<Piece> canMovePieces;
         do {
             command = input.next(); // primeste input
@@ -29,10 +29,10 @@ public class Main {
                     go = 1;
                     break;
                 case "white":
-                    myPieces = board.whitePieces;
+                    color = "white";
                     break;
                 case "black":
-                    myPieces = board.blackPieces;
+                    color = "black";
                     break;
                 case "quit":
                     quit = 1;
@@ -46,14 +46,19 @@ public class Main {
                 }
                 if (start == 1) {
                     Random rand = new Random();
-                    canMovePieces = board.getMovePieces(myPieces);
+                    if(color.compareTo("black") == 0)
+                        canMovePieces = board.getMovePieces(board.blackPieces);
+                    else
+                        canMovePieces = board.getMovePieces(board.whitePieces);
                     if(canMovePieces.size() == 0)
                         System.out.println("resign");
                     Piece myPiece = canMovePieces.get(Math.abs(rand.nextInt()) % canMovePieces.size());
+                    System.out.println("Piesa selectata se afla la " + myPiece.current_position);
                     System.out.println("move " + myPiece.move(board));
                 }
                 go = 0;
                 System.out.println(board.whitePieces.size() + " " + board.blackPieces.size());
+                board.printBoard();
             }
         } while (quit != 1);
     }

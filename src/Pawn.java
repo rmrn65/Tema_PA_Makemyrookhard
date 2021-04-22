@@ -36,7 +36,7 @@ public class Pawn extends Piece{
         if(can_enPassant_right(board))
             possible_moves.add(take_right());
         Random rand = new Random();
-        String randomMove = possible_moves.get(rand.nextInt(possible_moves.size()));
+        String randomMove = possible_moves.get(Math.abs(rand.nextInt()) % possible_moves.size());
         if(randomMove.charAt(0) != randomMove.charAt(2) &&
                 board.object_matrix[randomMove.charAt(3) - '1'][randomMove.charAt(2) - 'a'] == null) {
             board.moveEnPassant(randomMove, color);

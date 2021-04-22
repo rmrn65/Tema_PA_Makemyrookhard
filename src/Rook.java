@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 public class Rook extends Piece{
-    List<String> possibleMoves=new ArrayList<String>();
+    List<String> possibleMoves = new ArrayList<String>();
     int value, row, line;
     public Rook(String current_position,String color,Board board){
         value = 5;
@@ -15,14 +15,17 @@ public class Rook extends Piece{
 
     public String move(Board board){
         Random random=new Random();
-        String move = possibleMoves.get(Math.abs(random.nextInt()%(possibleMoves.size())));
+        String move = possibleMoves.get(Math.abs(random.nextInt()) % possibleMoves.size());
+        System.out.println(move);
         board.move(move);
         current_position = move.substring(2);
-        possibleMoves.clear();
+        row = board.pos_to_indexes(current_position).get(0);
+        line = board.pos_to_indexes(current_position).get(1);
         return move;
     }
     public Boolean canMove(Board board){
         int i;
+        possibleMoves.clear();
         class moveAdder{
             boolean addMove(int finishLine,int finishRow){
                 Piece piece=board.getSquare(finishLine,finishRow);
