@@ -7,7 +7,7 @@ public class Main {
         int first_move = 1;
         int start = 0, go = 0, quit = 0;
         String command;
-        Bishop myBishop = board.B1;
+        Pawn myPiece = board.P4;
         do {
             command = input.next(); // primeste input
             //tratez comanda
@@ -21,7 +21,7 @@ public class Main {
                     start = 1;
                     board = new Board();
                     first_move = 1;
-                    myBishop = board.B1;
+                    myPiece = board.P4;
                     break;
                 case "force":
                     first_move = 0;
@@ -32,10 +32,10 @@ public class Main {
                     go = 1;
                     break;
                 case "white":
-                    myBishop = board.B1;
+                    myPiece = board.P4;
                     break;
                 case "black":
-                    myBishop = board.b1;
+                    myPiece = board.p4;
                     break;
                 case "quit":
                     quit = 1;
@@ -47,13 +47,16 @@ public class Main {
                 if (go == 0)
                     board.move(command);
                 if (start == 1) {
-                    myBishop.generateMoves(board);
-                    if(myBishop.canMove(board)) {
-                        System.out.println("move " + myBishop.move(board));
-                    }
+                    if(myPiece.taken(board))
+                        System.out.println("resign");
+                    else if(myPiece.canMove(board))
+                        System.out.println("move " + myPiece.move(board));
+                    else
+                        System.out.println("resign");
                 }
                 first_move = 0;
                 go = 0;
+                board.printBoard();
             }
         } while (quit != 1);
     }

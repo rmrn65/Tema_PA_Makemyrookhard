@@ -1,0 +1,110 @@
+locale = LC_CTYPE=en_US.UTF-8;LC_NUMERIC=ro_RO.UTF-8;LC_TIME=ro_RO.UTF-8;LC_COLLATE=en_US.UTF-8;LC_MONETARY=ro_RO.UTF-8;LC_MESSAGES=en_US.UTF-8;LC_PAPER=ro_RO.UTF-8;LC_NAME=ro_RO.UTF-8;LC_ADDRESS=ro_RO.UTF-8;LC_TELEPHONE=ro_RO.UTF-8;LC_MEASUREMENT=ro_RO.UTF-8;LC_IDENTIFICATION=ro_RO.UTF-8
+recognized 'normal' (-1) as variant normal
+recognized 'normal' (-1) as variant normal
+recognized 'normal' (-1) as variant normal
+shuffleOpenings = 0
+shuffleOpenings = 0
+Version: xboard 4.9.1 + make ()
+Reset(1, 0) from gameMode 0
+recognized 'normal' (-1) as variant normal
+GameEnds(0, (null), 2)
+shuffleOpenings = 0
+StartChildProcess (dir=".") make run
+90 >first : xboard
+protover 2
+92 <first : javac -g Board.java
+532 <first : java Main
+573 <first : feature sigint=0 san=0 name=HardRookie
+573 >first : accepted sigint
+573 >first : accepted san
+573 >first : accepted name
+10092 >first : new
+random
+10092 >first : level 40 5 0
+10092 >first : post
+10092 >first : hard
+12669 >first : force
+13829 >first : d2d4
+13845 <first : | Rook | Night | Bishop | Queen | King | Bishop | Night | Rook |
+13845 <first : | Pawn | Pawn | Pawn |   | Pawn | Pawn | Pawn | Pawn |
+13845 <first : |   |   |   |   |   |   |   |   |
+13845 <first : |   |   |   | Pawn |   |   |   |   |
+13845 <first : |   |   |   |   |   |   |   |   |
+13845 <first : |   |   |   |   |   |   |   |   |
+13845 <first : | Pawn | Pawn | Pawn | Pawn | Pawn | Pawn | Pawn | Pawn |
+13845 <first : | Rook | Night | Bishop | Queen | King | Bishop | Night | Rook |
+14413 >first : d7d6
+14414 <first : | Rook | Night | Bishop | Queen | King | Bishop | Night | Rook |
+14414 <first : | Pawn | Pawn | Pawn |   | Pawn | Pawn | Pawn | Pawn |
+14414 <first : |   |   |   |   |   |   |   |   |
+14415 <first : |   |   |   | Pawn |   |   |   |   |
+14415 <first : |   |   |   |   |   |   |   |   |
+14415 <first : |   |   |   | Pawn |   |   |   |   |
+14415 <first : | Pawn | Pawn | Pawn |   | Pawn | Pawn | Pawn | Pawn |
+14415 <first : | Rook | Night | Bishop | Queen | King | Bishop | Night | Rook |
+15515 >first : d4d5
+15516 <first : | Rook | Night | Bishop | Queen | King | Bishop | Night | Rook |
+15517 <first : | Pawn | Pawn | Pawn |   | Pawn | Pawn | Pawn | Pawn |
+15517 <first : |   |   |   |   |   |   |   |   |
+15517 <first : |   |   |   |   |   |   |   |   |
+15517 <first : |   |   |   | Pawn |   |   |   |   |
+15517 <first : |   |   |   | Pawn |   |   |   |   |
+15518 <first : | Pawn | Pawn | Pawn |   | Pawn | Pawn | Pawn | Pawn |
+15518 <first : | Rook | Night | Bishop | Queen | King | Bishop | Night | Rook |
+16655 >first : e7e5
+16656 <first : | Rook | Night | Bishop | Queen | King | Bishop | Night | Rook |
+16656 <first : | Pawn | Pawn | Pawn |   | Pawn | Pawn | Pawn | Pawn |
+16656 <first : |   |   |   |   |   |   |   |   |
+16657 <first : |   |   |   |   |   |   |   |   |
+16657 <first : |   |   |   | Pawn | Pawn |   |   |   |
+16657 <first : |   |   |   | Pawn |   |   |   |   |
+16657 <first : | Pawn | Pawn | Pawn |   |   | Pawn | Pawn | Pawn |
+16657 <first : | Rook | Night | Bishop | Queen | King | Bishop | Night | Rook |
+18378 >first : black
+18378 >first : time 30000
+18378 >first : otim 30000
+18378 >first : white
+book hit = (NULL)
+18378 >first : go
+nps: w=-1, b=-1
+18403 <first : A mers in enPassant
+18406 <first : move d5e6
+18478 <first : | Rook | Night | Bishop | Queen | King | Bishop | Night | Rook |
+18478 <first : | Pawn | Pawn | Pawn |   | Pawn | Pawn | Pawn | Pawn |
+18478 <first : |   |   |   |   |   |   |   |   |
+18478 <first : |   |   |   |   |   |   |   |   |
+18478 <first : |   |   |   |   |   |   |   |   |
+18478 <first : |   |   |   | Pawn | Pawn |   |   |   |
+18478 <first : | Pawn | Pawn | Pawn |   |   | Pawn | Pawn | Pawn |
+18478 <first : | Rook | Night | Bishop | Queen | King | Bishop | Night | Rook |
+19755 >first : time 29997
+19755 >first : otim 29865
+book hit = (NULL)
+19755 >first : d6d5
+19757 <first : move e6e7
+19830 <first : | Rook | Night | Bishop | Queen | King | Bishop | Night | Rook |
+19830 <first : | Pawn | Pawn | Pawn |   | Pawn | Pawn | Pawn | Pawn |
+19830 <first : |   |   |   |   |   |   |   |   |
+19830 <first : |   |   |   |   |   |   |   |   |
+19830 <first : |   |   |   | Pawn |   |   |   |   |
+19830 <first : |   |   |   |   |   |   |   |   |
+19830 <first : | Pawn | Pawn | Pawn |   | Pawn | Pawn | Pawn | Pawn |
+19830 <first : | Rook | Night | Bishop | Queen | King | Bishop | Night | Rook |
+22706 >first : time 29997
+22706 >first : otim 29570
+book hit = (NULL)
+22706 >first : g7g6
+22708 <first : e7d8
+22709 <first : move e7f8
+22781 <first : | Rook | Night | Bishop | Queen | King | Bishop | Night | Rook |
+22781 <first : | Pawn | Pawn | Pawn |   | Pawn | Pawn | Pawn | Pawn |
+22781 <first : |   |   |   |   |   |   |   |   |
+22781 <first : |   |   |   |   |   |   |   |   |
+22781 <first : |   |   |   | Pawn |   |   |   |   |
+22781 <first : |   |   |   |   |   |   | Pawn |   |
+22781 <first : | Pawn | Pawn | Pawn |   |   | Pawn |   | Pawn |
+22781 <first : | Rook | Night | Bishop | Queen | King | Pawn | Night | Rook |
+GameEnds(29, xboard exit, 2)
+27441 >first : result * {xboard exit}
+27441 >first : force
+27441 >first : quit

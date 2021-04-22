@@ -2,6 +2,7 @@ import java.util.ArrayList;
 
 public class Board {
     Piece[][] object_matrix;
+    StringBuilder lastMove;
     Rook R1,R2,r1,r2;
     Night N1,N2,n1,n2;
     Bishop B1, B2,b1,b2;
@@ -64,14 +65,45 @@ public class Board {
         String starting_square = squares.substring(0,2);
         //squares[2:3] -> destination square
         String dest_square = squares.substring(2,4);
+        lastMove = new StringBuilder(squares);
         object_matrix[starting_square.charAt(1)-'1'][starting_square.charAt(0)-'a'].current_position = dest_square;
         object_matrix[dest_square.charAt(1)-'1'][dest_square.charAt(0)-'a'] = object_matrix[starting_square.charAt(1)-'1'][starting_square.charAt(0)-'a'];
         object_matrix[starting_square.charAt(1)-'1'][starting_square.charAt(0)-'a'] = null;
+    }
+    public void moveEnPassant(String squares, String color){
+        int x;
+        if(color.equals("white")) {
+            x = 1;
+        }
+        else {
+            x = -1;
+        }
+        //squares[0:1] -> starting square
+        String starting_square = squares.substring(0,2);
+        //squares[2:3] -> destination square
+        String dest_square = squares.substring(2,4);
+        lastMove = new StringBuilder(squares);
+        object_matrix[starting_square.charAt(1)-'1'][starting_square.charAt(0)-'a'].current_position = dest_square;
+        object_matrix[dest_square.charAt(1)-'1'][dest_square.charAt(0)-'a'] = object_matrix[starting_square.charAt(1)-'1'][starting_square.charAt(0)-'a'];
+        object_matrix[starting_square.charAt(1)-'1'][starting_square.charAt(0)-'a'] = null;
+        object_matrix[dest_square.charAt(1) - '1' - x][dest_square.charAt(0) - 'a'] = null;
     }
     public ArrayList<Integer> pos_to_indexes(String pos){
         ArrayList<Integer> coordinates = new ArrayList<Integer>();
         coordinates.add(pos.charAt(0) - 'a');
         coordinates.add(pos.charAt(1) - '1');
         return coordinates;
+    }
+
+    public void printBoard() {
+        for(int i = 0; i < object_matrix.length; i++) {
+            System.out.print("|");
+            for(int j = 0; j < object_matrix[0].length; j++) {
+                if (object_matrix[i][j] != null)
+                    System.out.print(" " + object_matrix[i][j].getClass().getName() + " " + "|");
+                else System.out.print(" " + " " + " " + "|");
+            }
+            System.out.println("");
+        }
     }
 }

@@ -1,10 +1,9 @@
-import java.nio.charset.CoderResult;
 import java.util.ArrayList;
 import java.util.Random;
-import java.util.Timer;
 
 public class Bishop extends Piece{
     int value;
+    // toate mutarile posibile intr-o anumita stare a tablei
     ArrayList<Coordinates> possibleMoves;
     public Bishop(String current_position, String color){
         value = 3;
@@ -13,14 +12,16 @@ public class Bishop extends Piece{
         this.color = color;
     }
 
+    // functie de generare a mutarilor valide
     void generateMoves(Board board) {
         possibleMoves.clear();
+        // coordonate initiale
         ArrayList<Integer> initCoords = board.pos_to_indexes(current_position);
         int row = initCoords.get(1);
         int col = initCoords.get(0);
-        System.out.println(col + " " + row);
+        // 4 for-uri pentru cele 4 diagonale pe care se poate deplasa nebunul
         for(int i = row + 1, j = col + 1; i <= 7 && j <= 7; i++, j++) {
-            System.out.println(i + " " + j);
+            // daca gasim mutare valida o adaugam in array-ul de mutari
             if(board.object_matrix[i][j] == null)
                 possibleMoves.add(new Coordinates(i, j));
             else if(board.object_matrix[i][j].color.compareTo(color) != 0) {
@@ -59,14 +60,15 @@ public class Bishop extends Piece{
             }
             else break;
         }
-        System.out.println(possibleMoves.size());
     }
 
-    boolean canMove(Board board) {
+    // genrare mutari posibile + verificare daca o piesa se poate misca
+    Boolean canMove(Board board) {
         generateMoves(board);
         return (possibleMoves.size() != 0);
     }
 
+    // functia de mutare
     String move(Board board) {
         Random randomMove = new Random();
         Coordinates myMove = possibleMoves.get(Math.abs(randomMove.nextInt()) % possibleMoves.size());
@@ -77,11 +79,13 @@ public class Bishop extends Piece{
         return aux + "" + new_position;
     }
 
+    // verificam ca piesa a fost luata
     public Boolean taken(Board board){
         return board.object_matrix[(int)board.pos_to_indexes(current_position).get(1)][(int)board.pos_to_indexes(current_position).get(0)] != this;
     }
 }
 
+// clasa de coordonate (linie + coloana)
 class Coordinates {
     int row;
     int col;
@@ -90,3 +94,5 @@ class Coordinates {
         this.col = col;
     }
 }
+
+// Bishop = Bishop(pos_curr, culoare)
