@@ -47,16 +47,30 @@ public class Main {
                     break;
             }
             //folosim regex pentru a găsi comenzile de mutare
-            if(command.matches("[a-h][1-8][a-h][1-8]") || go == 1){
+            if(command.matches("[a-h][1-8][a-h][1-8]q?") || go == 1){
                 //process command
                 if(go == 0) // de schimbat first_move pentru piese cand se da force
                     board.move(command);
                 if(start == 1) {
                     //prima miscare
                     while(true) {
-                        Random rand = new Random();
                         String aux = "";
-                        if(myKing.isInCheck(myKing.current_position, board) != null) {
+                        // ----- ETAPA2 -----
+                        if(myKing.canMove(board)) {
+                            if (myKing.first_move == 1 && myKing.canCastleShort(board)) {
+                                aux = myKing.move(board);
+                                System.out.println("move " + aux);
+                                break;
+                            } else if ( myKing.first_move == 1 && myKing.canCastleLong(board) ) {
+                                aux = myKing.move(board);
+                                System.out.println("move " + aux);
+                                break;
+                            }
+                        }
+                        // ------- ETAPA2 -------
+                        Random rand = new Random();
+                        int []array = myKing.isInCheck(myKing.current_position, board);
+                        if (array != null && array[4] == 2) {
                             String rezultat = myKing.canKingDefend(board);
                             if (rezultat == null)
                                 aux = myKing.move(board);
@@ -68,11 +82,18 @@ public class Main {
                             System.out.println("move " + aux);
                             break;
                         }
+                        if (array != null && array[4] == 4) {
+                            aux = myKing.move(board);
+                            System.out.println("move " + aux);
+                            break;
+                        }
 
                         int index = rand.nextInt(random_pieces.size());
                         Piece rpiece = random_pieces.get(index);
-                        if(rpiece.canMove(board))
+                        if(rpiece.canMove(board) && myKing.canIMove(rpiece.current_position, board)) {
+                            System.out.println("Piesa selectata se afla la " + rpiece.current_position);
                             aux = rpiece.move(board);
+                        }
                         else
                             continue;
                         if (aux.equals(""))
@@ -82,8 +103,8 @@ public class Main {
                             break;
                         }
                     }
+                    board.printBoard();
                 }
-                first_move = 0;
                 go = 0;
             }
             if(quit == 1)

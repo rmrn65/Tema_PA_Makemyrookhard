@@ -24,8 +24,8 @@ public class King extends Piece{
         first_move = 1;
     }
     public int[] isInCheck(String position, Board board) {
-        int[] check_position = new int[2];
-        optionsToDefend = new Vector<String>();
+        int[] check_position = new int[5];
+        check_position[4] = 0;
         int linie = board.pos_to_indexes(position).get(1);
         int coloana = board.pos_to_indexes(position).get(0);
 
@@ -38,9 +38,12 @@ public class King extends Piece{
             } else if (board.object_matrix[axisx][axisy + i].color != color &&
                     (board.object_matrix[axisx][axisy + i].getClass().getName().equals("Rook")
                             || board.object_matrix[axisx][axisy + i].getClass().getName().equals("Queen"))) {
-                check_position[0] = axisx;
-                check_position[1] = axisy + i;
-                return check_position;
+                check_position[check_position[4]] = axisx;
+                check_position[check_position[4] + 1] = axisy + i;
+                check_position[4] += 2;
+                if (check_position[4] == 4)
+                    return check_position;
+                break;
             } else
                 break;
         }
@@ -51,68 +54,86 @@ public class King extends Piece{
             }else if(board.object_matrix[axisx][axisy - i].color != color &&
                     (board.object_matrix[axisx][axisy - i].getClass().getName().equals("Rook")
                             || board.object_matrix[axisx][axisy - i].getClass().getName().equals("Queen"))){
-                check_position[0] = axisx;
-                check_position[1] = axisy - i;
-                return check_position;
-
+                check_position[check_position[4]] = axisx;
+                check_position[check_position[4] + 1] = axisy - i;
+                check_position[4] += 2;
+                if (check_position[4] == 4)
+                    return check_position;
+                break;
             }else
                 break;
         }
         if(outOfBounds(linie + 2, coloana + 1 ))
             if (board.object_matrix[linie + 2][coloana + 1] != null && board.object_matrix[linie + 2][coloana + 1].color != color &&
                     board.object_matrix[linie + 2][coloana + 1].getClass().getName().equals("Night")) {
-                check_position[0] = linie + 2;
-                check_position[1] = coloana + 1;
-                return check_position;
+                check_position[check_position[4]] = linie + 2;
+                check_position[check_position[4] + 1] = coloana + 1;
+                check_position[4] += 2;
+                if (check_position[4] == 4)
+                    return check_position;
             }
         if(outOfBounds(linie + 2, coloana - 1 ))
             if (board.object_matrix[linie + 2][coloana - 1] != null && board.object_matrix[linie + 2][coloana - 1].color != color &&
                     board.object_matrix[linie + 2][coloana - 1].getClass().getName().equals("Night")) {
-                check_position[0] = linie + 2;
-                check_position[1] = coloana - 1;
-                return check_position;
+                check_position[check_position[4]] = linie + 2;
+                check_position[check_position[4] + 1] = coloana - 1;
+                check_position[4] += 2;
+                if (check_position[4] == 4)
+                    return check_position;
             }
         if(outOfBounds(linie - 2, coloana + 1 ))
             if (board.object_matrix[linie - 2][coloana + 1] != null && board.object_matrix[linie - 2][coloana + 1].color != color &&
                     board.object_matrix[linie - 2][coloana + 1].getClass().getName().equals("Night")) {
-                check_position[0] = linie - 2;
-                check_position[1] = coloana + 1;
-                return check_position;
+                check_position[check_position[4]] = linie - 2;
+                check_position[check_position[4] + 1] = coloana + 1;
+                check_position[4] += 2;
+                if (check_position[4] == 4)
+                    return check_position;
             }
         if(outOfBounds(linie - 2, coloana - 1 ))
             if (board.object_matrix[linie - 2][coloana - 1] != null && board.object_matrix[linie - 2][coloana - 1].color != color &&
                     board.object_matrix[linie - 2][coloana - 1].getClass().getName().equals("Night")) {
-                check_position[0] = linie - 2;
-                check_position[1] = coloana - 1;
-                return check_position;
+                check_position[check_position[4]] = linie - 2;
+                check_position[check_position[4] + 1] = coloana - 1;
+                check_position[4] += 2;
+                if (check_position[4] == 4)
+                    return check_position;
             }
         if(outOfBounds(linie + 1, coloana - 2 ))
             if (board.object_matrix[linie + 1][coloana - 2] != null && board.object_matrix[linie + 1][coloana - 2].color != color &&
                     board.object_matrix[linie + 1][coloana - 2].getClass().getName().equals("Night")){
-                check_position[0] = linie + 1;
-                check_position[1] = coloana - 2;
-                return check_position;
+                check_position[check_position[4]] = linie + 1;
+                check_position[check_position[4] + 1] = coloana - 2;
+                check_position[4] += 2;
+                if (check_position[4] == 4)
+                    return check_position;
             }
         if(outOfBounds(linie - 1, coloana - 2 ))
             if (board.object_matrix[linie - 1][coloana - 2] != null && board.object_matrix[linie - 1][coloana - 2].color != color &&
                     board.object_matrix[linie - 1][coloana - 2].getClass().getName().equals("Night")){
-                check_position[0] = linie - 1;
-                check_position[1] = coloana - 2;
-                return check_position;
+                check_position[check_position[4]] = linie - 1;
+                check_position[check_position[4] + 1] = coloana - 2;
+                check_position[4] += 2;
+                if (check_position[4] == 4)
+                    return check_position;
             }
         if(outOfBounds(linie + 1, coloana + 2 ))
             if (board.object_matrix[linie + 1][coloana + 2] != null && board.object_matrix[linie + 1][coloana + 2].color != color &&
                     board.object_matrix[linie + 1][coloana + 2].getClass().getName().equals("Night")) {
-                check_position[0] = linie + 1;
-                check_position[1] = coloana + 2;
-                return check_position;
+                check_position[check_position[4]] = linie + 1;
+                check_position[check_position[4] + 1] = coloana + 2;
+                check_position[4] += 2;
+                if (check_position[4] == 4)
+                    return check_position;
             }
         if(outOfBounds(linie - 1, coloana + 2))
             if (board.object_matrix[linie - 1][coloana + 2] != null && board.object_matrix[linie - 1][coloana + 2].color != color &&
                     board.object_matrix[linie - 1][coloana + 2].getClass().getName().equals("Night")){
-                check_position[0] = linie - 1;
-                check_position[1] = coloana + 2;
-                return check_position;
+                check_position[check_position[4]] = linie - 1;
+                check_position[check_position[4] + 1] = coloana + 2;
+                check_position[4] += 2;
+                if (check_position[4] == 4)
+                    return check_position;
             }
 
 
@@ -125,9 +146,12 @@ public class King extends Piece{
             } else if(board.object_matrix[axisx + i][axisy].color != color &&
                     (board.object_matrix[axisx + i][axisy].getClass().getName().equals("Rook")
                             || board.object_matrix[axisx + i][axisy].getClass().getName().equals("Queen"))){
-                check_position[0] = axisx + i;
-                check_position[1] = axisy;
-                return check_position;
+                check_position[check_position[4]] = axisx + i;
+                check_position[check_position[4] + 1] = axisy;
+                check_position[4] += 2;
+                if (check_position[4] == 4)
+                    return check_position;
+                break;
             } else
                 break;
         }
@@ -138,9 +162,12 @@ public class King extends Piece{
             } else if(board.object_matrix[axisx - i][axisy].color != color &&
                     (board.object_matrix[axisx - i][axisy].getClass().getName().equals("Rook")
                             || board.object_matrix[axisx - i][axisy].getClass().getName().equals("Queen"))){
-                check_position[0] = axisx - i;
-                check_position[1] = axisy;
-                return check_position;
+                check_position[check_position[4]] = axisx - i;
+                check_position[check_position[4] + 1] = axisy;
+                check_position[4] += 2;
+                if (check_position[4] == 4)
+                    return check_position;
+                break;
             } else
                 break;
         }
@@ -152,9 +179,12 @@ public class King extends Piece{
             } else if(board.object_matrix[axisx + i][axisy + i].color != color &&
                     (board.object_matrix[axisx + i][axisy + i].getClass().getName().equals("Bishop")
                             || board.object_matrix[axisx + i][axisy + i].getClass().getName().equals("Queen"))){
-                check_position[0] = axisx + i;
-                check_position[1] = axisy + i;
-                return check_position;
+                check_position[check_position[4]] = axisx + i;
+                check_position[check_position[4] + 1] = axisy + i;
+                check_position[4] += 2;
+                if (check_position[4] == 4)
+                    return check_position;
+                break;
             } else
                 break;
         }
@@ -166,9 +196,12 @@ public class King extends Piece{
             } else if(board.object_matrix[axisx - i][axisy - i].color != color &&
                     (board.object_matrix[axisx - i][axisy - i].getClass().getName().equals("Bishop")
                             || board.object_matrix[axisx - i][axisy - i].getClass().getName().equals("Queen"))){
-                check_position[0] = axisx - i;
-                check_position[1] = axisy - i;
-                return check_position;
+                check_position[check_position[4]] = axisx - i;
+                check_position[check_position[4] + 1] = axisy - i;
+                check_position[4] += 2;
+                if (check_position[4] == 4)
+                    return check_position;
+                break;
             } else
                 break;
         }
@@ -180,9 +213,12 @@ public class King extends Piece{
             } else if(board.object_matrix[axisx + i][axisy - i].color != color &&
                     (board.object_matrix[axisx + i][axisy - i].getClass().getName().equals("Bishop")
                             || board.object_matrix[axisx + i][axisy - i].getClass().getName().equals("Queen"))){
-                check_position[0] = axisx + i;
-                check_position[1] = axisy - i;
-                return check_position;
+                check_position[check_position[4]] = axisx + i;
+                check_position[check_position[4] + 1] = axisy - i;
+                check_position[4] += 2;
+                if (check_position[4] == 4)
+                    return check_position;
+                break;
             } else
                 break;
         }
@@ -195,9 +231,12 @@ public class King extends Piece{
                     (board.object_matrix[axisx - i][axisy + i].getClass().getName().equals("Bishop")
                             || board.object_matrix[axisx - i][axisy + i].getClass().getName().equals("Queen"))){
 
-                check_position[0] = axisx - i;
-                check_position[1] = axisy + i;
-                return check_position;
+                check_position[check_position[4]] = axisx - i;
+                check_position[check_position[4] + 1] = axisy + i;
+                check_position[4] += 2;
+                if (check_position[4] == 4)
+                    return check_position;
+                break;
             } else
                 break;
         }
@@ -205,93 +244,118 @@ public class King extends Piece{
             if(outOfBounds(linie+1, coloana-1))
                 if (board.object_matrix[linie + 1][coloana - 1] != null && board.object_matrix[linie + 1][coloana - 1].color != color &&
                         board.object_matrix[linie + 1][coloana - 1].getClass().getName().equals("Pawn")) {
-                    check_position[0] = linie + 1;
-                    check_position[1] = coloana - 1;
-                    return check_position;
+                    check_position[check_position[4]] = linie + 1;
+                    check_position[check_position[4] + 1] = coloana - 1;
+                    check_position[4] += 2;
+                    if (check_position[4] == 4)
+                        return check_position;
                 }
 
             if(outOfBounds(linie+1, coloana+1))
                 if (board.object_matrix[linie + 1][coloana + 1] != null && board.object_matrix[linie + 1][coloana + 1].color != color &&
                         board.object_matrix[linie + 1][coloana + 1].getClass().getName().equals("Pawn")) {
-                    check_position[0] = linie + 1;
-                    check_position[1] = coloana + 1;
-                    return check_position;
+                    check_position[check_position[4]] = linie + 1;
+                    check_position[check_position[4] + 1] = coloana + 1;
+                    check_position[4] += 2;
+                    if (check_position[4] == 4)
+                        return check_position;
                 }
         }
         if (this.color.equals("black")) {
             if(outOfBounds(linie-1, coloana-1))
                 if (board.object_matrix[linie - 1][coloana - 1] != null && board.object_matrix[linie - 1][coloana - 1].color != color &&
                         board.object_matrix[linie - 1][coloana - 1].getClass().getName().equals("Pawn")) {
-                    check_position[0] = linie - 1;
-                    check_position[1] = coloana - 1;
-                    return check_position;
+                    check_position[check_position[4]] = linie - 1;
+                    check_position[check_position[4] + 1] = coloana - 1;
+                    check_position[4] += 2;
+                    if (check_position[4] == 4)
+                        return check_position;
                 }
             if(outOfBounds(linie-1, coloana+1))
                 if (board.object_matrix[linie - 1][coloana + 1] != null && board.object_matrix[linie - 1][coloana + 1].color != color &&
                         board.object_matrix[linie - 1][coloana + 1].getClass().getName().equals("Pawn")) {
-                    check_position[0] = linie - 1;
-                    check_position[1] = coloana + 1;
-                    return check_position;
+                    check_position[check_position[4]] = linie - 1;
+                    check_position[check_position[4] + 1] = coloana + 1;
+                    check_position[4] += 2;
+                    if (check_position[4] == 4)
+                        return check_position;
                 }
         }
         if(outOfBounds(linie, coloana  - 1))
             if(board.object_matrix[linie][coloana - 1] != null && board.object_matrix[linie][coloana - 1].color != color &&
                     board.object_matrix[linie][coloana - 1].getClass().getName().equals("King")) {
-                check_position[0] = linie;
-                check_position[1] = coloana - 1;
-                return check_position;
+                check_position[check_position[4]] = linie;
+                check_position[check_position[4] + 1] = coloana - 1;
+                check_position[4] += 2;
+                if (check_position[4] == 4)
+                    return check_position;
             }
         if(outOfBounds(linie, coloana  + 1))
             if(board.object_matrix[linie][coloana + 1] != null && board.object_matrix[linie][coloana + 1].color != color &&
                     board.object_matrix[linie][coloana + 1].getClass().getName().equals("King")) {
-                check_position[0] = linie;
-                check_position[1] = coloana + 1;
-                return check_position;
+                check_position[check_position[4]] = linie;
+                check_position[check_position[4] + 1] = coloana + 1;
+                check_position[4] += 2;
+                if (check_position[4] == 4)
+                    return check_position;
             }
         if(outOfBounds(linie - 1, coloana))
             if(board.object_matrix[linie - 1][coloana] != null && board.object_matrix[linie - 1][coloana].color != color &&
                     board.object_matrix[linie - 1][coloana].getClass().getName().equals("King")) {
-                check_position[0] = linie - 1;
-                check_position[1] = coloana;
-                return check_position;
+                check_position[check_position[4]] = linie - 1;
+                check_position[check_position[4] + 1] = coloana;
+                check_position[4] += 2;
+                if (check_position[4] == 4)
+                    return check_position;
             }
         if(outOfBounds(linie + 1, coloana))
             if(board.object_matrix[linie + 1][coloana] != null && board.object_matrix[linie + 1][coloana].color != color &&
                     board.object_matrix[linie + 1][coloana].getClass().getName().equals("King")) {
-                check_position[0] = linie + 1;
-                check_position[1] = coloana;
-                return check_position;
+                check_position[check_position[4]] = linie + 1;
+                check_position[check_position[4] + 1] = coloana;
+                check_position[4] += 2;
+                if (check_position[4] == 4)
+                    return check_position;
             }
         if(outOfBounds(linie + 1, coloana + 1))
             if(board.object_matrix[linie + 1][coloana + 1] != null && board.object_matrix[linie + 1][coloana + 1].color != color &&
                     board.object_matrix[linie + 1][coloana + 1].getClass().getName().equals("King")) {
-                check_position[0] = linie + 1;
-                check_position[1] = coloana + 1;
-                return check_position;
+                check_position[check_position[4]] = linie + 1;
+                check_position[check_position[4] + 1] = coloana + 1;
+                check_position[4] += 2;
+                if (check_position[4] == 4)
+                    return check_position;
             }
         if(outOfBounds(linie - 1, coloana - 1))
             if(board.object_matrix[linie - 1][coloana - 1] != null && board.object_matrix[linie - 1][coloana - 1].color != color &&
                     board.object_matrix[linie - 1][coloana - 1].getClass().getName().equals("King")) {
-                check_position[0] = linie - 1;
-                check_position[1] = coloana - 1;
-                return check_position;
+                check_position[check_position[4]] = linie - 1;
+                check_position[check_position[4] + 1] = coloana - 1;
+                check_position[4] += 2;
+                if (check_position[4] == 4)
+                    return check_position;
             }
         if(outOfBounds(linie + 1, coloana - 1))
             if(board.object_matrix[linie + 1][coloana - 1] != null && board.object_matrix[linie + 1][coloana - 1].color != color &&
                     board.object_matrix[linie + 1][coloana - 1].getClass().getName().equals("King")) {
-                check_position[0] = linie + 1;
-                check_position[1] = coloana - 1;
-                return check_position;
+                check_position[check_position[4]] = linie + 1;
+                check_position[check_position[4] + 1] = coloana - 1;
+                check_position[4] += 2;
+                if (check_position[4] == 4)
+                    return check_position;
             }
         if(outOfBounds(linie - 1, coloana + 1))
             if(board.object_matrix[linie - 1][coloana + 1] != null && board.object_matrix[linie - 1][coloana + 1].color != color &&
                     board.object_matrix[linie - 1][coloana + 1].getClass().getName().equals("King")) {
-                check_position[0] = linie - 1;
-                check_position[1] = coloana + 1;
-                return check_position;
+                check_position[check_position[4]] = linie - 1;
+                check_position[check_position[4] + 1] = coloana + 1;
+                check_position[4] += 2;
+                if (check_position[4] == 4)
+                    return check_position;
             }
-        return null;
+        return check_position[4] == 0? null : check_position;
     }
+
     public Vector<String> defendKing(String position, Board board) {
         int[] check_position = new int[2];
 
@@ -497,7 +561,7 @@ public class King extends Piece{
             }
             if(outOfBounds(linie+1, coloana))
                 if (board.object_matrix[linie + 1][coloana] != null && board.object_matrix[linie + 1][coloana].color == color &&
-                        board.object_matrix[linie + 1][coloana ].getClass().getName().equals("Pawn")) {
+                        board.object_matrix[linie + 1][coloana ].getClass().getName().equals("Pawn") && board.object_matrix[linie][coloana] == null) {
                     check_position[0] = linie + 1;
                     check_position[1] = coloana ;
                     optionsToDefend.add((char)(check_position[1] + 'a') + "" + (char)(check_position[0] + '1') + position);
@@ -522,7 +586,7 @@ public class King extends Piece{
             }
             if(outOfBounds(linie - 1, coloana))
                 if (board.object_matrix[linie - 1][coloana] != null && board.object_matrix[linie - 1][coloana].color == color &&
-                        board.object_matrix[linie - 1][coloana].getClass().getName().equals("Pawn")) {
+                        board.object_matrix[linie - 1][coloana].getClass().getName().equals("Pawn") && board.object_matrix[linie][coloana] == null) {
                     check_position[0] = linie - 1;
                     check_position[1] = coloana;
                     optionsToDefend.add((char)(check_position[1] + 'a') + "" + (char)(check_position[0] + '1') + position);
@@ -532,15 +596,13 @@ public class King extends Piece{
     }
     public String canKingDefend(Board board) {
         String canDef = null;
+        optionsToDefend = new Vector<String>();
+
         int []array = isInCheck(current_position,board);
-//        int aux = array[1];
-//        array[1] = array[0];
-//        array[0] = aux;
         int current_line = board.pos_to_indexes(current_position).get(1);
         int current_col = board.pos_to_indexes(current_position).get(0);
         System.out.println("array [0] : " + array[0] + " array[1] : " + array[1] + " current_linie : " + current_line + " current col: " + current_col);
         if (array[1] == current_col) {
-            System.out.println("am intrat aici");
             int diff = array[0] - current_line;
             diff = diff > 0? -1 : 1;
             for (int i = array[0]; i != current_line; i += diff)
@@ -599,22 +661,51 @@ public class King extends Piece{
             }
         }
         Random rand = new Random();
+        ListIterator<String> it = optionsToDefend.listIterator();
+        while(it.hasNext()){
+            String aux = it.next();
+            String starting_square = aux.substring(0,2);
+            if(!canIMove(starting_square, board)){
+                it.remove();
+            }
+        }
         if(optionsToDefend.size() == 0)
             return canDef;
+
         canDef = optionsToDefend.get(rand.nextInt(optionsToDefend.size()));
 
         return canDef;
     }
+    public Boolean canIMove(String position, Board board){
+        int []array = isInCheck(current_position, board);
+        if(array != null && array[4] == 2){
+            int current_line = board.pos_to_indexes(position).get(1);
+            int current_col = board.pos_to_indexes(position).get(0);
+            Piece aux = board.object_matrix[current_line][current_col];
+            board.object_matrix[current_line][current_col] = null;
+            int []array2 = isInCheck(current_position, board);
 
-    public String moveRandom(Board board) {
-        String rezultat = canKingDefend(board);
-        if (rezultat == null)
-            return rezultat;
+            if(array2[4] == 4) {
+                board.object_matrix[current_line][current_col] = aux;
+                return false;
+            }
+            board.object_matrix[current_line][current_col] = aux;
+            return true;
+        }
 
-        board.move(rezultat);
-        return rezultat;
-
+        int current_line = board.pos_to_indexes(position).get(1);
+        int current_col = board.pos_to_indexes(position).get(0);
+        Piece aux = board.object_matrix[current_line][current_col];
+        board.object_matrix[current_line][current_col] = null;
+        if(isInCheck(current_position, board) != null){
+            board.object_matrix[current_line][current_col] = aux;
+            return false;
+        }
+        board.object_matrix[current_line][current_col] = aux;
+        return true;
     }
+
+
     public Boolean canMove(Board board) {
         possible_moves = movesForKing(board);
         int linie = board.pos_to_indexes(this.current_position).get(1);
@@ -682,7 +773,7 @@ public class King extends Piece{
                 return true;
             }
         }
-        return true;
+        return false;
     }
     public Boolean canCastleLong(Board board){
         if(isInCheck(current_position,board) != null)
@@ -710,7 +801,7 @@ public class King extends Piece{
                 return true;
             }
         }
-        return true;
+        return false;
     }
     public Vector<KingMoves> movesForKing(Board board) {
         Vector<KingMoves> array = new Vector<>();
@@ -722,14 +813,19 @@ public class King extends Piece{
         array.add(new KingMoves(-1,-1));
         array.add(new KingMoves(1,-1));
         array.add(new KingMoves(-1,1));
+
         if(color == "white" && first_move == 1 && canCastleShort(board)){
+            array = new Vector<>();//etapa2
             array.add(new KingMoves(0, 2));
         } else if(color == "black" && first_move == 1 && canCastleShort(board)){
+            array = new Vector<>();//etapa2
             array.add(new KingMoves(0, 2));
         }
         if(color == "white" && first_move == 1 && canCastleLong(board)){
+            array = new Vector<>();//etapa2
             array.add(new KingMoves(0, -2));
         } else if(color == "black" && first_move == 1 && canCastleLong(board)){
+            array = new Vector<>();//etapa2
             array.add(new KingMoves(0, -2));
         }
         return array;
