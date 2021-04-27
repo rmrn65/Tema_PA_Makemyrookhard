@@ -76,6 +76,13 @@ public class Board {
 
     }
     public void move(String squares){
+        if(object_matrix[squares.charAt(1) - '1'][squares.charAt(0) - 'a'] instanceof Pawn &&
+                squares.charAt(0) != squares.charAt(2) &&
+                object_matrix[squares.charAt(3) - '1'][squares.charAt(2) - 'a'] == null) {
+            System.out.println("S-a mutat enPassant");
+            moveEnPassant(squares, object_matrix[squares.charAt(1) - '1'][squares.charAt(0) - 'a'].color);
+            return;
+        }
         //squares[0:1] -> starting square
         String starting_square = squares.substring(0,2);
         //squares[2:3] -> destination square
@@ -91,6 +98,19 @@ public class Board {
         object_matrix[starting_square.charAt(1)-'1'][starting_square.charAt(0)-'a'].current_position = dest_square;
         object_matrix[dest_square.charAt(1)-'1'][dest_square.charAt(0)-'a'] = object_matrix[starting_square.charAt(1)-'1'][starting_square.charAt(0)-'a'];
         object_matrix[starting_square.charAt(1)-'1'][starting_square.charAt(0)-'a'] = null;
+        if(squares.length() == 5) {
+            Pawn promotedPawn = (Pawn) object_matrix[dest_square.charAt(1) - '1'][dest_square.charAt(0) - 'a'];
+            if(promotedPawn.color.compareTo("black") == 0) {
+                blackPieces.remove(promotedPawn);
+                object_matrix[promotedPawn.current_position.charAt(1) - '1'][promotedPawn.current_position.charAt(0) - 'a'] = new Queen(promotedPawn.current_position, promotedPawn.color);
+                blackPieces.add(object_matrix[squares.charAt(3) - '1'][squares.charAt(2) - 'a']);
+            }
+            else {
+                whitePieces.remove(promotedPawn);
+                object_matrix[promotedPawn.current_position.charAt(1) - '1'][promotedPawn.current_position.charAt(0) - 'a'] = new Queen(promotedPawn.current_position, promotedPawn.color);
+                whitePieces.add(object_matrix[squares.charAt(3) - '1'][squares.charAt(2) - 'a']);
+            }
+        }
     }
     public void moveEnPassant(String squares, String color){
         int x;
