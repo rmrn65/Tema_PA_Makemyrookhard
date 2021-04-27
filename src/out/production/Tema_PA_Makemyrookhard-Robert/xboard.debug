@@ -1,0 +1,350 @@
+locale = LC_CTYPE=en_US.UTF-8;LC_NUMERIC=ro_RO.UTF-8;LC_TIME=ro_RO.UTF-8;LC_COLLATE=en_US.UTF-8;LC_MONETARY=ro_RO.UTF-8;LC_MESSAGES=en_US.UTF-8;LC_PAPER=ro_RO.UTF-8;LC_NAME=ro_RO.UTF-8;LC_ADDRESS=ro_RO.UTF-8;LC_TELEPHONE=ro_RO.UTF-8;LC_MEASUREMENT=ro_RO.UTF-8;LC_IDENTIFICATION=ro_RO.UTF-8
+recognized 'normal' (-1) as variant normal
+recognized 'normal' (-1) as variant normal
+recognized 'normal' (-1) as variant normal
+shuffleOpenings = 0
+shuffleOpenings = 0
+Version: xboard 4.9.1 + make ()
+Reset(1, 0) from gameMode 0
+recognized 'normal' (-1) as variant normal
+GameEnds(0, (null), 2)
+shuffleOpenings = 0
+StartChildProcess (dir=".") make run
+130 >first : xboard
+protover 2
+131 <first : java Main
+225 <first : feature sigint=0 san=0 name=HardRookie
+225 >first : accepted sigint
+225 >first : accepted san
+225 >first : accepted name
+10131 >first : new
+random
+10131 >first : level 40 5 0
+10131 >first : post
+10131 >first : hard
+11936 >first : force
+13110 >first : e2e4
+14214 >first : b8c6
+15730 >first : c2c4
+17147 >first : c6d4
+20776 >first : d1c2
+23485 >first : d4f3
+27860 >first : black
+27860 >first : time 30000
+27860 >first : otim 30000
+27860 >first : white
+book hit = (NULL)
+27860 >first : go
+nps: w=-1, b=-1
+27892 <first : d1
+27892 <first : e2
+27892 <first : [￿
+27892 <first : move e1e2
+36782 >first : time 29997
+36782 >first : otim 29111
+book hit = (NULL)
+36782 >first : f3d4
+36878 <first : e1
+36878 <first : e3
+36878 <first : f3
+36878 <first : d1
+36878 <first : d3
+36878 <first : [
+36878 <first : move e2e1
+38666 >first : time 29987
+38666 >first : otim 28932
+book hit = (NULL)
+38666 >first : d4f3
+38761 <first : d1
+38761 <first : e2
+38761 <first : [￿
+38761 <first : move e1d1
+44165 >first : time 29977
+44165 >first : otim 28391
+book hit = (NULL)
+44165 >first : f3d4
+44260 <first : e1
+44260 <first : e2
+44260 <first : [
+44260 <first : move d1e1
+45597 >first : time 29968
+45597 >first : otim 28258
+book hit = (NULL)
+45597 >first : d4f3
+45692 <first : d1
+45692 <first : e2
+45692 <first : [￿
+45692 <first : move e1e2
+47489 >first : time 29958
+47489 >first : otim 28078
+book hit = (NULL)
+47489 >first : f3d4
+47582 <first : e1
+47582 <first : e3
+47582 <first : f3
+47582 <first : d1
+47582 <first : d3
+47582 <first : [
+47582 <first : move e2d1
+53246 >first : time 29949
+53247 >first : otim 27512
+book hit = (NULL)
+53247 >first : d4f3
+53342 <first : e1
+53342 <first : e2
+53342 <first : []
+53342 <first : move d1e2
+54959 >first : time 29939
+54959 >first : otim 27350
+book hit = (NULL)
+54959 >first : f3d4
+55053 <first : e1
+55053 <first : e3
+55053 <first : f3
+55053 <first : d1
+55053 <first : d3
+55053 <first : [
+55054 <first : move e2e1
+56317 >first : time 29930
+56317 >first : otim 27224
+book hit = (NULL)
+56317 >first : d4f3
+56411 <first : d1
+56411 <first : e2
+56411 <first : [￿
+56411 <first : move e1d1
+58379 >first : time 29920
+58379 >first : otim 27027
+book hit = (NULL)
+58379 >first : f3d4
+58473 <first : e1
+58473 <first : e2
+58473 <first : [
+58474 <first : move d1e1
+59809 >first : time 29911
+59810 >first : otim 26893
+book hit = (NULL)
+59810 >first : d4c2
+59903 <first : d1
+59903 <first : e2
+59903 <first : [￿
+59903 <first : move e1e2
+66715 >first : time 29902
+66715 >first : otim 26212
+book hit = (NULL)
+66715 >first : d7d6
+66788 <first : e1
+66788 <first : e3
+66788 <first : f3
+66788 <first : d1
+66788 <first : d3
+66788 <first : [, ￿￿, ￿]
+66788 <first : move e2f3
+68839 >first : time 29894
+68840 >first : otim 26007
+book hit = (NULL)
+68840 >first : d8d7
+68913 <first : g3
+68914 <first : e3
+68914 <first : f4
+68914 <first : g4
+68914 <first : e2
+68914 <first : [
+68914 <first : move f3e2
+71497 >first : time 29887
+71497 >first : otim 25749
+book hit = (NULL)
+71497 >first : d7g4
+71592 <first : e1
+71592 <first : e3
+71592 <first : f3
+71592 <first : d1
+71592 <first : d3
+71592 <first : [￿￿, ￿]
+71592 <first : move e2d3
+87536 >first : time 29877
+87536 >first : otim 24155
+book hit = (NULL)
+87536 >first : g4g3
+87609 <first : e3
+87609 <first : c3
+87609 <first : d4
+87609 <first : c2
+87609 <first : e2
+87609 <first : [￿
+87609 <first : move d3c2
+101067 >first : time 29870
+101067 >first : otim 22809
+book hit = (NULL)
+101067 >first : c8f5
+101161 <first : c3
+101161 <first : d3
+101161 <first : b3
+101161 <first : d1
+101161 <first : [￿]
+101161 <first : move c2d1
+102967 >first : time 29860
+102967 >first : otim 22628
+book hit = (NULL)
+102967 >first : f5e4
+103041 <first : e1
+103041 <first : e2
+103041 <first : c2
+103041 <first : [
+103041 <first : move d1e2
+109877 >first : time 29853
+109877 >first : otim 21945
+book hit = (NULL)
+109877 >first : e4f5
+109952 <first : e1
+109952 <first : e3
+109952 <first : f3
+109952 <first : d1
+109952 <first : d3
+109952 <first : [
+109952 <first : move e2e1
+112975 >first : time 29845
+112975 >first : otim 21642
+book hit = (NULL)
+112975 >first : a8d8
+113068 <first : d1
+113068 <first : e2
+113068 <first : [￿
+113068 <first : move e1d1
+114538 >first : time 29836
+114538 >first : otim 21495
+book hit = (NULL)
+114538 >first : d8d7
+114611 <first : e1
+114611 <first : e2
+114611 <first : c2
+114611 <first : [
+114611 <first : move d1e1
+116769 >first : time 29829
+116769 >first : otim 21280
+book hit = (NULL)
+116769 >first : d6d5
+116843 <first : d1
+116843 <first : e2
+116843 <first : [￿
+116843 <first : move e1d1
+117862 >first : time 29821
+117862 >first : otim 21178
+book hit = (NULL)
+117862 >first : d7d6
+117936 <first : e1
+117936 <first : e2
+117936 <first : c2
+117936 <first : [
+117936 <first : move d1e2
+119457 >first : time 29814
+119457 >first : otim 21026
+book hit = (NULL)
+119457 >first : d6e6
+119531 <first : e1
+119531 <first : e3
+119531 <first : f3
+119531 <first : d1
+119531 <first : d3
+119531 <first : [
+119531 <first : move e2d1
+136883 >first : time 29807
+136883 >first : otim 19291
+book hit = (NULL)
+136883 >first : d5d4
+136958 <first : e1
+136958 <first : e2
+136958 <first : c2
+136958 <first : resign
+GameEnds(27, White resigns, 1)
+136958 >first : result 0-1 {White resigns}
+136958 >first : force
+Reset(1, 1) from gameMode 8
+recognized 'normal' (-1) as variant normal
+GameEnds(0, (null), 2)
+shuffleOpenings = 0
+260702 >first : new
+random
+260702 >first : level 40 5 0
+260702 >first : post
+260702 >first : hard
+264305 >first : force
+265280 >first : e2e4
+266526 >first : e7e5
+267676 >first : e1e2
+270265 >first : d7d6
+271595 >first : e2d3
+273530 >first : a7a5
+276107 >first : d3c4
+279660 >first : b7b6
+283277 >first : b2b3
+287068 >first : d8e7
+290374 >first : a2a3
+297136 >first : e7e6
+307263 >first : c4d3
+316847 >first : e6g4
+320027 >first : a3a4
+331383 >first : f7f5
+332105 >first : e4f5
+347712 >first : g4g6
+353115 >first : b3b4
+354190 >first : c8f5
+361819 >first : d3e3
+365839 >first : d6d5
+373528 >first : e3f3
+374668 >first : e5e4
+376601 >first : f3f4
+383451 >first : b6b5
+384493 >first : g2g4
+392272 >first : b5a4
+393559 >first : g1h3
+394766 >first : a4a3
+395840 >first : h3g5
+397896 >first : a3a2
+398780 >first : f2f3
+406472 >first : b8c6
+410851 >first : b4b5
+412360 >first : c6e5
+436902 >first : b1a3
+439142 >first : e5c6
+465131 >first : c2c3
+469513 >first : f8c5
+476249 >first : a3b1
+479263 >first : a5a4
+480235 >first : h1g1
+481244 >first : a4a3
+482303 >first : g1g3
+501324 >first : a8a7
+504363 >first : black
+504363 >first : time 30000
+504363 >first : otim 30000
+504363 >first : white
+book hit = (NULL)
+504364 >first : go
+nps: w=-1, b=-1
+504367 <first : e4
+504367 <first : f5
+504367 <first : e3
+504367 <first : e5
+504367 <first : resign
+GameEnds(27, White resigns, 1)
+504367 >first : result 0-1 {White resigns}
+504367 >first : force
+Reset(1, 1) from gameMode 8
+recognized 'normal' (-1) as variant normal
+GameEnds(0, (null), 2)
+shuffleOpenings = 0
+633710 >first : new
+random
+633710 >first : level 40 5 0
+633710 >first : post
+633710 >first : hard
+635854 >first : force
+637171 >first : e2e4
+638582 >first : d7d6
+641644 >first : e1e2
+643137 >first : d6d5
+644277 >first : e2d3
+648477 >first : c7c5
+GameEnds(29, xboard exit, 2)
+1013327 >first : quit

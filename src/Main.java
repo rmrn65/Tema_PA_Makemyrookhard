@@ -2,12 +2,14 @@ import java.util.*;
 public class Main {
 
     public static void main(String[] args) {
-    Scanner input = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
         Board board = new Board();
         int first_move = 1;
         int start = 0, go = 0, quit = 0;
         String command;
-        Pawn myPawn = board.P5;
+//        Pawn myPawn = board.P5;
+        King myKing= board.k;
+        ArrayList<Piece> random_pieces = board.BlackPieces;
         while(true){
             command = input.next(); // primește input
             //tratez comanda
@@ -21,7 +23,8 @@ public class Main {
                     start = 1;
                     board = new Board();
                     first_move = 1;
-                    myPawn = board.p5;
+                    myKing = board.k;
+                    random_pieces = board.BlackPieces;
                     break;
                 case "force":
                     first_move = 0;
@@ -32,10 +35,12 @@ public class Main {
                     go = 1;
                     break;
                 case "white":
-                    myPawn = board.P5;
+                    myKing= board.K;
+                    random_pieces = board.WhitePieces;
                     break;
                 case "black":
-                    myPawn = board.p5;
+                    myKing= board.k;
+                    random_pieces = board.BlackPieces;
                     break;
                 case "quit":
                     quit = 1;
@@ -44,24 +49,39 @@ public class Main {
             //folosim regex pentru a găsi comenzile de mutare
             if(command.matches("[a-h][1-8][a-h][1-8]") || go == 1){
                 //process command
-                if(go == 0)
+                if(go == 0) // de schimbat first_move pentru piese cand se da force
                     board.move(command);
                 if(start == 1) {
                     //prima miscare
-                    if (first_move == 1) {
-                        first_move = 0;
-                        System.out.println("move " + myPawn.move_forward(1, board));
-                    } else if(myPawn.taken(board))
-                        System.out.println("resign");
-                    else if (myPawn.can_take_left(board)) {
-                        System.out.println("move " + myPawn.take_left(board));
-                    } else if (myPawn.can_take_right(board)) {
-                        System.out.println("move " + myPawn.take_right(board));
-                    } else if (myPawn.can_move_forward(board)) {
-                        System.out.println("move " + myPawn.move_forward(0, board));
+                    while(true) {
+                        Random rand = new Random();
+                        String aux = "";
+                        if(myKing.isInCheck(myKing.current_position, board) != null) {
+                            String rezultat = myKing.canKingDefend(board);
+                            if (rezultat == null)
+                                aux = myKing.move(board);
+                            else {
+                                board.move(rezultat);
+                                aux = rezultat;
+                            }
+
+                            System.out.println("move " + aux);
+                            break;
+                        }
+
+                        int index = rand.nextInt(random_pieces.size());
+                        Piece rpiece = random_pieces.get(index);
+                        if(rpiece.canMove(board))
+                            aux = rpiece.move(board);
+                        else
+                            continue;
+                        if (aux.equals(""))
+                            continue;
+                        else {
+                            System.out.println("move " + aux);
+                            break;
+                        }
                     }
-                    else
-                        System.out.println("resign");
                 }
                 first_move = 0;
                 go = 0;

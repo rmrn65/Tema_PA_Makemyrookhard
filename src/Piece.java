@@ -1,4 +1,3 @@
-
 public abstract class Piece {
     String color;
     String current_position;
@@ -8,7 +7,8 @@ public abstract class Piece {
     //move : - returneaza string cu mutarea -
     // -face mutarea pe object-matrix
     // - daca mutarea nu e posibila returnez "null"
-    abstract String move();
+    abstract String move(Board board);
+    abstract Boolean canMove(Board board);
     //String getColor
     //String getPosition
     //String setPosition
