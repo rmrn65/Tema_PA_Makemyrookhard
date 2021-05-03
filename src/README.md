@@ -69,3 +69,70 @@
 *RESPONSABILITATEA FIECĂRUI MEMBRU AL ECHIPEI*
 	În această etapă toți membrii echipei au lucrat împreună la același cod,
 	procentajul de participare fiind egal.
+
+
+## Etapa 2 - Implementarea tuturor miscarilor legale + tratarea sahului + rocadele
+
+*INSTRUCTIUNI DE COMPILARE*
+
+0. Rulare: In aceasta etapa se poate utiliza comanda:
+	xboard -fcp "make run" -scp "make run" -debug (+ in xboard CTRL+T pentru a atribui 
+	ambelor culori bot-ul nostru)
+
+*STRUCTURA PROIECTULUI*
+
+1. Clasele pentru piese
+	In aceasta etapa am implementat o clasa abstracta Piece, parinte al tuturor pieselor,
+	in acesta am declarat doua metode abstracte: canMove(Board) si move(String), metode 
+	folosite in clasa Main, cand se muta o piesa, pentru a oferi o interfata predictibila
+	si uniformizata, indiferent de tipul piesei care este mutata.
+
+2. Update clasa Pawn
+	- Am implementat fata de etapa trecuta en Passant, verificand urmatoarele constrangeri:
+		I. Verific daca sunt pe linia 5 cu pion alb, respectiv linia 4 cu pion negru
+		II. Verific daca am la stanga sau la dreapta mea un pion advers si daca in spatele
+		acestuia este liber
+		III. Cu ajutorul unei variabile lastMove, care se updateaza in Board.move la fiecare
+		mutare, verific daca ultima mutare a fost a pionului pe care vreau sa il capturez
+		en Passant, de 2 casute (din pozitie initiala)
+	Daca se indeplinesc aceste cerinte, adaug mutarea la lista de mutari posibile, si verific
+	daca a fost selectata in Board.move, daca mutarea curenta e enPassant, exista o metoda in
+	Board, moveEnPassant, care pe langa modificarea uzuala din move, imi sterge si piesa din
+	spatele square-ului destinatie (pionul capturat)
+
+	- Am implementat pawn promotion: Daca destinatia unui pion e ultima linie (8 pentru alb,
+	1 pentru negru), imi aleg random la ce piesa voi face promovare (prin utilizarea unui
+	String "qrbn" -> care va fi flag-ul trimis catre xboard la promovare (q -> Queen, r -> Rook
+	b -> Bishop, n -> Knight). Cu ajutorul acestui ultim caracter, in momentul mutarii, modific
+	referinta din square-ul respectiv de la pion la piesa la care am promovat, elimanand pionul
+	din setul de piese, adaugand piesa promovata.
+
+
+3. Randomizare mutarilor + piesei care va muta
+	La fiecare mutare tinem cont de ce piese poate muta bot-ul, alegem random una din acele piese,
+	apoi alegem o mutare random dintre cele legale ale piesei respective. Pentru acest lucru folosim
+	clasa Random, si metoda Random.nextInt(). Pentru fiecare piesa am implementat o lista de miscari
+	legale, pe care o verificam la momentul mutarii.
+
+4. Clasa Bishop
+	La implementarea nebunului, verific cele 2 diagonale pe care poate muta nebunul, adaug miscari
+	la cele posibile atat timp cat:
+		I. Nu ies din bound-urile tablei
+		II. Nu dau de piesa de culoarea nebunului
+		III. Daca dau de piesa inamica, ultima mutare pe diagonala respectiva este capturarea acesteia
+
+*RESPONSABILITATEA FIECĂRUI MEMBRU AL ECHIPEI*
+
+Implementarea pieselor:
+	Queen - Robert
+	Rook - Alin
+	Knight - Alex
+	Bishop - Stefan
+
+Implementarea regelui + tratarea sahului + rocade: Robert si Alex
+Implementarea En Passant + promovare pion: Stefan si Alin
+
+Bugfixing + Randomizare mutari + Stabilire structura claselor: Toti
+
+
+
