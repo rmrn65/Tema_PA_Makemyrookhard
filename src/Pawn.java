@@ -23,8 +23,8 @@ public class Pawn extends Piece{
     public String move(Board board){
         possible_moves.clear();
         if(can_move_forward(board)) {
-            if((color.compareTo("white") == 0 && current_position.charAt(1) == '2') || (color.compareTo("black") == 0 && current_position.charAt(1) == '7') &&
-            board.object_matrix[board.pos_to_indexes(current_position).get(1) + 2 * x][board.pos_to_indexes(current_position).get(0)] == null)
+            if(((color.compareTo("white") == 0 && current_position.charAt(1) == '2') || (color.compareTo("black") == 0 && current_position.charAt(1) == '7')) &&
+                    board.object_matrix[board.pos_to_indexes(current_position).get(1) + 2 * x][board.pos_to_indexes(current_position).get(0)] == null)
                 possible_moves.add(move_forward(2));
             possible_moves.add(move_forward(1));
         }
@@ -38,13 +38,15 @@ public class Pawn extends Piece{
             possible_moves.add(take_right());
         Random rand = new Random();
         String randomMove = possible_moves.get(Math.abs(rand.nextInt()) % possible_moves.size());
+        char randomPromotion = "qrbn".charAt(Math.abs(rand.nextInt()) % 4);
         if((color.compareTo("white") == 0 && randomMove.charAt(3) == '8') || (color.compareTo("black") == 0 && randomMove.charAt(3) == '1'))
-            board.move(randomMove + "q");
+            board.move(randomMove + randomPromotion);
         else
             board.move(randomMove);
         current_position = randomMove.charAt(2) + "" + randomMove.charAt(3);
-        if((color.compareTo("white") == 0 && randomMove.charAt(3) == '8') || (color.compareTo("black") == 0 && randomMove.charAt(3) == '1'))
-            return randomMove + "q";
+        if((color.compareTo("white") == 0 && randomMove.charAt(3) == '8') || (color.compareTo("black") == 0 && randomMove.charAt(3) == '1')) {
+            return randomMove + randomPromotion;
+        }
         return randomMove;
     }
     public Boolean canMove(Board board){
@@ -120,8 +122,8 @@ public class Pawn extends Piece{
                 return false;
             if(piece.color.compareTo(color) == 0)
                 return false;
-            pieceLastMove.append((char) ('a' + (position.get(0) - 1))).append('6')
-                    .append((char) ('a' + (position.get(0) - 1))).append('4');
+            pieceLastMove.append((char) ('a' + (position.get(0) - 1))).append('7')
+                    .append((char) ('a' + (position.get(0) - 1))).append('5');
             return board.lastMove.compareTo(pieceLastMove) == 0;
         }
         else {
@@ -136,8 +138,8 @@ public class Pawn extends Piece{
                 return false;
             if(piece.color.compareTo(color) == 0)
                 return false;
-            pieceLastMove.append((char) ('a' + (position.get(0) - 1))).append('1')
-                    .append((char) ('a' + (position.get(0) - 1))).append('3');
+            pieceLastMove.append((char) ('a' + (position.get(0) - 1))).append('2')
+                    .append((char) ('a' + (position.get(0) - 1))).append('4');
             return board.lastMove.compareTo(pieceLastMove) == 0;
         }
     }
@@ -173,13 +175,9 @@ public class Pawn extends Piece{
                 return false;
             if(piece.color.compareTo(color) == 0)
                 return false;
-            pieceLastMove.append((char) ('a' + (position.get(0) + 1))).append('1')
-                    .append((char) ('a' + (position.get(0) + 1))).append('3');
+            pieceLastMove.append((char) ('a' + (position.get(0) + 1))).append('2')
+                    .append((char) ('a' + (position.get(0) + 1))).append('4');
             return board.lastMove.compareTo(pieceLastMove) == 0;
         }
-    }
-
-    public void promotePawn(Board board) {
-        board.object_matrix[this.current_position.charAt(0) - 'a'][this.current_position.charAt(1) - '1'] = new Queen(current_position, color);
     }
 }

@@ -67,8 +67,8 @@ public class Night extends Piece {
     }
 
     public String move(Board board) {
-        if(!canMove(board))
-            return "";
+//        if(!canMove(board))
+//            return "";
         String aux = current_position;
         String new_position = "";
         int linie = board.pos_to_indexes(this.current_position).get(1);
@@ -81,7 +81,8 @@ public class Night extends Piece {
         new_position = (char)(coloana + 'a') + "" + (char)(linie + '1');
 
         board.move(current_position+""+new_position);
-        current_position = new_position;
+
+
         return aux+""+new_position;
     }
 }

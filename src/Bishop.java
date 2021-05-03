@@ -31,6 +31,7 @@ public class Bishop extends Piece{
             else break;
         }
         for(int i = row + 1, j = col - 1; i <= 7 && j >= 0; i++, j--) {
+            System.out.println(i + " " + j);
             if(board.object_matrix[i][j] == null)
                 possibleMoves.add(new Coordinates(i, j));
             else if(board.object_matrix[i][j].color.compareTo(color) != 0) {
@@ -40,6 +41,7 @@ public class Bishop extends Piece{
             else break;
         }
         for(int i = row - 1, j = col + 1; i >= 0 && j <= 7; i--, j++) {
+            System.out.println(i + " " + j);
             if(board.object_matrix[i][j] == null)
                 possibleMoves.add(new Coordinates(i, j));
             else if(board.object_matrix[i][j].color.compareTo(color) != 0) {
@@ -49,6 +51,7 @@ public class Bishop extends Piece{
             else break;
         }
         for(int i = row - 1, j = col - 1; i >= 0 && j >= 0; i--, j--) {
+            System.out.println(i + " " + j);
             if(board.object_matrix[i][j] == null)
                 possibleMoves.add(new Coordinates(i, j));
             else if(board.object_matrix[i][j].color.compareTo(color) != 0) {
@@ -91,5 +94,3 @@ class Coordinates {
         this.col = col;
     }
 }
-
-// Bishop = Bishop(pos_curr, culoare)
