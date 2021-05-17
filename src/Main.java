@@ -25,6 +25,7 @@ public class Main {
                     first_move = 1;
                     myKing = board.k;
                     random_pieces = board.BlackPieces;
+                    board.colorToMove = "black";
                     break;
                 case "force":
                     first_move = 0;
@@ -37,10 +38,12 @@ public class Main {
                 case "white":
                     myKing= board.K;
                     random_pieces = board.WhitePieces;
+                    board.colorToMove = "white";
                     break;
                 case "black":
                     myKing= board.k;
                     random_pieces = board.BlackPieces;
+                    board.colorToMove = "black";
                     break;
                 case "quit":
                     quit = 1;
@@ -103,7 +106,6 @@ public class Main {
                             break;
                         }
                     }
-                    board.printBoard();
                 }
                 go = 0;
             }

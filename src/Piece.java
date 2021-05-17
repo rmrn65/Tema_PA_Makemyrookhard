@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public abstract class Piece {
     String color;
     String current_position;
@@ -8,7 +10,8 @@ public abstract class Piece {
     // -face mutarea pe object-matrix
     // - daca mutarea nu e posibila returnez "null"
     abstract String move(Board board);
-    abstract Boolean canMove(Board board);
+    abstract boolean canMove(Board board);
+    abstract ArrayList<String> generateMoves(Board board);
     //String getColor
     //String getPosition
     //String setPosition

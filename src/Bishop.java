@@ -13,7 +13,7 @@ public class Bishop extends Piece{
     }
 
     // functie de generare a mutarilor valide
-    void generateMoves(Board board) {
+    void generateMovesCoordinates(Board board) {
         possibleMoves.clear();
         // coordonate initiale
         ArrayList<Integer> initCoords = board.pos_to_indexes(current_position);
@@ -62,9 +62,17 @@ public class Bishop extends Piece{
         }
     }
 
+    ArrayList<String> generateMoves(Board board) {
+        ArrayList<String> legalMoves = new ArrayList<>();
+        for(Coordinates c : possibleMoves) {
+            legalMoves.add(current_position + (char)('a' + c.col) + "" + (char)('1' + c.row));
+        }
+        return legalMoves;
+    }
+
     // genrare mutari posibile + verificare daca o piesa se poate misca
-    Boolean canMove(Board board) {
-        generateMoves(board);
+    boolean canMove(Board board) {
+        generateMovesCoordinates(board);
         return (possibleMoves.size() != 0);
     }
 

@@ -18,7 +18,7 @@ public class Night extends Piece {
         this.color = color;
         this.current_position = current_position;
     }
-    public Boolean canMove(Board board) {
+    public boolean canMove(Board board) {
         possible_moves = movesForNight();
         int linie = board.pos_to_indexes(this.current_position).get(1);
         int coloana = board.pos_to_indexes(this.current_position).get(0);
@@ -52,6 +52,21 @@ public class Night extends Piece {
             return false;
         return true;
     }
+
+    @Override
+    ArrayList<String> generateMoves(Board board) {
+        ArrayList<String> legalMoves = new ArrayList<>();
+        for(NightMoves m : possible_moves) {
+            int linie = board.pos_to_indexes(this.current_position).get(1);
+            int coloana = board.pos_to_indexes(this.current_position).get(0);
+            linie += m.linie;
+            coloana += m.coloana;
+            String new_position = (char)(coloana + 'a') + "" + (char)(linie + '1');
+            legalMoves.add(current_position + new_position);
+        }
+        return legalMoves;
+    }
+
     public Vector<NightMoves> movesForNight() {
         Vector<NightMoves> array = new Vector<>();
         array.add(new NightMoves(2,1));

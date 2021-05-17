@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 public class Rook extends Piece{
     int first_move;
@@ -86,12 +85,12 @@ public class Rook extends Piece{
         Random rand = new Random();
         return current_position + "" + moves.get(rand.nextInt(moves.size()));
     }
-    Boolean canMove(Board board){
+    boolean canMove(Board board){
         return can_move_vertically(board).size() != 0 || can_move_horizontally(board).size() != 0;
     }
 
     String move(Board board){
-        ArrayList<String> possible_moves = new ArrayList<String>();
+        ArrayList<String> possible_moves = new ArrayList<>();
         if(move_vertically(board) != null)
             possible_moves.add(move_vertically(board));
         if(move_horizontally(board) != null)
@@ -104,5 +103,11 @@ public class Rook extends Piece{
         current_position = possible_moves.get(index).substring(2);
         first_move = 0;
         return possible_moves.get(index);
+    }
+    public ArrayList<String> generateMoves(Board board) {
+        ArrayList<String> possible_moves = new ArrayList<>();
+        possible_moves.addAll(can_move_horizontally(board));
+        possible_moves.addAll(can_move_vertically(board));
+        return possible_moves;
     }
 }

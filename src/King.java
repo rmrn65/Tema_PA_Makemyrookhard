@@ -676,7 +676,7 @@ public class King extends Piece{
 
         return canDef;
     }
-    public Boolean canIMove(String position, Board board){
+    public boolean canIMove(String position, Board board){
         int []array = isInCheck(current_position, board);
         if(array != null && array[4] == 2){
             int current_line = board.pos_to_indexes(position).get(1);
@@ -706,7 +706,7 @@ public class King extends Piece{
     }
 
 
-    public Boolean canMove(Board board) {
+    public boolean canMove(Board board) {
         possible_moves = movesForKing(board);
         int linie = board.pos_to_indexes(this.current_position).get(1);
         int coloana = board.pos_to_indexes(this.current_position).get(0);
@@ -746,7 +746,8 @@ public class King extends Piece{
             return false;
         return true;
     }
-    public Boolean canCastleShort(Board board){
+
+    public boolean canCastleShort(Board board){
         if(isInCheck(current_position,board) != null)
             return false;
         if(color == "white") {
@@ -775,7 +776,7 @@ public class King extends Piece{
         }
         return false;
     }
-    public Boolean canCastleLong(Board board){
+    public boolean canCastleLong(Board board){
         if(isInCheck(current_position,board) != null)
             return false;
         if(color == "white") {
@@ -845,13 +846,27 @@ public class King extends Piece{
         coloana += possible_moves.get(index).coloana;
         new_position = (char)(coloana + 'a') + "" + (char)(linie + '1');
         board.move(current_position+""+new_position);
-
-        System.out.println(possible_moves);
         first_move = 0;
         return aux+""+new_position;
     }
-    public Boolean outOfBounds(int index1, int index2) {
+    public boolean outOfBounds(int index1, int index2) {
         return !(index1 > 7 || index2> 7 || index1 < 0 || index2 < 0);
 
     }
+
+    ArrayList<String> generateMoves(Board board) {
+        ArrayList<String> legalMoves = new ArrayList<>();
+        if(!canMove(board))
+            return legalMoves;
+        for(KingMoves m : possible_moves) {
+            int linie = board.pos_to_indexes(this.current_position).get(1);
+            int coloana = board.pos_to_indexes(this.current_position).get(0);
+            linie += m.linie;
+            coloana += m.coloana;
+            String new_position = (char)(coloana + 'a') + "" + (char)(linie + '1');
+            legalMoves.add(current_position + new_position);
+        }
+        return legalMoves;
+    }
+
 }
