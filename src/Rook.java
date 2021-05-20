@@ -2,54 +2,110 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 public class Rook extends Piece{
-    List<String> possibleMoves=new ArrayList<String>();
-    public Rook(String current_position,String color){
-        value = 5;
-        this.current_position=current_position;
+    int first_move;
+    public Rook(String current_position, String color){
+        this.current_position = current_position;
         this.color = color;
-        List<Integer> positions=Board.pos_to_indexes(current_position);
-        this.row=positions.get(0);
-        this.line=positions.get(1);
+        first_move = 1;
+    }
+    public ArrayList<String> can_move_horizontally(Board board){
+        int axisy = board.pos_to_indexes(current_position).get(0) ;
+        int axisx = board.pos_to_indexes(current_position).get(1) ;
+        ArrayList<String> possible_squares = new ArrayList<String>();
+        int i = 1;
+        while(axisy + i <= 7){
+            if(board.object_matrix[axisx][axisy + i] == null) {
+                possible_squares.add((char) (axisy + i  + 'a') + "" + (char) (axisx + '1'));
+                i++;
+            } else if(board.object_matrix[axisx][axisy + i].color != color &&
+                    (board.object_matrix[axisx][axisy + i] != board.k && board.object_matrix[axisx][axisy + i] != board.K)){
+                possible_squares.add((char) (axisy + i  + 'a') + "" + (char) (axisx + '1'));
+                i++;
+                break;
+            }else
+                break;
+        }
+        i = 1;
+        while(axisy - i >= 0){
+            if (board.object_matrix[axisx][axisy - i] == null) {
+                possible_squares.add((char) (axisy - i  + 'a') + "" + (char) (axisx + '1'));
+                i++;
+            }else if(board.object_matrix[axisx][axisy - i].color != color &&
+                    (board.object_matrix[axisx][axisy - i] != board.k && board.object_matrix[axisx][axisy - i] != board.K)){
+                possible_squares.add((char) (axisy - i  + 'a') + "" + (char) (axisx + '1'));
+                i++;
+                break;
+            }else
+                break;
+        }
+        return possible_squares;
+    }
+    public ArrayList<String> can_move_vertically(Board board){
+        int axisy = board.pos_to_indexes(current_position).get(0) ;
+        int axisx = board.pos_to_indexes(current_position).get(1) ;
+        ArrayList<String> possible_squares = new ArrayList<String>();
+        int i = 1;
+        while(axisx + i <= 7){
+            if(board.object_matrix[axisx + i][axisy] == null) {
+                possible_squares.add((char) (axisy + 'a') + "" + (char) (axisx + i + '1'));
+                i++;
+            } else if(board.object_matrix[axisx + i][axisy].color != color &&
+                    (board.object_matrix[axisx + i][axisy] != board.k && board.object_matrix[axisx + i][axisy] != board.K)){
+                possible_squares.add((char) (axisy  + 'a') + "" + (char) (axisx + i + '1'));
+                i++;
+                break;
+            }else
+                break;
+        }
+        i = 1;
+        while(axisx - i >= 0){
+            if (board.object_matrix[axisx - i][axisy] == null) {
+                possible_squares.add((char) (axisy + 'a') + "" + (char) (axisx - i + '1'));
+                i++;
+            } else if(board.object_matrix[axisx - i][axisy].color != color &&
+                    (board.object_matrix[axisx - i][axisy] != board.k && board.object_matrix[axisx - i][axisy] != board.K)){
+                possible_squares.add((char) (axisy  + 'a') + "" + (char) (axisx - i + '1'));
+                i++;
+                break;
+            }else
+                break;
+        }
+        return possible_squares;
     }
 
-    public String Move(Board board){
-        Random random=new Random();
-        String move = possibleMoves.get(Math.abs(random.nextInt()%(possibleMoves.size())));
-        board.move(move);
-        possibleMoves.clear();
-        return move;
+    public String move_horizontally(Board board){
+        ArrayList<String> moves = can_move_horizontally(board);
+        if(moves.size() == 0)
+            return null;
+        Random rand = new Random();
+        return current_position + "" + moves.get(rand.nextInt(moves.size()));
     }
-    public boolean canMove(Board board){
-        int i;
-        class moveAdder{
-            boolean addMove(int finishLine,int finishRow){
-                Piece piece=board.getSquare(finishLine,finishRow);
-                if(piece!=null){
-                    if(!piece.color.equals(color))
-                        possibleMoves.add(Board.indexes_to_pos(line,row)+Board.indexes_to_pos(finishLine,finishRow));
-                    return true;
-                }
-                possibleMoves.add(Board.indexes_to_pos(line,row)+Board.indexes_to_pos(finishLine,finishRow));
-                return false;
-            }
-        }
-        moveAdder adder=new moveAdder();
-        for (i=line+1;i<8;i++){
-            if(adder.addMove(i,row))
-                break;
-        }
-        for (i=line-1;i>=0;i--){
-            if(adder.addMove(i,row))
-                break;
-        }
-        for (i=row+1;i<8;i++){    
-            if(adder.addMove(line,i))
-                break;
-        }
-        for (i=row-1;i>=0;i--){
-            if(adder.addMove(line,i))
-                break;
-        }
-        return ( possibleMoves.size() > 0);
+
+    public String move_vertically(Board board){
+        ArrayList<String> moves = can_move_vertically(board);
+        if(moves.size() == 0)
+            return null;
+        Random rand = new Random();
+        return current_position + "" + moves.get(rand.nextInt(moves.size()));
+    }
+
+    Boolean canMove(Board board){
+        return can_move_vertically(board).size() != 0 || can_move_horizontally(board).size() != 0;
+    }
+
+    String move(Board board){
+        ArrayList<String> possible_moves = new ArrayList<String>();
+        if(move_vertically(board) != null)
+            possible_moves.add(move_vertically(board));
+        if(move_horizontally(board) != null)
+            possible_moves.add(move_horizontally(board));
+        if(possible_moves.size() == 0)
+            return "";
+        Random rand = new Random();
+        int index = rand.nextInt(possible_moves.size());
+        board.move( possible_moves.get(index));
+        current_position = possible_moves.get(index).substring(2);
+        first_move = 0;
+        return possible_moves.get(index);
     }
 }

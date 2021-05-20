@@ -1,19 +1,19 @@
-
 import java.util.*;
 public class Main {
 
     public static void main(String[] args) {
-    Scanner input = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
         Board board = new Board();
         int first_move = 1;
         int start = 0, go = 0, quit = 0;
         String command;
-        Pawn myPawn = board.P5;
-        Rook myRook=board.R1;
-        do {
-            command = input.next(); // primeste input
+//        Pawn myPawn = board.P5;
+        King myKing= board.k;
+        ArrayList<Piece> random_pieces = board.BlackPieces;
+        while(true){
+            command = input.next(); // primește input
             //tratez comanda
-            switch (command) {
+            switch (command){
                 case "xboard":
                     break;
                 case "protover":
@@ -23,8 +23,8 @@ public class Main {
                     start = 1;
                     board = new Board();
                     first_move = 1;
-                    myPawn = board.p5;
-                    myRook=board.R1;
+                    myKing = board.k;
+                    random_pieces = board.BlackPieces;
                     break;
                 case "force":
                     first_move = 0;
@@ -35,46 +35,80 @@ public class Main {
                     go = 1;
                     break;
                 case "white":
-                    myPawn = board.P5;
-                    myRook=board.R1;
+                    myKing= board.K;
+                    random_pieces = board.WhitePieces;
                     break;
                 case "black":
-                    myPawn = board.p5;
-                    myRook=board.r1;
+                    myKing= board.k;
+                    random_pieces = board.BlackPieces;
                     break;
                 case "quit":
                     quit = 1;
                     break;
             }
-            //folosim regex pentru a gasi comenzile de mutare
-            if (command.matches("[a-h][1-8][a-h][1-8]q?") || go == 1) {
+            //folosim regex pentru a găsi comenzile de mutare
+            if(command.matches("[a-h][1-8][a-h][1-8]q?r?b?n?") || go == 1){
                 //process command
-                if (go == 0)
+                if(go == 0) // de schimbat first_move pentru piese cand se da force
                     board.move(command);
-                if (start == 1) {
+                if(start == 1) {
                     //prima miscare
-                    
-                    if(myRook.canMove(board)){                        
-                        System.out.println("move "+myRook.Move(board));
+                    while(true) {
+                        String aux = "";
+                        // ----- ETAPA2 -----
+                        if(myKing.canMove(board)) {
+                            if (myKing.first_move == 1 && myKing.canCastleShort(board)) {
+                                aux = myKing.move(board);
+                                System.out.println("move " + aux);
+                                break;
+                            } else if ( myKing.first_move == 1 && myKing.canCastleLong(board) ) {
+                                aux = myKing.move(board);
+                                System.out.println("move " + aux);
+                                break;
+                            }
+                        }
+                        // ------- ETAPA2 -------
+                        Random rand = new Random();
+                        int []array = myKing.isInCheck(myKing.current_position, board);
+                        if (array != null && array[4] == 2) {
+                            String rezultat = myKing.canKingDefend(board);
+                            if (rezultat == null)
+                                aux = myKing.move(board);
+                            else {
+                                board.move(rezultat);
+                                aux = rezultat;
+                            }
+
+                            System.out.println("move " + aux);
+                            break;
+                        }
+                        if (array != null && array[4] == 4) {
+                            aux = myKing.move(board);
+                            System.out.println("move " + aux);
+                            break;
+                        }
+
+                        int index = rand.nextInt(random_pieces.size());
+                        Piece rpiece = random_pieces.get(index);
+                        if(rpiece.canMove(board) && myKing.canIMove(rpiece.current_position, board)) {
+                            System.out.println("Piesa selectata se afla la " + rpiece.current_position);
+                            aux = rpiece.move(board);
+                        }
+                        else
+                            continue;
+                        if (aux.equals(""))
+                            continue;
+                        else {
+                            System.out.println("move " + aux);
+                            break;
+                        }
                     }
-                    else if (first_move == 1){
-                        first_move = 0;
-                        System.out.println("move " + myPawn.move_forward(1, board));
-                    } else if (myPawn.taken(board))
-                        System.out.println("resign");
-                    else if (myPawn.can_take_left(board)) {
-                        System.out.println("move " + myPawn.take_left(board));
-                    } else if (myPawn.can_take_right(board)) {
-                        System.out.println("move " + myPawn.take_right(board));
-                    } else if (myPawn.can_move_forward(board)) {
-                        System.out.println("move " + myPawn.move_forward(0, board));
-                    } else
-                        System.out.println("resign");
+                    board.printBoard();
                 }
-                first_move = 0;
                 go = 0;
             }
-        } while (quit != 1);
-        input.close();
+            if(quit == 1)
+                break;
+        }
     }
 }
