@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.List;
 
 public class Board {
     char matrix[][];
@@ -192,7 +191,7 @@ public class Board {
         }
     }
 
-    public double Evaluate(Board board,String myColor){
+    public static double Evaluate(Board board,String myColor){
         ArrayList<Piece> myPieces=new ArrayList(),enemyPieces=new ArrayList();
         if(myColor.equals("white")){
             myPieces=WhitePieces;
@@ -201,170 +200,165 @@ public class Board {
             myPieces=BlackPieces;
             enemyPieces=WhitePieces;
         }
-        double materialCost=myPieces.stream().mapToDouble(piece -> piece.value).sum()-enemyPieces.stream().mapToDouble(piece -> piece.value).sum();
-        double positionalCost=myPieces.stream().mapToDouble(piece -> IndividualCost(board,piece)).sum()-enemyPieces.stream().mapToDouble(piece ->  IndividualCost(board,piece)).sum();
-        return materialCost + positionalCost;
+        double materialCost=myPieces.stream().MapToDouble(piece -> piece.value).sum()-enemyPieces.stream().MapToDouble(piece -> piece.value).sum();
+        double positionalCost=myPieces.stream().MapToDouble(piece -> IndividualCost(board,piece)).sum()-enemyPieces.stream().MapToDouble(piece ->  IndividualCost(board,piece)).sum();
+        return materialCost + positionalCost; 
     }
 
-       public double IndividualCost(Board board,Piece myPiece){
-           int posX, posY;
-           Integer range = 0;
-           posX = board.pos_to_indexes(myPiece.current_position).get(0);
-           posY = board.pos_to_indexes(myPiece.current_position).get(1);
-           double protectionCost;
-           double protectionFactor = 0.3;
-           double rangeCost;
-           double rangeFactor = 0.1;
-           ArrayList<Piece> defending = new ArrayList<Piece>();
-           ArrayList<Piece> attacking = new ArrayList<Piece>();
-           class Helper {
-               boolean reachedPiece = false;
-               final Piece myPiece;
-               Integer range;
-               public Helper(Piece myPiece,Integer range) {
-                   this.myPiece = myPiece;
-                   this.range=range;
-               }
+    double static IndividualCost(Board board,Piece myPiece){
+        int posX,posY;
+        int range=0;
+        posX=board.pos_to_indexes(myPiece.current_position).get(0);
+        posY=board.pos_to_indexes(myPiece.current_position).get(1);
+        double protectionCost;
+        double protectionFactor=0.3;
+        double rangeCost;
+        double rangeFactor=0.1;
+        ArrayList<Piece> defending=new ArrayList();
+        ArrayList<Piece> attacking=new ArrayList();
+        Helper.iterateLine(Direction.DIAG_UPLEFT);
+        Helper.iterateLine(Direction.DIAG_UPRIGHT);
+        Helper.iterateLine(Direction.DIAG_DOWNLEFT);
+        Helper.iterateLine(Direction.DIAG_DOWNRIGHT);
+        Helper.iterateLine(Direction.RIGHT);
+        Helper.iterateLine(Direction.LEFT);
+        Helper.iterateLine(Direction.UP);
+        Helper.iterateLine(Direction.DOWN);
+        Helper.computeKnightPos(posX+2,posY+1);
+        Helper.computeKnightPos(posX+2,posY-1);
+        Helper.computeKnightPos(posX-2,posY+1);
+        Helper.computeKnightPos(posX-2,posY-1);
+        Helper.computeKnightPos(posX+1,posY+2);
+        Helper.computeKnightPos(posX+1,posY-2);
+        Helper.computeKnightPos(posX-1,posY+2);
+        Helper.computeKnightPos(posX-1,posY-2);
+        
+        attacking.sort( (Piece p1, Piece p2) -> p1.value.compareTo(p2.value));
+        defending.sort( (Piece p1, Piece p2) -> p1.value.compareTo(p2.value));
+        defending.add(0,myPiece);
+        if(attacking.size() > defending.size())
+            attacking.trimToSize(defending.size());
+        else
+            defending.trimToSize(attacking.size());
+        protectionCost=protectionFactor*(attacking.stream().mapToDouble(piece -> piece.value).sum()-defending.stream().mapToDouble(piece -> piece.value).sum());
+        rangeCost=range*rangeFactor;
+        return protectionCost+rangeCost;
 
-               void iterateLine(Direction dir) {
-                   int i,j;
-                   boolean checkPawnAttack = false, checkPawnDefend = false;
-                   Piece currentPiece = board.object_matrix[posX][posY];
-                   List<Integer> pos = dir.DirToOffset(myPiece.color);
-                   int offsetX = pos.get(0);
-                   int offsetY = pos.get(1);
-                   if (dir.compareTo(Direction.DIAG_UPLEFT)==0 || dir.compareTo(Direction.DIAG_UPRIGHT)==0)
-                       checkPawnAttack = true;
-                   if (dir.compareTo(Direction.DIAG_DOWNLEFT)==0 || dir.compareTo(Direction.DIAG_DOWNRIGHT)==0)
-                       checkPawnDefend = true;
-                   for (i = posX + offsetX, j = posY + offsetY; inBounds(i, j); i = i + offsetX, j = j + offsetY) {
-                       if (currentPiece != null) {
-                           reachedPiece = true;
-                           if (currentPiece.color.equals(myPiece.color)) {
-                               if (checkPawnDefend && (currentPiece instanceof Pawn)) {
-                                   checkPawnDefend = false;
-                                   defending.add(currentPiece);
-                                   continue;
-                               }
-                               if (dir.CheckMovement(currentPiece))
-                                   defending.add(currentPiece);
-                               else
-                                   break;
-                           } else {
-                               if (checkPawnAttack && (currentPiece instanceof Pawn)) {
-                                   checkPawnAttack = false;
-                                   attacking.add(currentPiece);
-                                   continue;
-                               }
-                               if (dir.CheckMovement(currentPiece))
-                                   attacking.add(currentPiece);
-                               else
-                                   break;
-                               defending.add(myPiece);
-                           }
-                       } else {
-                           if (!reachedPiece) {
-                               if (dir.CheckMovement(myPiece))
-                                   range++;
-                           } else
-                               break;
-                       }
-                   }
-               }
-
-               void computeKnightPos(int X, int Y) {
-                   if (!inBounds(posX, posY))
-                       return;
-                   Piece currentPiece = board.object_matrix[X][Y];
-                   if (currentPiece != null) {
-                       if (currentPiece instanceof Night) {
-                           if (currentPiece.color.equals(myPiece.color))
-                               defending.add(currentPiece);
-                           else
-                               attacking.add(currentPiece);
-                       }
-                   } else {
-                       if (myPiece instanceof Night)
-                           range++;
-                   }
-               }
-           }
-           Helper helper = new Helper(myPiece,range);
-           helper.iterateLine(Direction.DIAG_UPLEFT);
-           helper.iterateLine(Direction.DIAG_UPRIGHT);
-           helper.iterateLine(Direction.DIAG_DOWNLEFT);
-           helper.iterateLine(Direction.DIAG_DOWNRIGHT);
-           helper.iterateLine(Direction.RIGHT);
-           helper.iterateLine(Direction.LEFT);
-           helper.iterateLine(Direction.UP);
-           helper.iterateLine(Direction.DOWN);
-           helper.computeKnightPos(posX + 2, posY + 1);
-           helper.computeKnightPos(posX + 2, posY - 1);
-           helper.computeKnightPos(posX - 2, posY + 1);
-           helper.computeKnightPos(posX - 2, posY - 1);
-           helper.computeKnightPos(posX + 1, posY + 2);
-           helper.computeKnightPos(posX + 1, posY - 2);
-           helper.computeKnightPos(posX - 1, posY + 2);
-           helper.computeKnightPos(posX - 1, posY - 2);
-
-           attacking.sort((Piece p1, Piece p2) -> ((Integer)p1.value).compareTo(p2.value));
-           defending.sort((Piece p1, Piece p2) ->  ((Integer)p1.value).compareTo(p2.value));
-           defending.add(0, myPiece);
-           if (attacking.size() > defending.size())
-               attacking.subList(0,defending.size()-1);
-           else
-               defending.subList(0,attacking.size()-1);
-           protectionCost = protectionFactor * (attacking.stream().mapToDouble(piece -> piece.value).sum() - defending.stream().mapToDouble(piece -> piece.value).sum());
-           rangeCost = range * rangeFactor;
-           return protectionCost + rangeCost;
-
-       }
-       enum Direction {
-           LEFT, RIGHT, UP, DOWN, DIAG_UPLEFT, DIAG_UPRIGHT, DIAG_DOWNLEFT, DIAG_DOWNRIGHT;
-
-           public ArrayList<Integer> DirToOffset(String color) {
-               ArrayList<Integer> pos = new ArrayList<Integer>();
-               int x = 0, y = 0;
-               switch (this) {
-                   case LEFT -> x = -1;
-                   case RIGHT -> x = 1;
-                   case DOWN -> y = -1;
-                   case UP -> y = 1;
-                   case DIAG_DOWNLEFT -> {
-                       x = -1;
-                       y = -1;
-                   }
-                   case DIAG_DOWNRIGHT -> {
-                       x = 1;
-                       y = -1;
-                   }
-                   case DIAG_UPLEFT -> {
-                       x = -1;
-                       y = 1;
-                   }
-                   case DIAG_UPRIGHT -> {
-                       y = 1;
-                       x = 1;
-                   }
-               }
-               if (color.equals("black")) {
-                   x = -x;
-                   y = -y;
-               }
-               pos.add(x);
-               pos.add(y);
-               return pos;
-           }
-
-           public Boolean CheckMovement(Piece piece) {
-               return switch (this) {
-                   case DIAG_UPLEFT, DIAG_UPRIGHT, DIAG_DOWNLEFT, DIAG_DOWNRIGHT -> (piece instanceof Bishop) || (piece instanceof Queen);
-                   case LEFT, RIGHT, UP, DOWN -> (piece instanceof Rook) || (piece instanceof Queen);
-               };
-           }
-       }
-
-    Boolean inBounds ( int X, int Y){
-        return (X > 0 && X <= 8 && Y > 0 && Y <= 8);
+        private static class Helper{
+            Boolean reachedPiece=false;
+            static void iterateLine(Direction dir){
+                Boolean checkPawnAttack=false,checkPawnDefend=false;
+                Piece currentPiece=board.object_matrix[posX][posY];
+                List pos=dir.DirToOffset(myPiece.color);
+                int xOffset=pos.get(0);
+                int yOffset=pos.get(1);
+                if(dir.compareTo(Direction.DIAG_UPLEFT) || dir.compareTo(Direction.DIAG_UPRIGHT))
+                    checkPawnAttack=true;
+                if(dir.compareTo(Direction.DIAG_DOWNLEFT) || dir.compareTo(Direction.DIAG_DOWNRIGHT))
+                    checkPawnDefend=true;
+                for(i=x+offsetX,j=y+offsetY;inbounds(i,j);i=i+offsetX,j=j+offsetY){
+                    if(currentPiece!=null){
+                        reachedPiece=true;
+                        if(currentPiece.color.equals(myPiece.color)){
+                            if(checkPawnDefend && (currentPiece instanceof Pawn)){
+                                checkPawnDefend=false;
+                                defending.add(currentPiece);
+                                continue;
+                            }
+                            if(dir.CheckMovement(currentPiece))
+                                defending.add(currentPiece);
+                            else
+                                break;
+                        }else{
+                            if(checkPawnAttack && (currentPiece instanceof Pawn)){
+                                checkPawnAttack=false;
+                                attacking.add(currentPiece);
+                                continue;
+                            }
+                            if(dir.checkMovement(currentPiece))
+                                attacking.add(currentPiece);
+                            else
+                                break
+                                defending.add(myPiece);
+                        }
+                    }else{
+                        if(!reachedPiece){ 
+                            if(dir.CheckMovement(myPiece))
+                                range++;
+                        }else
+                            break;
+                    }
+            }
+            static void computeKnightPos(int X,int Y){
+                if(!inBounds(posX,posY))
+                    return;
+                Piece currentPiece=board.object_matrix[X][Y];
+                if(currentPiece != null){
+                    if(currentPiece instanceof Night){
+                        if(currentPiece.color.equals(myPiece.color))
+                            defending.add(currentPiece);
+                        else
+                            attacking.add(currentPiece);
+                    }
+                }else{
+                    if(myPiece instanceof Night)
+                        range++;
+                }
+            }
+        }
+        Boolean inBounds(int X,int Y){
+            return (X>0 || X<=8 || Y>0 || Y<=8);
+        }
+        private enum Direction{
+            LEFT,RIGHT,UP,DOWN,DIAG_UPLEFT,DIAG_UPRIGHT,DIAG_DOWNLEFT,DIAG_DOWNRIGHT;
+            public ArrayList<Integer> DirToOffset(String color){
+                ArrayList<Integer> pos=new ArrayList();
+                int x=0,y=0;
+                switch (this){
+                    case LEFT:
+                        x=-1;
+                        break;
+                    case RIGHT:
+                        x=1;
+                        break;
+                    case DOWN:
+                        y=-1;
+                        break;
+                    case UP:
+                        y=1;
+                        break;
+                    case DIAG_DOWNLEFT:
+                        x=-1;
+                        y=-1
+                        break;
+                    case DIAG_DOWNRIGHT:
+                        x=1;
+                        y=-1
+                        break;
+                    case DIAG_UPLEFT:
+                        x=-1;
+                        y=1
+                        break;
+                    case DIAG_UPRIGHT:
+                        y=1
+                        x=1;
+                        break;
+                }
+                if(color.equals("black")){
+                    x = -x;
+                    y = -y;
+                }
+                pos.add(x);pos.add(y);
+                return pos;
+            }
+            public Boolean checkMovement(Piece piece){
+                switch (this){
+                    case DIAG_UPLEFT,DIAG_UPRIGHT,DIAG_DOWNLEFT,DIAG_DOWNRIGHT:
+                        return(piece instanceof Bishop) || (piece instanceof Queen);
+                    case LEFT,RIGHT,UP,DOWN:
+                        return(piece instanceof Rook) || (piece instanceof Queen);
+                }
+            }
+        }
     }
 }
