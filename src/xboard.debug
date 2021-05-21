@@ -10,67 +10,360 @@ recognized 'normal' (-1) as variant normal
 GameEnds(0, (null), 2)
 shuffleOpenings = 0
 StartChildProcess (dir=".") make run
-293 >first : xboard
+312 >first : xboard
 protover 2
-322 <first : java Main
-491 <first : feature sigint=0 san=0 name=HardRookie
-492 >first : accepted sigint
-493 >first : accepted san
-494 >first : accepted name
-10307 >first : new
+323 <first : java Main
+480 <first : feature sigint=0 san=0 name=HardRookie
+481 >first : accepted sigint
+481 >first : accepted san
+482 >first : accepted name
+10314 >first : new
 random
-10308 >first : level 40 5 0
-10308 >first : post
-10308 >first : hard
-13168 >first : force
-14098 >first : a2a4
-15258 >first : a7a5
-17979 >first : name alin
-17979 >first : black
-17979 >first : time 30000
-17980 >first : otim 30000
-17981 >first : white
-book hit = (NULL)
-17982 >first : go
+10315 >first : level 40 5 0
+10316 >first : post
+10316 >first : hard
 nps: w=-1, b=-1
-17990 <first : move a1a2
-21278 >first : time 29999
-21279 >first : otim 29671
+19030 >first : name alin
+nps: w=-1, b=-1
+19032 >first : time 30000
+19033 >first : otim 30000
 book hit = (NULL)
-21281 >first : c7c5
-21284 <first : move a2a3
-21820 >first : time 29999
-21820 >first : otim 29617
+19037 >first : c2c4
+19132 <first : c4   c2
+19133 <first : 8
+19134 <first : [
+19135 <first : Piesa selectata se afla la a7
+19135 <first : a5   a7
+19135 <first : move a7a5
+19262 <first : 2523161237352404474507053414575517154424676527255434777537356444474574545755642615362505460635155616452566265535763665454675555665211231220241013212511142226121523271316242417252516222201332302303444204023531151152501210432362602220533372703230634342407353525063costul = 0.0
+19269 <first : | Rook | Night | Bishop | Queen | King | Bishop | Night | Rook |
+19270 <first : | Pawn | Pawn |   | Pawn | Pawn | Pawn | Pawn | Pawn |
+19272 <first : |   |   |   |   |   |   |   |   |
+19273 <first : |   |   | Pawn |   |   |   |   |   |
+19274 <first : | Pawn |   |   |   |   |   |   |   |
+19276 <first : |   |   |   |   |   |   |   |   |
+19282 <first : |   | Pawn | Pawn | Pawn | Pawn | Pawn | Pawn | Pawn |
+19283 <first : | Rook | Night | Bishop | Queen | King | Bishop | Night | Rook |
+19741 >first : time 29989
+19741 >first : otim 29939
 book hit = (NULL)
-21820 >first : c5c4
-21822 <first : move a3a2
-22479 >first : time 29999
-22479 >first : otim 29552
+19741 >first : c4c5
+19818 <first : c5   c4
+19819 <first : 8
+19819 <first : [
+19819 <first : 8
+19819 <first : [
+19819 <first : 8
+19819 <first : [
+19819 <first : 8
+19819 <first : [
+19819 <first : Piesa selectata se afla la e7
+19819 <first : e5   e7
+19819 <first : move e7e5
+19895 <first : 25231612373524044745070534145755171544246563252356523632777537356444474574545755642615362505460635155616452566265535763665454675555665211231220241013212511142226121523271316242417252516222201332302303454305033632161252501210432362602220533372703230634342407353525063costul = -0.1999999999999993
+19895 <first : | Rook | Night | Bishop | Queen | King | Bishop | Night | Rook |
+19895 <first : | Pawn | Pawn |   | Pawn | Pawn | Pawn | Pawn | Pawn |
+19895 <first : |   |   |   |   |   |   |   |   |
+19895 <first : |   |   |   |   |   |   |   |   |
+19895 <first : | Pawn |   | Pawn |   | Pawn |   |   |   |
+19895 <first : |   |   |   |   |   |   |   |   |
+19895 <first : |   | Pawn | Pawn | Pawn |   | Pawn | Pawn | Pawn |
+19895 <first : | Rook | Night | Bishop | Queen | King | Bishop | Night | Rook |
+20805 >first : time 29981
+20807 >first : otim 29840
 book hit = (NULL)
-22479 >first : c4c3
-22480 <first : move a2a3
-23529 >first : time 29998
-23529 >first : otim 29447
+20808 >first : c5c6
+20892 <first : c6   c5
+20892 <first : 8
+20892 <first : [
+20892 <first : e7
+20892 <first : Piesa selectata se afla la b7
+20892 <first : c6   b7
+20892 <first : move b7c6
+20969 <first : 252316124644060437331713474507053414575517154424656325235652363277753735644447457454575564261536250546063515561645256626553576366545467555566521123122024101321251114222612152327131624241725251622220133230230352501210432362602220533372703230634342407353525063costul = 0.6999999999999993
+20969 <first : | Rook | Night | Bishop | Queen | King | Bishop | Night | Rook |
+20969 <first : | Pawn | Pawn |   | Pawn | Pawn | Pawn | Pawn | Pawn |
+20969 <first : |   |   |   |   |   |   |   |   |
+20969 <first : |   |   |   |   |   |   |   |   |
+20969 <first : | Pawn |   |   |   | Pawn |   |   |   |
+20969 <first : |   |   | Pawn |   |   |   |   |   |
+20969 <first : |   |   | Pawn | Pawn |   | Pawn | Pawn | Pawn |
+20969 <first : | Rook | Night | Bishop | Queen | King | Bishop | Night | Rook |
+23790 >first : time 29973
+23791 >first : otim 29551
 book hit = (NULL)
-23529 >first : d7d6
-23530 <first : move a3c3
-25138 >first : time 29998
-25139 >first : otim 29286
+23793 >first : d1a4
+23901 <first : a4   d1
+23901 <first : 8
+23901 <first : [
+23901 <first : e7
+23901 <first : Piesa selectata se afla la g7
+23901 <first : g5   g7
+23901 <first : move g7g5
+23975 <first : 2523161246440604373317134745070534145755171544246563252356523632777537356444454376725652575564261536250546063515561645256626553576366545467555566521123122024101321224221511612152327131624241725251622220133230230352501210432362602220533372703230634342407353525063costul = 0.9000000000000004
+23975 <first : | Rook | Night | Bishop |   | King | Bishop | Night | Rook |
+23975 <first : | Pawn | Pawn |   | Pawn | Pawn | Pawn | Pawn | Pawn |
+23975 <first : |   |   |   |   |   |   |   |   |
+23975 <first : | Queen |   |   |   |   |   |   |   |
+23976 <first : | Pawn |   |   |   | Pawn |   | Pawn |   |
+23976 <first : |   |   | Pawn |   |   |   |   |   |
+23976 <first : |   |   | Pawn | Pawn |   | Pawn |   | Pawn |
+23976 <first : | Rook | Night | Bishop | Queen | King | Bishop | Night | Rook |
+24601 >first : time 29962
+24601 >first : otim 29481
 book hit = (NULL)
-25139 >first : b7b6
-25140 <first : move c3c8
-30349 >first : time 29998
-30349 >first : otim 28765
+24602 >first : a4a5
+24677 <first : a5   a4
+24677 <first : 8
+24677 <first : [
+24677 <first : e7
+24677 <first : Piesa selectata se afla la d7
+24677 <first : d5   d7
+24677 <first : move d7d5
+24751 <first : 464406043733171347450705341455531513464226226563252356523632777537356444454376725652575564261536250546063515561645256626553576366545467555566521123122024101321225231612612152327131624241725251622220133230230352501210432362602220533372703230634342407353525063costul = 0.20000000000000107
+24751 <first : | Rook | Night | Bishop |   | King | Bishop | Night | Rook |
+24751 <first : | Pawn | Pawn |   | Pawn | Pawn | Pawn | Pawn | Pawn |
+24751 <first : |   |   |   |   |   |   |   |   |
+24751 <first : |   |   |   |   |   |   |   |   |
+24751 <first : | Queen |   |   | Pawn | Pawn |   | Pawn |   |
+24751 <first : |   |   | Pawn |   |   |   |   |   |
+24751 <first : |   |   | Pawn |   |   | Pawn |   | Pawn |
+24751 <first : | Rook | Night | Bishop | Queen | King | Bishop | Night | Rook |
+25547 >first : time 29954
+25547 >first : otim 29394
 book hit = (NULL)
-30350 >first : b8c6
-30350 <first : move c8d8
-45231 >first : time 29998
-45231 >first : otim 27277
+25548 >first : a5d5
+25656 <first : d5   a5
+25656 <first : 8
+25656 <first : [
+25656 <first : e7
+25656 <first : d7
+25656 <first : Piesa selectata se afla la h7
+25656 <first : h6   h7
+25656 <first : move h7h6
+25729 <first : 464406043733171347450705341465632523565236327775373564444543767256525654676326153625054606351556164525662655357636654546755556652112312202410132125553151346422622612152327131624241725251622220133230230352501210432362602220533372703230634342407353525063costul = -2.9749999999999996
+25730 <first : | Rook | Night | Bishop |   | King | Bishop | Night | Rook |
+25730 <first : | Pawn | Pawn |   | Pawn | Pawn | Pawn | Pawn | Pawn |
+25730 <first : |   |   |   |   |   |   |   |   |
+25730 <first : |   |   |   |   |   |   |   |   |
+25730 <first : |   |   |   | Queen | Pawn |   | Pawn |   |
+25730 <first : |   |   | Pawn |   |   |   |   | Pawn |
+25730 <first : |   |   | Pawn |   |   | Pawn |   |   |
+25730 <first : | Rook | Night | Bishop | Queen | King | Bishop | Night | Rook |
+26686 >first : time 29943
+26687 >first : otim 29291
 book hit = (NULL)
-45231 >first : e8d8
-45236 <first : move d8a8
-BackwardInner(15), current 16, forward 16
+26687 >first : d5e5
+26771 <first : e5   d5
+26771 <first : 8
+26771 <first : [
+26771 <first : e7
+26771 <first : d7
+26771 <first : array [0] : 4 array[1] : 4 current_linie : 7 current col: 4
+26771 <first : e7   g8
+26771 <first : move g8e7
+26865 <first : 46440604373317134745070534147775373564444543767256525654676326153625054606351556164525662655357636654567652725543456652112312202410132126563252356523632612152327131624241725251622220133230230352501210432362602220533372703230634342407353525063costul = -3.875
+26865 <first : | Rook | Night | Bishop |   | King | Bishop | Night | Rook |
+26865 <first : | Pawn | Pawn |   | Pawn | Pawn | Pawn | Pawn | Pawn |
+26865 <first : |   |   |   |   |   |   |   |   |
+26865 <first : |   |   |   |   |   |   |   |   |
+26865 <first : |   |   |   |   | Queen |   | Pawn |   |
+26865 <first : |   |   | Pawn |   |   |   |   | Pawn |
+26865 <first : |   |   | Pawn |   | Night | Pawn |   |   |
+26865 <first : | Rook | Night | Bishop | Queen | King | Bishop |   | Rook |
+28024 >first : time 29934
+28026 >first : otim 29165
+book hit = (NULL)
+28027 >first : e5g5
+28112 <first : g5   e5
+28112 <first : 8
+28112 <first : [
+28112 <first : d7
+28112 <first : Piesa selectata se afla la b8
+28112 <first : a6   b8
+28112 <first : move b8a6
+28208 <first : 464406043733171347450705341477753735644456546763261526241713460635155616452566265535763665456765272554345665211231220241013212454376725652612152327131624241725251622220133230230352501210432362602220533372703230634342407353525063costul = -2.5
+28209 <first : | Rook | Night | Bishop |   | King | Bishop | Night | Rook |
+28210 <first : | Pawn | Pawn |   | Pawn | Pawn | Pawn | Pawn | Pawn |
+28210 <first : |   |   |   |   |   |   |   |   |
+28210 <first : |   |   |   |   |   |   |   |   |
+28210 <first : |   |   |   |   |   |   | Queen |   |
+28210 <first : | Night |   | Pawn |   |   |   |   | Pawn |
+28210 <first : |   |   | Pawn |   | Night | Pawn |   |   |
+28210 <first : | Rook |   | Bishop | Queen | King | Bishop |   | Rook |
+29176 >first : time 29926
+29176 >first : otim 29059
+book hit = (NULL)
+29177 >first : g5h5
+29259 <first : h5   g5
+29260 <first : 8
+29260 <first : [
+29260 <first : d7
+29260 <first : 8
+29260 <first : [
+29260 <first : d7
+29260 <first : 6 6
+29260 <first : 5 7
+29260 <first : 6 4
+29260 <first : Piesa selectata se afla la f8
+29260 <first : g7   f8
+29260 <first : move f8g7
+29333 <first : 46440604373317134745070534147775373564445654676326152624171346063515561645256626553547457454676527255434566521123122024101321255536662612152327131624241725251622220133230230352501210432362602220533372703230634342407353525063costul = -3.1499999999999986
+29333 <first : | Rook | Night | Bishop |   | King | Bishop | Night | Rook |
+29333 <first : | Pawn | Pawn |   | Pawn | Pawn | Pawn | Pawn | Pawn |
+29334 <first : |   |   |   |   |   |   |   |   |
+29334 <first : |   |   |   |   |   |   |   |   |
+29334 <first : |   |   |   |   |   |   |   | Queen |
+29334 <first : | Night |   | Pawn |   |   |   |   | Pawn |
+29334 <first : |   |   | Pawn |   | Night | Pawn | Bishop |   |
+29334 <first : | Rook |   | Bishop | Queen | King |   |   | Rook |
+30443 >first : time 29917
+30445 >first : otim 28941
+book hit = (NULL)
+30446 >first : h5h6
+30528 <first : h6   h5
+30528 <first : 1
+30528 <first : [
+30528 <first : g8
+30528 <first : 1
+30528 <first : [
+30528 <first : g8
+30528 <first : g8   e8
+30528 <first : f8   h8
+30528 <first : [
+30528 <first : move e8g8
+30603 <first : 46440604373317134745070534147775373564442615262417134606351556164525467555474574546765272554347636654521123122024101321256546763612152327131624241725251622220133230230352501210432362602220533372703230634342407353525063costul = -14.549999999999999
+30603 <first : | Rook | Night | Bishop |   | King | Bishop | Night | Rook |
+30603 <first : | Pawn | Pawn |   | Pawn | Pawn | Pawn | Pawn | Pawn |
+30603 <first : |   |   |   |   |   |   |   |   |
+30603 <first : |   |   |   |   |   |   |   |   |
+30603 <first : |   |   |   |   |   |   |   |   |
+30603 <first : | Night |   | Pawn |   |   |   |   | Queen |
+30603 <first : |   |   | Pawn |   | Night | Pawn | Bishop |   |
+30603 <first : | Rook |   | Bishop | Queen |   | Rook | King |   |
+33758 >first : time 29909
+33759 >first : otim 28618
+book hit = (NULL)
+33760 >first : h6e3
+33860 <first : e3   h6
+33860 <first : 8
+33860 <first : [
+33860 <first : h8
+33860 <first : h7
+33860 <first : 8
+33860 <first : [
+33860 <first : h8
+33860 <first : h7
+33860 <first : Piesa selectata se afla la g8
+33860 <first : 8
+33860 <first : [
+33860 <first : h8
+33860 <first : h7
+33860 <first : h7   g8
+33860 <first : [
+33860 <first : move g8h7
+33933 <first : 4644060437331713474507053414777537356444261526241713460635155616452557556447457454676527255434763665452112312202410132126361232154503430612152327131624241725251622220133230230352501210432362602220533372703230634342407353525063costul = 2.950000000000001
+33934 <first : | Rook | Night | Bishop |   | King | Bishop | Night | Rook |
+33935 <first : | Pawn | Pawn |   | Pawn | Pawn | Pawn | Pawn | Pawn |
+33935 <first : |   |   |   |   | Queen |   |   |   |
+33935 <first : |   |   |   |   |   |   |   |   |
+33935 <first : |   |   |   |   |   |   |   |   |
+33935 <first : | Night |   | Pawn |   |   |   |   |   |
+33935 <first : |   |   | Pawn |   | Night | Pawn | Bishop | King |
+33935 <first : | Rook |   | Bishop | Queen |   | Rook |   |   |
+56768 >first : time 29899
+56769 >first : otim 26327
+book hit = (NULL)
+56770 >first : e3e7
+56873 <first : e7   e3
+56873 <first : 8
+56873 <first : [
+56873 <first : h6
+56873 <first : h8
+56873 <first : g6
+56873 <first : g8
+56873 <first : Piesa selectata se afla la a8
+56873 <first : a7   a8
+56873 <first : move a8a7
+56948 <first : 46440604373317134745070534147775373564442725142624171346063515561645255755644745745476366545211231220241013212676527255434612152327131624241725251622220133230230352501210432362602220533372703230634342407353525063costul = -4.05
+56949 <first : | Rook | Night | Bishop |   | King | Bishop | Night | Rook |
+56949 <first : | Pawn | Pawn |   | Pawn | Pawn | Pawn | Pawn | Pawn |
+56949 <first : |   |   |   |   |   |   |   |   |
+56949 <first : |   |   |   |   |   |   |   |   |
+56949 <first : |   |   |   |   |   |   |   |   |
+56949 <first : | Night |   | Pawn |   |   |   |   |   |
+56949 <first : | Rook |   | Pawn |   | Queen | Pawn | Bishop | King |
+56949 <first : |   |   | Bishop | Queen |   | Rook |   |   |
+61690 >first : time 29888
+61690 >first : otim 25845
+book hit = (NULL)
+61690 >first : e7a3
+61797 <first : a3   e7
+61800 <first : 8
+61800 <first : [
+61800 <first : h6
+61800 <first : h8
+61800 <first : g6
+61800 <first : g8
+61800 <first : Piesa selectata se afla la a7
+61800 <first : a8   a7
+61800 <first : move a7a8
+61875 <first : 46440604373317134745070534147775373564442615262417134606351556164525575564474574547636654521123122024101321223211410612152327131624241725251622220133230230352501210432362602220533372703230634342407353525063costul = 5.225000000000001
+61876 <first : | Rook | Night | Bishop |   | King | Bishop | Night | Rook |
+61876 <first : | Pawn | Pawn |   | Pawn | Pawn | Pawn | Pawn | Pawn |
+61876 <first : | Queen |   |   |   |   |   |   |   |
+61876 <first : |   |   |   |   |   |   |   |   |
+61876 <first : |   |   |   |   |   |   |   |   |
+61876 <first : | Night |   | Pawn |   |   |   |   |   |
+61876 <first : |   |   | Pawn |   |   | Pawn | Bishop | King |
+61876 <first : | Rook |   | Bishop | Queen |   | Rook |   |   |
+62964 >first : time 29877
+62964 >first : otim 25729
+book hit = (NULL)
+62966 >first : a3a6
+63077 <first : a6   a3
+63080 <first : 8
+63080 <first : [
+63080 <first : h6
+63080 <first : h8
+63080 <first : g6
+63080 <first : g8
+63080 <first : Piesa selectata se afla la d8
+63080 <first : g5   d8
+63080 <first : move d8g5
+63175 <first : 4644060437331713474507053414777537356444261546063515454376725652575564474574547636654521123122024101321226241713612152327131624241725251622220133230230352501210432362602220533372703230634342407353525063costul = 2.950000000000001
+63175 <first : | Rook | Night | Bishop |   | King | Bishop | Night | Rook |
+63175 <first : | Pawn | Pawn |   | Pawn | Pawn | Pawn | Pawn | Pawn |
+63175 <first : |   |   |   |   |   |   |   |   |
+63175 <first : |   |   |   |   |   |   |   |   |
+63175 <first : |   |   |   |   |   |   | Queen |   |
+63175 <first : | Queen |   | Pawn |   |   |   |   |   |
+63175 <first : |   |   | Pawn |   |   | Pawn | Bishop | King |
+63175 <first : | Rook |   | Bishop |   |   | Rook |   |   |
+65048 >first : time 29865
+65048 >first : otim 25532
+book hit = (NULL)
+65050 >first : a6d3
+65151 <first : d3   a6
+65151 <first : 8
+65151 <first : [
+65151 <first : h6
+65152 <first : h8
+65152 <first : g6
+65152 <first : g8
+65152 <first : array [0] : 2 array[1] : 3 current_linie : 6 current col: 7
+65152 <first : g6   g5
+65152 <first : move g5g6
+65226 <first : 464406043733171347450705341477753735644426154606351546447773575357556447457454763665452112312202410132125351131144402420612152327131624241725251622220133230230352501210432362602220533372703230634342407353525063costul = 0.47500000000000053
+65226 <first : | Rook | Night | Bishop |   | King | Bishop | Night | Rook |
+65226 <first : | Pawn | Pawn |   | Pawn | Pawn | Pawn | Pawn | Pawn |
+65226 <first : |   |   |   | Queen |   |   |   |   |
+65226 <first : |   |   |   |   |   |   |   |   |
+65226 <first : |   |   |   |   |   |   |   |   |
+65226 <first : |   |   | Pawn |   |   |   | Queen |   |
+65226 <first : |   |   | Pawn |   |   | Pawn | Bishop | King |
+65226 <first : | Rook |   | Bishop |   |   | Rook |   |   |
 GameEnds(29, xboard exit, 2)
-2251029 >first : result * {xboard exit}
-2251030 >first : force
-2251030 >first : quit
+177598 >first : result * {xboard exit}
+177598 >first : force
+177598 >first : quit

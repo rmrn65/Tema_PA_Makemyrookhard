@@ -1,3 +1,7 @@
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.*;
 public class Main {
 
@@ -78,7 +82,6 @@ public class Main {
                                 board.move(rezultat);
                                 aux = rezultat;
                             }
-
                             System.out.println("move " + aux);
                             break;
                         }
@@ -103,6 +106,9 @@ public class Main {
                             break;
                         }
                     }
+                    double cost=0;
+                    cost=board.Evaluate(board,myKing.color);
+                    System.out.println("costul = "+cost);
                     board.printBoard();
                 }
                 go = 0;

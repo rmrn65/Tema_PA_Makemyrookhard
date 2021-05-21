@@ -1,6 +1,8 @@
+import java.io.BufferedWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
+import java.io.FileWriter;
 public class Board {
     char matrix[][];
     StringBuilder lastMove;
@@ -212,9 +214,17 @@ public class Board {
            posX = board.pos_to_indexes(myPiece.current_position).get(0);
            posY = board.pos_to_indexes(myPiece.current_position).get(1);
            double protectionCost;
-           double protectionFactor = 0.3;
+           double protectionFactor = 0.1;
            double rangeCost;
-           double rangeFactor = 0.1;
+           double rangeFactor = 0.01;
+           BufferedWriter bw;
+           try{
+                bw=new BufferedWriter(new FileWriter("cost.txt"));
+                bw.append(myPiece.color);
+                bw.flush();
+           }catch(IOException e){
+               e.printStackTrace();
+           }
            ArrayList<Piece> defending = new ArrayList<Piece>();
            ArrayList<Piece> attacking = new ArrayList<Piece>();
            class Helper {
@@ -273,10 +283,11 @@ public class Board {
                }
 
                void computeKnightPos(int X, int Y) {
-                   if (!inBounds(posX, posY))
+                   if (!inBounds(X, Y))
                        return;
-                   Piece currentPiece = board.object_matrix[X][Y];
-                   if (currentPiece != null) {
+                    System.out.print(X+""+Y);
+                    Piece currentPiece = board.object_matrix[X][Y];
+                    if (currentPiece != null) {
                        if (currentPiece instanceof Night) {
                            if (currentPiece.color.equals(myPiece.color))
                                defending.add(currentPiece);
@@ -307,13 +318,13 @@ public class Board {
            helper.computeKnightPos(posX - 1, posY + 2);
            helper.computeKnightPos(posX - 1, posY - 2);
 
-           attacking.sort((Piece p1, Piece p2) -> ((Integer)p1.value).compareTo(p2.value));
-           defending.sort((Piece p1, Piece p2) ->  ((Integer)p1.value).compareTo(p2.value));
+           attacking.sort((Piece p1, Piece p2) -> ((Double)p1.value).compareTo(p2.value));
+           defending.sort((Piece p1, Piece p2) ->  ((Double)p1.value).compareTo(p2.value));
            defending.add(0, myPiece);
            if (attacking.size() > defending.size())
-               attacking.subList(0,defending.size()-1);
+               attacking.subList(0,defending.size());
            else
-               defending.subList(0,attacking.size()-1);
+               defending.subList(0,attacking.size());
            protectionCost = protectionFactor * (attacking.stream().mapToDouble(piece -> piece.value).sum() - defending.stream().mapToDouble(piece -> piece.value).sum());
            rangeCost = range * rangeFactor;
            return protectionCost + rangeCost;
@@ -365,6 +376,6 @@ public class Board {
        }
 
     Boolean inBounds ( int X, int Y){
-        return (X > 0 && X <= 8 && Y > 0 && Y <= 8);
+        return (X >= 0 && X < 8 && Y >= 0 && Y < 8);
     }
 }
