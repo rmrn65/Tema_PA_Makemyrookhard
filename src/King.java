@@ -4,7 +4,7 @@ import java.util.Random;
 import java.util.Vector;
 
 public class King extends Piece{
-    int value, first_move;
+    int first_move;
     Vector<KingMoves> possible_moves;
     Vector<String> optionsToDefend = new Vector<String>();
 

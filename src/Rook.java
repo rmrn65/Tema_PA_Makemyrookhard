@@ -6,6 +6,7 @@ public class Rook extends Piece{
         this.current_position = current_position;
         this.color = color;
         first_move = 1;
+        value=4;
     }
     public ArrayList<String> can_move_horizontally(Board board){
         int axisy = board.pos_to_indexes(current_position).get(0) ;

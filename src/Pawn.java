@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Random;
 public class Pawn extends Piece{
-    int value, x;
+    int  x;
     ArrayList<String> possible_moves;
     public Pawn(){
         current_position = "";
@@ -13,6 +13,7 @@ public class Pawn extends Piece{
         this();
         this.current_position = current_position;
         this.color = color;
+        value=1;
         if(color.equals("white")) {
             x = 1;
         }

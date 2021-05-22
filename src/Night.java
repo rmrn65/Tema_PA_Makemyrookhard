@@ -1,7 +1,6 @@
 import java.util.*;
 
 public class Night extends Piece {
-    int value;
     Vector<NightMoves> possible_moves;
     class NightMoves {
         int linie, coloana;

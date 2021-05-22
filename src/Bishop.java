@@ -2,7 +2,6 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Bishop extends Piece{
-    int value;
     // toate mutarile posibile intr-o anumita stare a tablei
     ArrayList<Coordinates> possibleMoves;
     public Bishop(String current_position, String color){

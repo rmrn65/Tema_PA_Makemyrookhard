@@ -10,360 +10,738 @@ recognized 'normal' (-1) as variant normal
 GameEnds(0, (null), 2)
 shuffleOpenings = 0
 StartChildProcess (dir=".") make run
-312 >first : xboard
+299 >first : xboard
 protover 2
-323 <first : java Main
-480 <first : feature sigint=0 san=0 name=HardRookie
-481 >first : accepted sigint
-481 >first : accepted san
-482 >first : accepted name
-10314 >first : new
+306 <first : java Main
+614 <first : feature sigint=0 san=0 name=HardRookie
+615 >first : accepted sigint
+620 >first : accepted san
+620 >first : accepted name
+10300 >first : new
 random
-10315 >first : level 40 5 0
-10316 >first : post
-10316 >first : hard
+10301 >first : level 40 5 0
+10304 >first : post
+10305 >first : hard
 nps: w=-1, b=-1
-19030 >first : name alin
+39488 >first : name alin
 nps: w=-1, b=-1
-19032 >first : time 30000
-19033 >first : otim 30000
+39491 >first : time 30000
+39491 >first : otim 30000
 book hit = (NULL)
-19037 >first : c2c4
-19132 <first : c4   c2
-19133 <first : 8
-19134 <first : [
-19135 <first : Piesa selectata se afla la a7
-19135 <first : a5   a7
-19135 <first : move a7a5
-19262 <first : 2523161237352404474507053414575517154424676527255434777537356444474574545755642615362505460635155616452566265535763665454675555665211231220241013212511142226121523271316242417252516222201332302303444204023531151152501210432362602220533372703230634342407353525063costul = 0.0
-19269 <first : | Rook | Night | Bishop | Queen | King | Bishop | Night | Rook |
-19270 <first : | Pawn | Pawn |   | Pawn | Pawn | Pawn | Pawn | Pawn |
-19272 <first : |   |   |   |   |   |   |   |   |
-19273 <first : |   |   | Pawn |   |   |   |   |   |
-19274 <first : | Pawn |   |   |   |   |   |   |   |
-19276 <first : |   |   |   |   |   |   |   |   |
-19282 <first : |   | Pawn | Pawn | Pawn | Pawn | Pawn | Pawn | Pawn |
-19283 <first : | Rook | Night | Bishop | Queen | King | Bishop | Night | Rook |
-19741 >first : time 29989
-19741 >first : otim 29939
+39492 >first : e2e4
+39585 <first : e4   e2
+39586 <first : Pawn 1.0
+39588 <first : Pawn 1.0
+39588 <first : Pawn 1.0
+39588 <first : Pawn 1.0
+39592 <first : Pawn 1.0
+39592 <first : Pawn 1.0
+39592 <first : Pawn 1.0
+39592 <first : Pawn 1.0
+39593 <first : Rook 4.0
+39593 <first : Night 3.0
+39593 <first : Bishop 3.0
+39593 <first : Queen 0.0
+39593 <first : King 0.0
+39593 <first : Bishop 3.0
+39593 <first : Night 3.0
+39593 <first : Rook 4.0
+39608 <first : my material 28.0 their material 28.0
+39763 <first : 27251437352404474507053414575517154424676527255434777537356444474574545755642615362505460635155616452566265535763665454675555665211231220241013212511142226121523271316242417252516222201332302303424002003313525012104323646224225551353172703230634342407353525063costul pentru black este 0.0
+39764 <first : 8
+39771 <first : [
+39781 <first : Piesa selectata se afla la e7
+39781 <first : e6   e7
+39781 <first : move e7e6
+39856 <first : Pawn 1.0
+39858 <first : Pawn 1.0
+39858 <first : Pawn 1.0
+39858 <first : Pawn 1.0
+39858 <first : Pawn 1.0
+39858 <first : Pawn 1.0
+39858 <first : Pawn 1.0
+39858 <first : Pawn 1.0
+39858 <first : Rook 4.0
+39858 <first : Night 3.0
+39858 <first : Bishop 3.0
+39858 <first : Queen 0.0
+39858 <first : King 0.0
+39858 <first : Bishop 3.0
+39858 <first : Night 3.0
+39858 <first : Rook 4.0
+39858 <first : my material 28.0 their material 28.0
+39858 <first : 272514373524044745070534145755171544246664262457533733777537356444474574545755642615362505460635155616452566265535763665454675555665211231220241013212511142226121523271316242417252516222201332302303424002003313525012104323646224225551353172703230634342407353525063costul pentru black este 0.0
+40449 >first : time 29970
+40450 >first : otim 29933
 book hit = (NULL)
-19741 >first : c4c5
-19818 <first : c5   c4
-19819 <first : 8
-19819 <first : [
-19819 <first : 8
-19819 <first : [
-19819 <first : 8
-19819 <first : [
-19819 <first : 8
-19819 <first : [
-19819 <first : Piesa selectata se afla la e7
-19819 <first : e5   e7
-19819 <first : move e7e5
-19895 <first : 25231612373524044745070534145755171544246563252356523632777537356444474574545755642615362505460635155616452566265535763665454675555665211231220241013212511142226121523271316242417252516222201332302303454305033632161252501210432362602220533372703230634342407353525063costul = -0.1999999999999993
-19895 <first : | Rook | Night | Bishop | Queen | King | Bishop | Night | Rook |
-19895 <first : | Pawn | Pawn |   | Pawn | Pawn | Pawn | Pawn | Pawn |
-19895 <first : |   |   |   |   |   |   |   |   |
-19895 <first : |   |   |   |   |   |   |   |   |
-19895 <first : | Pawn |   | Pawn |   | Pawn |   |   |   |
-19895 <first : |   |   |   |   |   |   |   |   |
-19895 <first : |   | Pawn | Pawn | Pawn |   | Pawn | Pawn | Pawn |
-19895 <first : | Rook | Night | Bishop | Queen | King | Bishop | Night | Rook |
-20805 >first : time 29981
-20807 >first : otim 29840
+40450 >first : e4e5
+40529 <first : e5   e4
+40530 <first : Pawn 1.0
+40530 <first : Pawn 1.0
+40530 <first : Pawn 1.0
+40530 <first : Pawn 1.0
+40530 <first : Pawn 1.0
+40530 <first : Pawn 1.0
+40530 <first : Pawn 1.0
+40530 <first : Pawn 1.0
+40530 <first : Rook 4.0
+40530 <first : Night 3.0
+40530 <first : Bishop 3.0
+40530 <first : Queen 0.0
+40530 <first : King 0.0
+40530 <first : Bishop 3.0
+40530 <first : Night 3.0
+40530 <first : Rook 4.0
+40530 <first : my material 28.0 their material 28.0
+40530 <first : 272514373524044745070534145755171544246664262457533733777537356444474574545755642615362505460635155616452566265535763665454675555665211231220241013212511142226121523271316242417252516222201332302303424002003313525012104323656325235652363272703230634342407353525063costul pentru black este 0.40000000000000213
+40530 <first : 8
+40530 <first : [
+40530 <first : e7
+40530 <first : 6 6
+40530 <first : 6 4
+40530 <first : 5 3
+40530 <first : 4 2
+40530 <first : 3 1
+40530 <first : 2 0
+40530 <first : Piesa selectata se afla la f8
+40530 <first : e7   f8
+40530 <first : move f8e7
+40605 <first : Pawn 1.0
+40605 <first : Pawn 1.0
+40605 <first : Pawn 1.0
+40605 <first : Pawn 1.0
+40605 <first : Pawn 1.0
+40605 <first : Pawn 1.0
+40605 <first : Pawn 1.0
+40605 <first : Pawn 1.0
+40605 <first : Rook 4.0
+40605 <first : Night 3.0
+40605 <first : Bishop 3.0
+40605 <first : Queen 0.0
+40605 <first : King 0.0
+40605 <first : Bishop 3.0
+40605 <first : Night 3.0
+40605 <first : Rook 4.0
+40605 <first : my material 28.0 their material 28.0
+40605 <first : 2725143735240447450705341457551715442466642624575337337775373564444745745457556426153625054606351556164525662655356765272554344675555665211231220241013212511142226121523271316242417252516222201332302303424002003313525012104323656325235652363272703230634342407353525063costul pentru black este 1.0
+41542 >first : time 29962
+41545 >first : otim 29832
 book hit = (NULL)
-20808 >first : c5c6
-20892 <first : c6   c5
-20892 <first : 8
-20892 <first : [
-20892 <first : e7
-20892 <first : Piesa selectata se afla la b7
-20892 <first : c6   b7
-20892 <first : move b7c6
-20969 <first : 252316124644060437331713474507053414575517154424656325235652363277753735644447457454575564261536250546063515561645256626553576366545467555566521123122024101321251114222612152327131624241725251622220133230230352501210432362602220533372703230634342407353525063costul = 0.6999999999999993
-20969 <first : | Rook | Night | Bishop | Queen | King | Bishop | Night | Rook |
-20969 <first : | Pawn | Pawn |   | Pawn | Pawn | Pawn | Pawn | Pawn |
-20969 <first : |   |   |   |   |   |   |   |   |
-20969 <first : |   |   |   |   |   |   |   |   |
-20969 <first : | Pawn |   |   |   | Pawn |   |   |   |
-20969 <first : |   |   | Pawn |   |   |   |   |   |
-20969 <first : |   |   | Pawn | Pawn |   | Pawn | Pawn | Pawn |
-20969 <first : | Rook | Night | Bishop | Queen | King | Bishop | Night | Rook |
-23790 >first : time 29973
-23791 >first : otim 29551
+41550 >first : f2f3
+41648 <first : f3   f2
+41648 <first : Pawn 1.0
+41648 <first : Pawn 1.0
+41648 <first : Pawn 1.0
+41648 <first : Pawn 1.0
+41648 <first : Pawn 1.0
+41648 <first : Pawn 1.0
+41648 <first : Pawn 1.0
+41648 <first : Pawn 1.0
+41648 <first : Rook 4.0
+41648 <first : Night 3.0
+41648 <first : Bishop 3.0
+41648 <first : Queen 0.0
+41648 <first : King 0.0
+41648 <first : Bishop 3.0
+41648 <first : Night 3.0
+41648 <first : Rook 4.0
+41648 <first : my material 28.0 their material 28.0
+41648 <first : 27251437352404474507053414575517154424666426245753373377753735644447457454575564261536250546063515561645256626553567652725543446755556652112312202410132125111422261215232713162424172525162222013323023034240020033135250121043236563252356523632737133316460444042407353525063costul pentru black este 0.3999999999999986
+41648 <first : 8
+41648 <first : [
+41648 <first : f8
+41648 <first : 8
+41648 <first : [
+41648 <first : f8
+41648 <first : Piesa selectata se afla la c7
+41648 <first : c5   c7
+41648 <first : move c7c5
+41722 <first : Pawn 1.0
+41723 <first : Pawn 1.0
+41724 <first : Pawn 1.0
+41724 <first : Pawn 1.0
+41724 <first : Pawn 1.0
+41724 <first : Pawn 1.0
+41724 <first : Pawn 1.0
+41724 <first : Pawn 1.0
+41724 <first : Rook 4.0
+41724 <first : Night 3.0
+41724 <first : Bishop 3.0
+41724 <first : Queen 0.0
+41724 <first : King 0.0
+41724 <first : Bishop 3.0
+41724 <first : Night 3.0
+41724 <first : Rook 4.0
+41724 <first : my material 28.0 their material 28.0
+41724 <first : 272514373524044543050336321612575517154424666426245753373377753735644447457454575564261536250546063515561645256626553567652725543446755556652112312202410132125111422261215232713162424172525162222013323023034240020033135250121043236563252356523632737133316460444042407353525063costul pentru black este 0.3999999999999986
+42218 >first : time 29952
+42219 >first : otim 29775
 book hit = (NULL)
-23793 >first : d1a4
-23901 <first : a4   d1
-23901 <first : 8
-23901 <first : [
-23901 <first : e7
-23901 <first : Piesa selectata se afla la g7
-23901 <first : g5   g7
-23901 <first : move g7g5
-23975 <first : 2523161246440604373317134745070534145755171544246563252356523632777537356444454376725652575564261536250546063515561645256626553576366545467555566521123122024101321224221511612152327131624241725251622220133230230352501210432362602220533372703230634342407353525063costul = 0.9000000000000004
-23975 <first : | Rook | Night | Bishop |   | King | Bishop | Night | Rook |
-23975 <first : | Pawn | Pawn |   | Pawn | Pawn | Pawn | Pawn | Pawn |
-23975 <first : |   |   |   |   |   |   |   |   |
-23975 <first : | Queen |   |   |   |   |   |   |   |
-23976 <first : | Pawn |   |   |   | Pawn |   | Pawn |   |
-23976 <first : |   |   | Pawn |   |   |   |   |   |
-23976 <first : |   |   | Pawn | Pawn |   | Pawn |   | Pawn |
-23976 <first : | Rook | Night | Bishop | Queen | King | Bishop | Night | Rook |
-24601 >first : time 29962
-24601 >first : otim 29481
+42220 >first : f3f4
+42302 <first : f4   f3
+42307 <first : Pawn 1.0
+42307 <first : Pawn 1.0
+42307 <first : Pawn 1.0
+42307 <first : Pawn 1.0
+42307 <first : Pawn 1.0
+42307 <first : Pawn 1.0
+42307 <first : Pawn 1.0
+42307 <first : Pawn 1.0
+42307 <first : Rook 4.0
+42307 <first : Night 3.0
+42307 <first : Bishop 3.0
+42307 <first : Queen 0.0
+42307 <first : King 0.0
+42307 <first : Bishop 3.0
+42307 <first : Night 3.0
+42307 <first : Rook 4.0
+42307 <first : my material 28.0 their material 28.0
+42307 <first : 272514373524044543050336321612575517154424666426245753373377753735644447457454575564261536250546063515561645256626553567652725543446755556652112312202410132125111422261215232713162424172525162222013323023034240020033135250121043236563252356523632747234326561454142407353525063costul pentru black este 1.0
+42307 <first : 8
+42307 <first : [
+42307 <first : f8
+42307 <first : 8
+42307 <first : [
+42307 <first : f8
+42307 <first : Piesa selectata se afla la f7
+42307 <first : f5   f7
+42307 <first : move f7f5
+42381 <first : Pawn 1.0
+42381 <first : Pawn 1.0
+42381 <first : Pawn 1.0
+42381 <first : Pawn 1.0
+42381 <first : Pawn 1.0
+42381 <first : Pawn 1.0
+42381 <first : Pawn 1.0
+42381 <first : Pawn 1.0
+42381 <first : Rook 4.0
+42381 <first : Night 3.0
+42381 <first : Bishop 3.0
+42381 <first : Queen 0.0
+42381 <first : King 0.0
+42381 <first : Bishop 3.0
+42381 <first : Night 3.0
+42381 <first : Rook 4.0
+42381 <first : my material 28.0 their material 28.0
+42381 <first : 2725143735240445430503363216125755171544246664262457533733757335336662464247457454575564261536250546063515561645256626553567652725543446755556652112312202410132125111422261215232713162424172525162222013323023034240020033135250121043236563252356523632747234326561454142407353525063costul pentru black este 0.1999999999999993
+51886 >first : time 29943
+51887 >first : otim 28817
 book hit = (NULL)
-24602 >first : a4a5
-24677 <first : a5   a4
-24677 <first : 8
-24677 <first : [
-24677 <first : e7
-24677 <first : Piesa selectata se afla la d7
-24677 <first : d5   d7
-24677 <first : move d7d5
-24751 <first : 464406043733171347450705341455531513464226226563252356523632777537356444454376725652575564261536250546063515561645256626553576366545467555566521123122024101321225231612612152327131624241725251622220133230230352501210432362602220533372703230634342407353525063costul = 0.20000000000000107
-24751 <first : | Rook | Night | Bishop |   | King | Bishop | Night | Rook |
-24751 <first : | Pawn | Pawn |   | Pawn | Pawn | Pawn | Pawn | Pawn |
-24751 <first : |   |   |   |   |   |   |   |   |
-24751 <first : |   |   |   |   |   |   |   |   |
-24751 <first : | Queen |   |   | Pawn | Pawn |   | Pawn |   |
-24751 <first : |   |   | Pawn |   |   |   |   |   |
-24751 <first : |   |   | Pawn |   |   | Pawn |   | Pawn |
-24751 <first : | Rook | Night | Bishop | Queen | King | Bishop | Night | Rook |
-25547 >first : time 29954
-25547 >first : otim 29394
+51891 >first : f1b5
+51999 <first : b5   f1
+51999 <first : Pawn 1.0
+51999 <first : Pawn 1.0
+51999 <first : Pawn 1.0
+51999 <first : Pawn 1.0
+51999 <first : Pawn 1.0
+51999 <first : Pawn 1.0
+51999 <first : Pawn 1.0
+51999 <first : Pawn 1.0
+51999 <first : Rook 4.0
+51999 <first : Night 3.0
+51999 <first : Bishop 3.0
+51999 <first : Queen 0.0
+51999 <first : King 0.0
+51999 <first : Bishop 3.0
+51999 <first : Night 3.0
+51999 <first : Rook 4.0
+51999 <first : my material 28.0 their material 28.0
+51999 <first : 27251437352404454305033632161257551715442466642624575337337573353366624642474574545755642615362505460635155616452566265535676527255434467555566521123122024101321251114222612152323533262206024172525162222013323023034240020033135250121043236563252356523632747234326561454142407353525063costul pentru black este 1.3999999999999986
+51999 <first : 8
+51999 <first : [
+51999 <first : f8
+51999 <first : f7
+51999 <first : 7 3
+51999 <first : 5 5
+51999 <first : 4 6
+51999 <first : 3 7
+51999 <first : 5 3
+51999 <first : 4 2
+51999 <first : Piesa selectata se afla la e7
+51999 <first : g5   e7
+51999 <first : move e7g5
+52095 <first : Pawn 1.0
+52097 <first : Pawn 1.0
+52097 <first : Pawn 1.0
+52097 <first : Pawn 1.0
+52097 <first : Pawn 1.0
+52097 <first : Pawn 1.0
+52097 <first : Pawn 1.0
+52097 <first : Pawn 1.0
+52097 <first : Rook 4.0
+52097 <first : Night 3.0
+52097 <first : Bishop 3.0
+52097 <first : Queen 0.0
+52097 <first : King 0.0
+52097 <first : Bishop 3.0
+52097 <first : Night 3.0
+52097 <first : Rook 4.0
+52097 <first : my material 28.0 their material 28.0
+52097 <first : 27251437352404454305033632161257551715442466642624575337337573353366624642474574545755642615362505460635155616452566265535454376725652467555566521123122024101321251114222612152323533262206024172525162222013323023034240020033135250121043236563252356523632747234326561454142407353525063costul pentru black este 0.7999999999999972
+55956 >first : time 29932
+55959 >first : otim 28421
 book hit = (NULL)
-25548 >first : a5d5
-25656 <first : d5   a5
-25656 <first : 8
-25656 <first : [
-25656 <first : e7
-25656 <first : d7
-25656 <first : Piesa selectata se afla la h7
-25656 <first : h6   h7
-25656 <first : move h7h6
-25729 <first : 464406043733171347450705341465632523565236327775373564444543767256525654676326153625054606351556164525662655357636654546755556652112312202410132125553151346422622612152327131624241725251622220133230230352501210432362602220533372703230634342407353525063costul = -2.9749999999999996
-25730 <first : | Rook | Night | Bishop |   | King | Bishop | Night | Rook |
-25730 <first : | Pawn | Pawn |   | Pawn | Pawn | Pawn | Pawn | Pawn |
-25730 <first : |   |   |   |   |   |   |   |   |
-25730 <first : |   |   |   |   |   |   |   |   |
-25730 <first : |   |   |   | Queen | Pawn |   | Pawn |   |
-25730 <first : |   |   | Pawn |   |   |   |   | Pawn |
-25730 <first : |   |   | Pawn |   |   | Pawn |   |   |
-25730 <first : | Rook | Night | Bishop | Queen | King | Bishop | Night | Rook |
-26686 >first : time 29943
-26687 >first : otim 29291
+55961 >first : b5d7
+55980 <first : d7   b5
+55985 <first : Pawn 1.0
+55985 <first : Pawn 1.0
+55985 <first : Pawn 1.0
+55985 <first : Pawn 1.0
+55985 <first : Pawn 1.0
+55985 <first : Pawn 1.0
+55986 <first : Pawn 1.0
+55986 <first : Rook 4.0
+55986 <first : Night 3.0
+55986 <first : Bishop 3.0
+55986 <first : Queen 0.0
+55986 <first : King 0.0
+55986 <first : Bishop 3.0
+55986 <first : Night 3.0
+55986 <first : Rook 4.0
+55986 <first : my material 27.0 their material 28.0
+55986 <first : 27251437352404454305033632161266642624575337337573353366624642474574545755642615362505460635155616452566265535454376725652467555566521123122024101321251114222612152325755171544244172525162222013323023034240020033135250121043236563252356523632747234326561454142407353525063costul pentru black este -0.5999999999999979
+55986 <first : 8
+55986 <first : [
+55986 <first : f8
+55986 <first : e7
+55986 <first : d7
+55986 <first : f7
+56018 <first : array [0] : 6 array[1] : 3 current_linie : 7 current col: 4
+56049 <first : d7   d8
+56051 <first : move d8d7
+56130 <first : Pawn 1.0
+56131 <first : Pawn 1.0
+56131 <first : Pawn 1.0
+56131 <first : Pawn 1.0
+56131 <first : Pawn 1.0
+56131 <first : Pawn 1.0
+56131 <first : Pawn 1.0
+56131 <first : Rook 4.0
+56131 <first : Night 3.0
+56131 <first : Bishop 3.0
+56131 <first : Queen 0.0
+56131 <first : King 0.0
+56131 <first : Bishop 3.0
+56131 <first : Night 3.0
+56131 <first : Rook 4.0
+56131 <first : my material 27.0 their material 25.0
+56131 <first : 272514373524044543050336321612666426245753373375733533666246424745745457556426153625054606351557551715442466265535454376725652467555566521123122024101321251114222612152324172525162222013323023034240020033135250121043236563252356523632747234326561454142407353525063costul pentru black este 1.8000000000000007
+105909 >first : time 29922
+105910 >first : otim 23435
 book hit = (NULL)
-26687 >first : d5e5
-26771 <first : e5   d5
-26771 <first : 8
-26771 <first : [
-26771 <first : e7
-26771 <first : d7
-26771 <first : array [0] : 4 array[1] : 4 current_linie : 7 current col: 4
-26771 <first : e7   g8
-26771 <first : move g8e7
-26865 <first : 46440604373317134745070534147775373564444543767256525654676326153625054606351556164525662655357636654567652725543456652112312202410132126563252356523632612152327131624241725251622220133230230352501210432362602220533372703230634342407353525063costul = -3.875
-26865 <first : | Rook | Night | Bishop |   | King | Bishop | Night | Rook |
-26865 <first : | Pawn | Pawn |   | Pawn | Pawn | Pawn | Pawn | Pawn |
-26865 <first : |   |   |   |   |   |   |   |   |
-26865 <first : |   |   |   |   |   |   |   |   |
-26865 <first : |   |   |   |   | Queen |   | Pawn |   |
-26865 <first : |   |   | Pawn |   |   |   |   | Pawn |
-26865 <first : |   |   | Pawn |   | Night | Pawn |   |   |
-26865 <first : | Rook | Night | Bishop | Queen | King | Bishop |   | Rook |
-28024 >first : time 29934
-28026 >first : otim 29165
+105912 >first : d1h5
+106030 <first : h5   d1
+106032 <first : Pawn 1.0
+106032 <first : Pawn 1.0
+106032 <first : Pawn 1.0
+106032 <first : Pawn 1.0
+106032 <first : Pawn 1.0
+106032 <first : Pawn 1.0
+106032 <first : Pawn 1.0
+106032 <first : Rook 4.0
+106032 <first : Night 3.0
+106032 <first : Bishop 3.0
+106032 <first : Queen 0.0
+106032 <first : King 0.0
+106032 <first : Bishop 3.0
+106032 <first : Night 3.0
+106032 <first : Rook 4.0
+106032 <first : my material 27.0 their material 25.0
+106032 <first : 272514373524044543050336321612666426245753373375733533666246424745745457556426153625054606351557551715442466265535454376725652467555566521123122024101321255536662612152324172525162222013323023034240020033135250121043236563252356523632747234326561454142407353525063costul pentru black este 1.8000000000000007
+106032 <first : 8
+106032 <first : [
+106032 <first : f8
+106032 <first : d8
+106032 <first : e7
+106032 <first : f7
+106032 <first : array [0] : 4 array[1] : 7 current_linie : 7 current col: 4
+106032 <first : f7   d7
+106032 <first : move d7f7
+106107 <first : Pawn 1.0
+106109 <first : Pawn 1.0
+106109 <first : Pawn 1.0
+106109 <first : Pawn 1.0
+106109 <first : Pawn 1.0
+106109 <first : Pawn 1.0
+106109 <first : Pawn 1.0
+106109 <first : Rook 4.0
+106109 <first : Night 3.0
+106109 <first : Bishop 3.0
+106109 <first : Queen 0.0
+106109 <first : King 0.0
+106109 <first : Bishop 3.0
+106109 <first : Night 3.0
+106109 <first : Rook 4.0
+106109 <first : my material 27.0 their material 25.0
+106109 <first : 272514373524044543050336321612666426245753373375733533666246424745745457556426153625054606351577753735644466265535454376725652467555566521123122024101321255536662612152324172525162222013323023034240020033135250121043236563252356523632747234326561454142407353525063costul pentru black este 1.8000000000000007
+108902 >first : time 29910
+108902 >first : otim 23148
 book hit = (NULL)
-28027 >first : e5g5
-28112 <first : g5   e5
-28112 <first : 8
-28112 <first : [
-28112 <first : d7
-28112 <first : Piesa selectata se afla la b8
-28112 <first : a6   b8
-28112 <first : move b8a6
-28208 <first : 464406043733171347450705341477753735644456546763261526241713460635155616452566265535763665456765272554345665211231220241013212454376725652612152327131624241725251622220133230230352501210432362602220533372703230634342407353525063costul = -2.5
-28209 <first : | Rook | Night | Bishop |   | King | Bishop | Night | Rook |
-28210 <first : | Pawn | Pawn |   | Pawn | Pawn | Pawn | Pawn | Pawn |
-28210 <first : |   |   |   |   |   |   |   |   |
-28210 <first : |   |   |   |   |   |   |   |   |
-28210 <first : |   |   |   |   |   |   | Queen |   |
-28210 <first : | Night |   | Pawn |   |   |   |   | Pawn |
-28210 <first : |   |   | Pawn |   | Night | Pawn |   |   |
-28210 <first : | Rook |   | Bishop | Queen | King | Bishop |   | Rook |
-29176 >first : time 29926
-29176 >first : otim 29059
+108904 >first : h5h7
+108986 <first : h7   h5
+108986 <first : Pawn 1.0
+108986 <first : Pawn 1.0
+108986 <first : Pawn 1.0
+108986 <first : Pawn 1.0
+108986 <first : Pawn 1.0
+108986 <first : Pawn 1.0
+108986 <first : Rook 4.0
+108986 <first : Night 3.0
+108986 <first : Bishop 3.0
+108986 <first : Queen 0.0
+108986 <first : King 0.0
+108986 <first : Bishop 3.0
+108986 <first : Night 3.0
+108986 <first : Rook 4.0
+108986 <first : my material 26.0 their material 25.0
+108986 <first : 2725143735240445430503363216126664262457533733757335336662464247457454261536250546063515777537356444662655354543767256524675555665211231220241013212575564612152324172525162222013323023034240020033135250121043236563252356523632747234326561454142407353525063costul pentru black este -11.599999999999998
+108986 <first : 8
+108986 <first : [
+108986 <first : f8
+108986 <first : d8
+108986 <first : e7
+108986 <first : d7
+108986 <first : 5 5
+108986 <first : 6 4
+108986 <first : 7 3
+108986 <first : 3 7
+108986 <first : 3 5
+108986 <first : Piesa selectata se afla la g5
+108986 <first : h4   g5
+108986 <first : move g5h4
+109060 <first : Pawn 1.0
+109060 <first : Pawn 1.0
+109060 <first : Pawn 1.0
+109060 <first : Pawn 1.0
+109060 <first : Pawn 1.0
+109060 <first : Pawn 1.0
+109060 <first : Rook 4.0
+109060 <first : Night 3.0
+109060 <first : Bishop 3.0
+109060 <first : Queen 0.0
+109060 <first : King 0.0
+109060 <first : Bishop 3.0
+109060 <first : Night 3.0
+109060 <first : Rook 4.0
+109060 <first : my material 26.0 their material 25.0
+109060 <first : 272514373524044543050336321612666426245753373375733533666246424745745426153625054606351577753735644466265535545265614675555665211231220241013212575564612152324172525162222013323023034240020033135250121043236563252356523632747234326561454142407353525063costul pentru black este -11.000000000000004
+111429 >first : time 29901
+111431 >first : otim 22904
 book hit = (NULL)
-29177 >first : g5h5
-29259 <first : h5   g5
-29260 <first : 8
-29260 <first : [
-29260 <first : d7
-29260 <first : 8
-29260 <first : [
-29260 <first : d7
-29260 <first : 6 6
-29260 <first : 5 7
-29260 <first : 6 4
-29260 <first : Piesa selectata se afla la f8
-29260 <first : g7   f8
-29260 <first : move f8g7
-29333 <first : 46440604373317134745070534147775373564445654676326152624171346063515561645256626553547457454676527255434566521123122024101321255536662612152327131624241725251622220133230230352501210432362602220533372703230634342407353525063costul = -3.1499999999999986
-29333 <first : | Rook | Night | Bishop |   | King | Bishop | Night | Rook |
-29333 <first : | Pawn | Pawn |   | Pawn | Pawn | Pawn | Pawn | Pawn |
-29334 <first : |   |   |   |   |   |   |   |   |
-29334 <first : |   |   |   |   |   |   |   |   |
-29334 <first : |   |   |   |   |   |   |   | Queen |
-29334 <first : | Night |   | Pawn |   |   |   |   | Pawn |
-29334 <first : |   |   | Pawn |   | Night | Pawn | Bishop |   |
-29334 <first : | Rook |   | Bishop | Queen | King |   |   | Rook |
-30443 >first : time 29917
-30445 >first : otim 28941
+111432 >first : h7h4
+111545 <first : h4   h7
+111545 <first : Pawn 1.0
+111545 <first : Pawn 1.0
+111545 <first : Pawn 1.0
+111545 <first : Pawn 1.0
+111545 <first : Pawn 1.0
+111545 <first : Pawn 1.0
+111545 <first : Rook 4.0
+111545 <first : Night 3.0
+111545 <first : Bishop 3.0
+111545 <first : Queen 0.0
+111545 <first : King 0.0
+111545 <first : Night 3.0
+111545 <first : Rook 4.0
+111545 <first : my material 23.0 their material 25.0
+111545 <first : 272514373524044543050336321612666426245753373375733533666246424745745426153625054606351577753735644466265535467555566521123122024101321254526561612152324172525162222013323023034240020033135250121043236563252356523632747234326561454142407353525063costul pentru black este -0.8000000000000007
+111545 <first : 8
+111545 <first : [
+111545 <first : f8
+111545 <first : d8
+111545 <first : e7
+111545 <first : d7
+111545 <first : Piesa selectata se afla la b8
+111545 <first : c6   b8
+111545 <first : move b8c6
+111643 <first : Pawn 1.0
+111644 <first : Pawn 1.0
+111644 <first : Pawn 1.0
+111644 <first : Pawn 1.0
+111644 <first : Pawn 1.0
+111644 <first : Pawn 1.0
+111644 <first : Rook 4.0
+111644 <first : Night 3.0
+111644 <first : Bishop 3.0
+111644 <first : Queen 0.0
+111644 <first : King 0.0
+111644 <first : Night 3.0
+111644 <first : Rook 4.0
+111644 <first : my material 23.0 their material 25.0
+111644 <first : 2725143735240445430503363216126664262457533733757335336662464247457454261546440604373317134606351577753735644466265535467555566521123122024101321254526561612152324172525162222013323023034240020033135250121043236563252356523632747234326561454142407353525063costul pentru black este -4.199999999999999
+112404 >first : time 29890
+112407 >first : otim 22818
 book hit = (NULL)
-30446 >first : h5h6
-30528 <first : h6   h5
-30528 <first : 1
-30528 <first : [
-30528 <first : g8
-30528 <first : 1
-30528 <first : [
-30528 <first : g8
-30528 <first : g8   e8
-30528 <first : f8   h8
-30528 <first : [
-30528 <first : move e8g8
-30603 <first : 46440604373317134745070534147775373564442615262417134606351556164525467555474574546765272554347636654521123122024101321256546763612152327131624241725251622220133230230352501210432362602220533372703230634342407353525063costul = -14.549999999999999
-30603 <first : | Rook | Night | Bishop |   | King | Bishop | Night | Rook |
-30603 <first : | Pawn | Pawn |   | Pawn | Pawn | Pawn | Pawn | Pawn |
-30603 <first : |   |   |   |   |   |   |   |   |
-30603 <first : |   |   |   |   |   |   |   |   |
-30603 <first : |   |   |   |   |   |   |   |   |
-30603 <first : | Night |   | Pawn |   |   |   |   | Queen |
-30603 <first : |   |   | Pawn |   | Night | Pawn | Bishop |   |
-30603 <first : | Rook |   | Bishop | Queen |   | Rook | King |   |
-33758 >first : time 29909
-33759 >first : otim 28618
+112407 >first : h4h8
+112515 <first : h8   h4
+112515 <first : Pawn 1.0
+112515 <first : Pawn 1.0
+112515 <first : Pawn 1.0
+112515 <first : Pawn 1.0
+112515 <first : Pawn 1.0
+112515 <first : Pawn 1.0
+112515 <first : Rook 4.0
+112515 <first : Night 3.0
+112515 <first : Bishop 3.0
+112515 <first : Queen 0.0
+112515 <first : King 0.0
+112515 <first : Night 3.0
+112515 <first : my material 19.0 their material 25.0
+112515 <first : 27251437352404454305033632161266642624575337337573353366624642474574542615464406043733171346063515777537356444662655354675552112312202410132125665612152324172525162222013323023034240020033135250121043236563252356523632747234326561454142407353525063costul pentru black este 4.4
+112515 <first : 8
+112515 <first : [
+112515 <first : f8
+112515 <first : d8
+112515 <first : e7
+112515 <first : d7
+112515 <first : Piesa selectata se afla la f7
+112515 <first : h5   f7
+112515 <first : move f7h5
+112614 <first : Pawn 1.0
+112615 <first : Pawn 1.0
+112615 <first : Pawn 1.0
+112615 <first : Pawn 1.0
+112615 <first : Pawn 1.0
+112615 <first : Pawn 1.0
+112615 <first : Rook 4.0
+112615 <first : Night 3.0
+112615 <first : Bishop 3.0
+112615 <first : Queen 0.0
+112615 <first : King 0.0
+112615 <first : Night 3.0
+112615 <first : my material 19.0 their material 25.0
+112615 <first : 2725143735240445430503363216126664262457533733757335336662464247457454261546440604373317134606351555536662662655354675552112312202410132125665612152324172525162222013323023034240020033135250121043236563252356523632747234326561454142407353525063costul pentru black este 4.4
+159371 >first : time 29879
+159372 >first : otim 18132
 book hit = (NULL)
-33760 >first : h6e3
-33860 <first : e3   h6
-33860 <first : 8
-33860 <first : [
-33860 <first : h8
-33860 <first : h7
-33860 <first : 8
-33860 <first : [
-33860 <first : h8
-33860 <first : h7
-33860 <first : Piesa selectata se afla la g8
-33860 <first : 8
-33860 <first : [
-33860 <first : h8
-33860 <first : h7
-33860 <first : h7   g8
-33860 <first : [
-33860 <first : move g8h7
-33933 <first : 4644060437331713474507053414777537356444261526241713460635155616452557556447457454676527255434763665452112312202410132126361232154503430612152327131624241725251622220133230230352501210432362602220533372703230634342407353525063costul = 2.950000000000001
-33934 <first : | Rook | Night | Bishop |   | King | Bishop | Night | Rook |
-33935 <first : | Pawn | Pawn |   | Pawn | Pawn | Pawn | Pawn | Pawn |
-33935 <first : |   |   |   |   | Queen |   |   |   |
-33935 <first : |   |   |   |   |   |   |   |   |
-33935 <first : |   |   |   |   |   |   |   |   |
-33935 <first : | Night |   | Pawn |   |   |   |   |   |
-33935 <first : |   |   | Pawn |   | Night | Pawn | Bishop | King |
-33935 <first : | Rook |   | Bishop | Queen |   | Rook |   |   |
-56768 >first : time 29899
-56769 >first : otim 26327
+159376 >first : h8h5
+159497 <first : h5   h8
+159500 <first : Pawn 1.0
+159500 <first : Pawn 1.0
+159500 <first : Pawn 1.0
+159500 <first : Pawn 1.0
+159500 <first : Pawn 1.0
+159500 <first : Pawn 1.0
+159500 <first : Rook 4.0
+159500 <first : Night 3.0
+159500 <first : Bishop 3.0
+159500 <first : King 0.0
+159500 <first : Night 3.0
+159500 <first : my material 19.0 their material 25.0
+159500 <first : 272514373524044543050336321612666426245753373375733533666246424745745426154644060437331713460635156626553546755521123122024101321255536662612152324172525162222013323023034240020033135250121043236563252356523632747234326561454142407353525063costul pentru black este 4.4
+159500 <first : 8
+159500 <first : [
+159500 <first : f8
+159500 <first : d8
+159500 <first : e7
+159500 <first : d7
+159500 <first : f7
+159500 <first : array [0] : 4 array[1] : 7 current_linie : 7 current col: 4
+159500 <first : g6   g7
+159500 <first : move g7g6
+159574 <first : Pawn 1.0
+159576 <first : Pawn 1.0
+159576 <first : Pawn 1.0
+159576 <first : Pawn 1.0
+159576 <first : Pawn 1.0
+159576 <first : Pawn 1.0
+159576 <first : Rook 4.0
+159576 <first : Night 3.0
+159576 <first : Bishop 3.0
+159576 <first : King 0.0
+159576 <first : Night 3.0
+159576 <first : my material 19.0 their material 25.0
+159576 <first : 2725143735240445430503363216126664262457533733757335336662464246447773575326154644060437331713460635156626553546755521123122024101321255536662612152324172525162222013323023034240020033135250121043236563252356523632747234326561454142407353525063costul pentru black este 4.800000000000001
+160458 >first : time 29866
+160460 >first : otim 18037
 book hit = (NULL)
-56770 >first : e3e7
-56873 <first : e7   e3
-56873 <first : 8
-56873 <first : [
-56873 <first : h6
-56873 <first : h8
-56873 <first : g6
-56873 <first : g8
-56873 <first : Piesa selectata se afla la a8
-56873 <first : a7   a8
-56873 <first : move a8a7
-56948 <first : 46440604373317134745070534147775373564442725142624171346063515561645255755644745745476366545211231220241013212676527255434612152327131624241725251622220133230230352501210432362602220533372703230634342407353525063costul = -4.05
-56949 <first : | Rook | Night | Bishop |   | King | Bishop | Night | Rook |
-56949 <first : | Pawn | Pawn |   | Pawn | Pawn | Pawn | Pawn | Pawn |
-56949 <first : |   |   |   |   |   |   |   |   |
-56949 <first : |   |   |   |   |   |   |   |   |
-56949 <first : |   |   |   |   |   |   |   |   |
-56949 <first : | Night |   | Pawn |   |   |   |   |   |
-56949 <first : | Rook |   | Pawn |   | Queen | Pawn | Bishop | King |
-56949 <first : |   |   | Bishop | Queen |   | Rook |   |   |
-61690 >first : time 29888
-61690 >first : otim 25845
+160460 >first : h5g6
+160552 <first : g6   h5
+160554 <first : Pawn 1.0
+160555 <first : Pawn 1.0
+160555 <first : Pawn 1.0
+160556 <first : Pawn 1.0
+160556 <first : Pawn 1.0
+160556 <first : Rook 4.0
+160556 <first : Night 3.0
+160556 <first : Bishop 3.0
+160556 <first : King 0.0
+160556 <first : Night 3.0
+160556 <first : my material 18.0 their material 25.0
+160556 <first : 27251437352404454305033632161266642624575337337573353366624642261546440604373317134606351566265535467555211231220241013212464477735753612152324172525162222013323023034240020033135250121043236563252356523632747234326561454142407353525063costul pentru black este 4.0
+160556 <first : 8
+160556 <first : [
+160556 <first : f8
+160556 <first : d8
+160556 <first : e7
+160556 <first : d7
+160556 <first : f7
+160556 <first : array [0] : 5 array[1] : 6 current_linie : 7 current col: 4
+160556 <first : 8
+160556 <first : [
+160556 <first : f8
+160556 <first : d8
+160556 <first : e7
+160556 <first : d7
+160556 <first : f7
+160556 <first : d7   e8
+160556 <first : move e8d7
+160637 <first : Pawn 1.0
+160637 <first : Pawn 1.0
+160637 <first : Pawn 1.0
+160637 <first : Pawn 1.0
+160637 <first : Pawn 1.0
+160637 <first : Rook 4.0
+160637 <first : Night 3.0
+160637 <first : Bishop 3.0
+160637 <first : King 0.0
+160637 <first : Night 3.0
+160637 <first : my material 18.0 their material 25.0
+160637 <first : 272514373524044543050336321612666426245753373375733533666246422615464406043733171346063515575517154424467555211231220241013212464477735753612152324172525162222013323023034240020033135250121043236563252356523632747234326561454142407353525063costul pentru black este 4.0
+161440 >first : time 29856
+161441 >first : otim 17948
 book hit = (NULL)
-61690 >first : e7a3
-61797 <first : a3   e7
-61800 <first : 8
-61800 <first : [
-61800 <first : h6
-61800 <first : h8
-61800 <first : g6
-61800 <first : g8
-61800 <first : Piesa selectata se afla la a7
-61800 <first : a8   a7
-61800 <first : move a7a8
-61875 <first : 46440604373317134745070534147775373564442615262417134606351556164525575564474574547636654521123122024101321223211410612152327131624241725251622220133230230352501210432362602220533372703230634342407353525063costul = 5.225000000000001
-61876 <first : | Rook | Night | Bishop |   | King | Bishop | Night | Rook |
-61876 <first : | Pawn | Pawn |   | Pawn | Pawn | Pawn | Pawn | Pawn |
-61876 <first : | Queen |   |   |   |   |   |   |   |
-61876 <first : |   |   |   |   |   |   |   |   |
-61876 <first : |   |   |   |   |   |   |   |   |
-61876 <first : | Night |   | Pawn |   |   |   |   |   |
-61876 <first : |   |   | Pawn |   |   | Pawn | Bishop | King |
-61876 <first : | Rook |   | Bishop | Queen |   | Rook |   |   |
-62964 >first : time 29877
-62964 >first : otim 25729
+161441 >first : g6g8
+161529 <first : g8   g6
+161529 <first : Pawn 1.0
+161531 <first : Pawn 1.0
+161531 <first : Pawn 1.0
+161531 <first : Pawn 1.0
+161531 <first : Pawn 1.0
+161531 <first : Rook 4.0
+161531 <first : Night 3.0
+161531 <first : Bishop 3.0
+161531 <first : King 0.0
+161531 <first : my material 15.0 their material 25.0
+161531 <first : 272514373524044543050336321612666426245753373375733533666246422615464406043733171346063515575517154424211231220241013212467555612152324172525162222013323023034240020033135250121043236563252356523632747234326561454142407353525063costul pentru black este 1.6000000000000014
+161531 <first : 8
+161531 <first : [
+161531 <first : e7
+161531 <first : c7
+161531 <first : d6
+161531 <first : d8
+161531 <first : e8
+161531 <first : 8
+161531 <first : [
+161531 <first : e7
+161531 <first : c7
+161531 <first : d6
+161531 <first : d8
+161531 <first : e8
+161531 <first : Piesa selectata se afla la d7
+161531 <first : 8
+161531 <first : [
+161531 <first : e7
+161531 <first : c7
+161531 <first : d6
+161531 <first : d8
+161531 <first : e8
+161531 <first : e7   d7
+161531 <first : move d7e7
+161605 <first : Pawn 1.0
+161605 <first : Pawn 1.0
+161605 <first : Pawn 1.0
+161605 <first : Pawn 1.0
+161605 <first : Pawn 1.0
+161606 <first : Rook 4.0
+161606 <first : Night 3.0
+161606 <first : Bishop 3.0
+161606 <first : King 0.0
+161606 <first : my material 15.0 their material 25.0
+161606 <first : 272514373524044543050336321612666426245753373375733533666246422615464406043733171346063515676527255434211231220241013212467555612152324172525162222013323023034240020033135250121043236563252356523632747234326561454142407353525063costul pentru black este 1.6000000000000014
+162896 >first : time 29847
+162899 >first : otim 17812
 book hit = (NULL)
-62966 >first : a3a6
-63077 <first : a6   a3
-63080 <first : 8
-63080 <first : [
-63080 <first : h6
-63080 <first : h8
-63080 <first : g6
-63080 <first : g8
-63080 <first : Piesa selectata se afla la d8
-63080 <first : g5   d8
-63080 <first : move d8g5
-63175 <first : 4644060437331713474507053414777537356444261546063515454376725652575564474574547636654521123122024101321226241713612152327131624241725251622220133230230352501210432362602220533372703230634342407353525063costul = 2.950000000000001
-63175 <first : | Rook | Night | Bishop |   | King | Bishop | Night | Rook |
-63175 <first : | Pawn | Pawn |   | Pawn | Pawn | Pawn | Pawn | Pawn |
-63175 <first : |   |   |   |   |   |   |   |   |
-63175 <first : |   |   |   |   |   |   |   |   |
-63175 <first : |   |   |   |   |   |   | Queen |   |
-63175 <first : | Queen |   | Pawn |   |   |   |   |   |
-63175 <first : |   |   | Pawn |   |   | Pawn | Bishop | King |
-63175 <first : | Rook |   | Bishop |   |   | Rook |   |   |
-65048 >first : time 29865
-65048 >first : otim 25532
+162899 >first : g8c8
+163012 <first : c8   g8
+163012 <first : Pawn 1.0
+163013 <first : Pawn 1.0
+163013 <first : Pawn 1.0
+163013 <first : Pawn 1.0
+163013 <first : Pawn 1.0
+163013 <first : Rook 4.0
+163013 <first : Night 3.0
+163013 <first : King 0.0
+163013 <first : my material 12.0 their material 25.0
+163013 <first : 272514373524044543050336321612666426245753373375733533666246422615464406043733171367652725543421123122024101321246063515612152324172525162222013323023034240020033135250121043236563252356523632747234326561454142407353525063costul pentru black este -0.8000000000000007
+163013 <first : 8
+163013 <first : [
+163013 <first : f7
+163013 <first : d7
+163013 <first : e8
+163013 <first : f8
+163013 <first : d6
+163013 <first : d8
+163013 <first : f6
+163013 <first : 8
+163013 <first : [
+163013 <first : f7
+163013 <first : d7
+163013 <first : e8
+163013 <first : f8
+163013 <first : d6
+163013 <first : d8
+163013 <first : f6
+163013 <first : Piesa selectata se afla la c5
+163013 <first : c4   c5
+163013 <first : move c5c4
+163087 <first : Pawn 1.0
+163087 <first : Pawn 1.0
+163087 <first : Pawn 1.0
+163087 <first : Pawn 1.0
+163087 <first : Pawn 1.0
+163087 <first : Rook 4.0
+163087 <first : Night 3.0
+163087 <first : King 0.0
+163087 <first : my material 12.0 their material 25.0
+163087 <first : 272514373524044442040235311511666426245753373375733533666246422615464406043733171367652725543421123122024101321246063515612152324172525162222013323023034240020033135250121043236563252356523632747234326561454142407353525063costul pentru black este -0.8000000000000007
+163895 >first : time 29835
+163897 >first : otim 17724
 book hit = (NULL)
-65050 >first : a6d3
-65151 <first : d3   a6
-65151 <first : 8
-65151 <first : [
-65151 <first : h6
-65152 <first : h8
-65152 <first : g6
-65152 <first : g8
-65152 <first : array [0] : 2 array[1] : 3 current_linie : 6 current col: 7
-65152 <first : g6   g5
-65152 <first : move g5g6
-65226 <first : 464406043733171347450705341477753735644426154606351546447773575357556447457454763665452112312202410132125351131144402420612152327131624241725251622220133230230352501210432362602220533372703230634342407353525063costul = 0.47500000000000053
-65226 <first : | Rook | Night | Bishop |   | King | Bishop | Night | Rook |
-65226 <first : | Pawn | Pawn |   | Pawn | Pawn | Pawn | Pawn | Pawn |
-65226 <first : |   |   |   | Queen |   |   |   |   |
-65226 <first : |   |   |   |   |   |   |   |   |
-65226 <first : |   |   |   |   |   |   |   |   |
-65226 <first : |   |   | Pawn |   |   |   | Queen |   |
-65226 <first : |   |   | Pawn |   |   | Pawn | Bishop | King |
-65226 <first : | Rook |   | Bishop |   |   | Rook |   |   |
+163897 >first : c8c7
+163979 <first : c7   c8
+163982 <first : Pawn 1.0
+163982 <first : Pawn 1.0
+163982 <first : Pawn 1.0
+163982 <first : Pawn 1.0
+163982 <first : Pawn 1.0
+163982 <first : Rook 4.0
+163982 <first : Night 3.0
+163982 <first : King 0.0
+163982 <first : my material 12.0 their material 25.0
+163982 <first : 2725143735240444420402353115116664262457533733757335336662464226154644060437331713676527255434211231220241013212474507053414612152324172525162222013323023034240020033135250121043236563252356523632747234326561454142407353525063costul pentru black este -1.3999999999999986
+163982 <first : 8
+163982 <first : [
+163982 <first : f7
+163982 <first : d7
+163982 <first : e8
+163982 <first : f8
+163982 <first : d6
+163982 <first : d8
+163982 <first : f6
+163982 <first : array [0] : 6 array[1] : 2 current_linie : 6 current col: 4
+163982 <first : 8
+163982 <first : [
+163982 <first : f7
+163982 <first : d7
+163982 <first : e8
+163982 <first : f8
+163982 <first : d6
+163982 <first : d8
+163982 <first : f6
+163982 <first : e8   e7
+163982 <first : move e7e8
+164057 <first : Pawn 1.0
+164057 <first : Pawn 1.0
+164059 <first : Pawn 1.0
+164059 <first : Pawn 1.0
+164059 <first : Pawn 1.0
+164059 <first : Rook 4.0
+164059 <first : Night 3.0
+164059 <first : King 0.0
+164059 <first : my material 12.0 their material 25.0
+164059 <first : 272514373524044442040235311511666426245753373375733533666246422615464406043733171366265535211231220241013212474507053414612152324172525162222013323023034240020033135250121043236563252356523632747234326561454142407353525063costul pentru black este -1.3999999999999986
 GameEnds(29, xboard exit, 2)
-177598 >first : result * {xboard exit}
-177598 >first : force
-177598 >first : quit
+165533 >first : result * {xboard exit}
+165540 >first : force
+165543 >first : quit

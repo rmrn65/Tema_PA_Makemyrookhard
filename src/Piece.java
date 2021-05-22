@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public abstract class Piece {
     String color;
     String current_position;
-    int value;
+    double value;
 
     public Piece(){}
     //move : - returneaza string cu mutarea -
