@@ -160,8 +160,16 @@ public class Queen extends Piece{
         Random rand = new Random();
         return current_position + "" + moves.get(rand.nextInt(moves.size()));
     }
-    Boolean canMove(Board board){
+    boolean canMove(Board board){
         return can_move_vertically(board).size() != 0 || can_move_horizontally(board).size() != 0 || can_move_diagonally(board).size() != 0;
+    }
+
+    ArrayList<String> generateMoves(Board board) {
+        ArrayList<String> possibleMoves = new ArrayList<>();
+        possibleMoves.addAll(can_move_horizontally(board));
+        possibleMoves.addAll(can_move_vertically(board));
+        possibleMoves.addAll(can_move_diagonally(board));
+        return possibleMoves;
     }
 
     String move(Board board){

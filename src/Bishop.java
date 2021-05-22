@@ -2,17 +2,18 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Bishop extends Piece{
+    int value;
     // toate mutarile posibile intr-o anumita stare a tablei
     ArrayList<Coordinates> possibleMoves;
     public Bishop(String current_position, String color){
-        value = 3.25;
+        value = 3;
         possibleMoves = new ArrayList<>();
         this.current_position = current_position;
         this.color = color;
     }
 
     // functie de generare a mutarilor valide
-    void generateMoves(Board board) {
+    void generateMovesCoordinates(Board board) {
         possibleMoves.clear();
         // coordonate initiale
         ArrayList<Integer> initCoords = board.pos_to_indexes(current_position);
@@ -61,9 +62,17 @@ public class Bishop extends Piece{
         }
     }
 
+    ArrayList<String> generateMoves(Board board) {
+        ArrayList<String> legalMoves = new ArrayList<>();
+        for(Coordinates c : possibleMoves) {
+            legalMoves.add(current_position + (char)('a' + c.col) + "" + (char)('1' + c.row));
+        }
+        return legalMoves;
+    }
+
     // genrare mutari posibile + verificare daca o piesa se poate misca
-    Boolean canMove(Board board) {
-        generateMoves(board);
+    boolean canMove(Board board) {
+        generateMovesCoordinates(board);
         return (possibleMoves.size() != 0);
     }
 
